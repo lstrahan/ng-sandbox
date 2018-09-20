@@ -1,0 +1,14 @@
+<h2>Custom Reactive/Material Form Fields</h2>
+<form [formGroup]="customFormGroup" fxLayout="column" fxLayoutAlign=" start">
+	
+  <app-simple-custom-form-control formControlName="nameCtrl" label="Basic Form Field"></app-simple-custom-form-control>
+	<br>
+  <mat-form-field appearance="fill">
+		<app-custom-mat-form-control formControlName="ssnCtrl"></app-custom-mat-form-control>
+		<mat-label>Material Form Field</mat-label>
+	</mat-form-field>
+	
+  <button mat-raised-button color="primary" (click)="formSubmitClicked()" fxFlexAlign="end">SUBMIT</button>
+  
+  {{results}}
+</form>

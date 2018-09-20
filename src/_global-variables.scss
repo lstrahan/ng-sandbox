@@ -1,0 +1,34 @@
+
+@import 'material-theme.scss';
+
+$primary-palette: map-get($app-theme, primary);
+$accent-palette: map-get($app-theme, accent);
+$warn-palette: map-get($app-theme, warn);
+
+$primary: mat-color($primary-palette);
+$primary-contrast: map-get($primary-palette, lighter-contrast);
+$primary-normal: mat-color($primary-palette);
+$primary-light: mat-color($primary-palette, lighter);
+$primary-dark: mat-color($primary-palette, darker);
+$primary50: mat-color($primary-palette, 50);
+$primary400: mat-color($primary-palette, 400);
+$primary600: mat-color($primary-palette, 600);
+$accent: mat-color($accent-palette);
+$background: map-get(map-get($app-theme, background), background);
+$foreground: map-get(map-get($app-theme, foreground), text);
+
+$selected: #DB167B;
+
+$grey: #BDBDBD;
+$red: #F44336;
+$yellow: #FFFF00;
+$orange: #FFAB00;
+$amber: $orange;
+$blue: #0091EA;
+$green: #00C853;
+
+// security classifications
+$unclassified: $green;
+$confidential: $blue;
+$secret: $red;
+$topsecret: $yellow;

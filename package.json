@@ -28,6 +28,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.2.0",
     "ag-grid": "^18.1.2",
     "ag-grid-angular": "^19.0.0",
+    "ag-grid-community": "^19.0.0",
     "core-js": "^2.5.3",
     "d3": "^5.0.0",
     "d3-selection-multi": "^1.0.1",

@@ -62,6 +62,7 @@ const ROUTES: Routes = [
     RouterModule.forRoot(ROUTES, { enableTracing: false }),
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MaterialModule,
     FlexLayoutModule,
     MaterialDemoModule

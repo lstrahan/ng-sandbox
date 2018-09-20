@@ -1,353 +1,381 @@
 <mat-card>
-	<mat-card-content>
-		<h2>Typography</h2>
+  <mat-card-content>
+    <h2>Typography</h2>
     <div class="mat-headline">Headline</div>
-		<div class="mat-title">Title</div>
+    <div class="mat-title">Title</div>
     <div class="mat-subheading-2">Subheading-2</div>
     <div class="mat-subheading-1">Subheading-1 (class="mat-subheading-1")</div>
-    <div class="my-subheading-1">Subheading-1 (class="my-subheading-1")</div>
     <div class="mat-body-2">Body-2</div>
     <div class="mat-body-1">Body-1</div>
     <div class="mat-caption">Caption</div>
     <div class="mat-button">Button</div>
-	</mat-card-content>
+  </mat-card-content>
 </mat-card>
 
 <mat-card>
-	<mat-card-content>
-		<h2>Theme Colors</h2>
-		<div>PRIMARY</div>
-	</mat-card-content>
+  <mat-card-content>
+    <h2>Theme Colors</h2>
+    <div>PRIMARY</div>
+  </mat-card-content>
 </mat-card>
 
 <!-- Material Button -->
 <mat-card>
-	<mat-card-content>
-		<h2>Material Button</h2>
-		<button mat-button>FLAT</button>
-		<button mat-raised-button mat-tooltip="This is a tooltip!">RAISED</button>
-		<button mat-raised-button color="primary">PRIMARY RAISED</button>
-		<button mat-raised-button color="accent">ACCENT RAISED</button>
-		<br> ICON BUTTON: <button mat-icon-button><mat-icon>search</mat-icon></button>
-	</mat-card-content>
+  <mat-card-content>
+    <h2>Material Button</h2>
+    <button mat-button>FLAT</button>
+    <button mat-raised-button mat-tooltip="This is a tooltip!">RAISED</button>
+    <button mat-raised-button color="primary">PRIMARY RAISED</button>
+    <button mat-raised-button color="accent">ACCENT RAISED</button>
+    <br> ICON BUTTON: <button mat-icon-button>
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-card-content>
 </mat-card>
 <!-- /Material Button -->
 
+<!-- Material Toggle Button -->
+<mat-card>
+  <h2>Material Toggle Button</h2>
+  <mat-button-toggle-group>
+    <mat-button-toggle title="Button #1" checked="true">
+      <mat-icon>linear_scale</mat-icon>
+    </mat-button-toggle>
+    <mat-button-toggle title="Button #2">
+      <mat-icon>sort</mat-icon>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+</mat-card>
+<!-- /Material Toggle Button -->
+
 <!-- Material Chip List -->
 <mat-card>
-	<mat-card-content>
-		<h2>Material Chips</h2>
-		<mat-chip-list>
-			<mat-chip *ngFor="let chipColor of availableColors" selected="true" color="{{chipColor.color}}">
-				{{chipColor.name}}
-			</mat-chip>
-		</mat-chip-list>
-	</mat-card-content>
+  <mat-card-content>
+    <h2>Material Chips</h2>
+    <mat-chip-list>
+      <mat-chip *ngFor="let chipColor of availableColors" selected="true" color="{{chipColor.color}}">
+        {{chipColor.name}}
+      </mat-chip>
+    </mat-chip-list>
+  </mat-card-content>
 </mat-card>
 <!-- /Material Chip List -->
 
 <!-- Material Checkbox -->
 <mat-card>
-	<mat-card-content>
-		<h2>Material Checkbox</h2>
-		<mat-checkbox color="warn">Unchecked</mat-checkbox>
-		&nbsp;&nbsp;
-		<mat-checkbox [checked]="true">Checked</mat-checkbox>
-		&nbsp;&nbsp;
-		<mat-checkbox [indeterminate]="true">Indeterminate</mat-checkbox>
-		&nbsp;&nbsp;
-		<mat-checkbox [disabled]="true">Disabled</mat-checkbox>
-	</mat-card-content>
+  <mat-card-content>
+    <h2>Material Checkbox</h2>
+    <mat-checkbox color="warn">Unchecked</mat-checkbox>
+    &nbsp;&nbsp;
+    <mat-checkbox [checked]="true">Checked</mat-checkbox>
+    &nbsp;&nbsp;
+    <mat-checkbox [indeterminate]="true">Indeterminate</mat-checkbox>
+    &nbsp;&nbsp;
+    <mat-checkbox [disabled]="true">Disabled</mat-checkbox>
+  </mat-card-content>
 </mat-card>
 <!-- /Material Checkbox -->
 
 <!-- Material Radio Button -->
 <mat-card>
-	<mat-card-content>
-		<h2>Material Radio Button</h2>
-		<mat-radio-button name="symbol">Alpha</mat-radio-button>
-		&nbsp;&nbsp;
-		<mat-radio-button name="symbol">Beta</mat-radio-button>
-		&nbsp;&nbsp;
-		<mat-radio-button name="symbol" disabled>Disabled</mat-radio-button>
-	</mat-card-content>
+  <mat-card-content>
+    <h2>Material Radio Button</h2>
+    <mat-radio-button name="symbol">Alpha</mat-radio-button>
+    &nbsp;&nbsp;
+    <mat-radio-button name="symbol">Beta</mat-radio-button>
+    &nbsp;&nbsp;
+    <mat-radio-button name="symbol" disabled>Disabled</mat-radio-button>
+  </mat-card-content>
 </mat-card>
 <!-- /Material Radio Button -->
 
 <!-- Material Input -->
 <mat-card>
-	<mat-card-content>
-		<h2>Material Input</h2>
-		<mat-form-field>
-			<input matInput placeholder="Regular" />
-		</mat-form-field>
-		&nbsp;&nbsp;
-		<mat-form-field>
-			<input matInput #nickname placeholder="Field with a hint" maxlength="50" />
-			<mat-hint align="start">YYYY-MM-DD</mat-hint>
-		</mat-form-field>
-		&nbsp;&nbsp;
-		<mat-form-field>
-			<mat-icon matPrefix>android</mat-icon>
-			<input matInput placeholder="Field with an icon">
-		</mat-form-field>
-		&nbsp;&nbsp;
-		<mat-form-field appearance="fill">
-			<input matInput placeholder="appearance='fill'" />
-		</mat-form-field>
-	</mat-card-content>
+  <mat-card-content>
+    <h2>Material Input</h2>
+    <mat-form-field>
+      <input matInput placeholder="Regular" />
+    </mat-form-field>
+    &nbsp;&nbsp;
+    <mat-form-field>
+      <input matInput #nickname placeholder="Field with a hint" maxlength="50" />
+      <mat-hint align="start">YYYY-MM-DD</mat-hint>
+    </mat-form-field>
+    &nbsp;&nbsp;
+    <mat-form-field>
+      <mat-icon matPrefix>android</mat-icon>
+      <input matInput placeholder="Field with an icon">
+    </mat-form-field>
+    &nbsp;&nbsp;
+    <mat-form-field appearance="fill">
+      <input matInput placeholder="appearance='fill'" />
+    </mat-form-field>
+  </mat-card-content>
 </mat-card>
 <!-- /Material Input -->
 
 
 <!-- Material Select -->
 <mat-card>
-	<mat-card-content>
-		<h2>Material Select</h2>
-		<mat-form-field>
-			<mat-select placeholder="Favorite game" [(ngModel)]="selectedValue" name="game">
-				<mat-option *ngFor="let game of games" [value]="game.value">
-					{{game.viewValue}}
-				</mat-option>
-			</mat-select>
-		</mat-form-field>
-		<p> Selected value: {{selectedValue}} </p>
+  <mat-card-content>
+    <h2>Material Select</h2>
+    <mat-form-field>
+      <mat-select placeholder="Favorite game" [(ngModel)]="selectedValue" name="game">
+        <mat-option *ngFor="let game of games" [value]="game.value">
+          {{game.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p> Selected value: {{selectedValue}} </p>
 
-	</mat-card-content>
+  </mat-card-content>
 </mat-card>
 <!-- /Material Select -->
 
 <!-- Material List -->
 <mat-card>
-	<mat-card-content>
-		<h2>Material List</h2>
-		<mat-list>
-			<mat-list-item *ngFor="let food of foods">
-				<h3 mat-line>{{food.name}}</h3>
-				<p mat-line>{{food.rating}}</p>
-			</mat-list-item>
-		</mat-list>
-	</mat-card-content>
+  <mat-card-content>
+    <h2>Material List</h2>
+    <mat-list>
+      <mat-list-item *ngFor="let food of foods">
+        <h3 mat-line>{{food.name}}</h3>
+        <p mat-line>{{food.rating}}</p>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
 </mat-card>
 <!-- /Material List -->
 
 <!-- Material Grid List -->
 <mat-card>
-	<mat-card-content>
-		<h2>Material Grid List</h2>
-		<mat-grid-list cols="4" rowHeight="100px">
-			<mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows" [style.background]="tile.color">
-				{{tile.text}}
-			</mat-grid-tile>
-		</mat-grid-list>
-	</mat-card-content>
+  <mat-card-content>
+    <h2>Material Grid List</h2>
+    <mat-grid-list cols="4" rowHeight="100px">
+      <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows" [style.background]="tile.color">
+        {{tile.text}}
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card-content>
 </mat-card>
 <!-- /Material Grid List -->
 
 <!-- Material Spinner -->
 <mat-card>
-	<mat-card-content>
-		<h2>Progress spinner configuration</h2>
+  <mat-card-content>
+    <h2>Progress spinner configuration</h2>
 
-		<section>
-			<label>Color:</label>
-			<mat-radio-group [(ngModel)]="color">
-				<mat-radio-button value="primary">
-					Primary
-				</mat-radio-button>
-				<mat-radio-button value="accent">
-					Accent
-				</mat-radio-button>
-				<mat-radio-button value="warn">
-					Warn
-				</mat-radio-button>
-			</mat-radio-group>
-		</section>
+    <section>
+      <label>Color:</label>
+      <mat-radio-group [(ngModel)]="color">
+        <mat-radio-button value="primary">
+          Primary
+        </mat-radio-button>
+        <mat-radio-button value="accent">
+          Accent
+        </mat-radio-button>
+        <mat-radio-button value="warn">
+          Warn
+        </mat-radio-button>
+      </mat-radio-group>
+    </section>
 
-		<section>
-			<label>Mode:</label>
-			<mat-radio-group [(ngModel)]="mode">
-				<mat-radio-button value="determinate">
-					Determinate
-				</mat-radio-button>
-				<mat-radio-button value="indeterminate">
-					Indeterminate
-				</mat-radio-button>
-			</mat-radio-group>
-		</section>
+    <section>
+      <label>Mode:</label>
+      <mat-radio-group [(ngModel)]="mode">
+        <mat-radio-button value="determinate">
+          Determinate
+        </mat-radio-button>
+        <mat-radio-button value="indeterminate">
+          Indeterminate
+        </mat-radio-button>
+      </mat-radio-group>
+    </section>
 
-		<section *ngIf="mode === 'determinate'">
-			<label>Progress:</label>
-			<mat-slider [(ngModel)]="value"></mat-slider>
-		</section>
-	</mat-card-content>
+    <section *ngIf="mode === 'determinate'">
+      <label>Progress:</label>
+      <mat-slider [(ngModel)]="value"></mat-slider>
+    </section>
+  </mat-card-content>
 </mat-card>
 <mat-card>
-	<mat-card-content>
-		<h2>Result</h2>
+  <mat-card-content>
+    <h2>Result</h2>
 
-		<mat-progress-spinner [color]="color" [mode]="mode" [value]="value">
-		</mat-progress-spinner>
-	</mat-card-content>
+    <mat-progress-spinner [color]="color" [mode]="mode" [value]="value">
+    </mat-progress-spinner>
+  </mat-card-content>
 </mat-card>
 <!-- /Material Spinner -->
 
 <!-- Material Progress Bar -->
 <mat-card>
-	<mat-card-content>
-		<h2>Material Progress Bar</h2>
-		<label>
-          Indeterminate progress-bar
-          <mat-progress-bar mode="indeterminate" aria-label="Indeterminate progress-bar example"></mat-progress-bar>
-        </label>
-		<label>
-          Determinate progress bar - {{progress}}%
-          <mat-progress-bar color="accent" mode="determinate" [value]="progress" aria-label="Determinate progress-bar example"></mat-progress-bar>
-        </label>
-	</mat-card-content>
+  <mat-card-content>
+    <h2>Material Progress Bar</h2>
+    <label>
+      Indeterminate progress-bar
+      <mat-progress-bar mode="indeterminate" aria-label="Indeterminate progress-bar example"></mat-progress-bar>
+    </label>
+    <label>
+      Determinate progress bar - {{progress}}%
+      <mat-progress-bar color="accent" mode="determinate" [value]="progress" aria-label="Determinate progress-bar example"></mat-progress-bar>
+    </label>
+  </mat-card-content>
 </mat-card>
 <!-- /Material Progress Bar -->
 
 <!-- Material Tab -->
 <mat-card>
-	<mat-card-content>
-		<h2>Material Tab</h2>
-		<mat-tab-group>
-			<mat-tab label="Air Nomads">
-				<p>The Air Nomads were a civilization composed of people who practiced the art of airbending. While nomadic, Air Nomads
-					did inhabit four major air temples, each built on remote locations, only easily reachable with flying bison. The Air
-					Nomads were a highly spiritual group of people.</p>
-			</mat-tab>
-			<mat-tab label="Water Tribe">
-				<p>The Water Tribe is a collective term for people, some of whom practice the art of waterbending, who follow a government
-					system in the form of a tribal chiefdom. Although members of the Water Tribe typically inhabit the polar regions, the
-					North Pole and the South Pole, there is a small population of waterbenders who inhabit the Foggy Swamp in Earth Kingdom
-					territory. The two main tribes are the Northern Water Tribe at the North Pole and the Southern Water Tribe at the South
-					Pole.</p>
-			</mat-tab>
-			<mat-tab label="Earth Kingdom">
-				<p>The Earth Kingdom is a massive continent led by an earth monarch and is home to people who practice the art of earthbending.
-					Being the largest of the four nations, it is ethnically diverse with a variance of customs and cultural traditions.
-					The people of the Earth Kingdom are strong and persistent. The geography of the Earth Kingdom varies tremendously, ranging
-					from wooded forests to blazing deserts, mountainous terrain, and grassy plains.
-				</p>
-			</mat-tab>
-			<mat-tab label="Fire Nation">
-				<p>The Fire Nation is home to people who practice the art of firebending and is an absolute monarchy led by the Fire Lord.
-					Being composed of several major islands and located on the equator, the nation is considered to be an archipelago. Its
-					economy is the largest and most powerful in the world with a strong industrial sector and advanced technological developments.
-					The climate is normally humid and warm which allows for a diversity of flora and fauna to thrive.</p>
-			</mat-tab>
-		</mat-tab-group>
-	</mat-card-content>
+  <mat-card-content>
+    <h2>Material Tab</h2>
+    <mat-tab-group>
+      <mat-tab label="Air Nomads">
+        <p>The Air Nomads were a civilization composed of people who practiced the art of airbending. While nomadic,
+          Air Nomads
+          did inhabit four major air temples, each built on remote locations, only easily reachable with flying bison.
+          The Air
+          Nomads were a highly spiritual group of people.</p>
+      </mat-tab>
+      <mat-tab label="Water Tribe">
+        <p>The Water Tribe is a collective term for people, some of whom practice the art of waterbending, who follow a
+          government
+          system in the form of a tribal chiefdom. Although members of the Water Tribe typically inhabit the polar
+          regions, the
+          North Pole and the South Pole, there is a small population of waterbenders who inhabit the Foggy Swamp in
+          Earth Kingdom
+          territory. The two main tribes are the Northern Water Tribe at the North Pole and the Southern Water Tribe at
+          the South
+          Pole.</p>
+      </mat-tab>
+      <mat-tab label="Earth Kingdom">
+        <p>The Earth Kingdom is a massive continent led by an earth monarch and is home to people who practice the art
+          of earthbending.
+          Being the largest of the four nations, it is ethnically diverse with a variance of customs and cultural
+          traditions.
+          The people of the Earth Kingdom are strong and persistent. The geography of the Earth Kingdom varies
+          tremendously, ranging
+          from wooded forests to blazing deserts, mountainous terrain, and grassy plains.
+        </p>
+      </mat-tab>
+      <mat-tab label="Fire Nation">
+        <p>The Fire Nation is home to people who practice the art of firebending and is an absolute monarchy led by the
+          Fire Lord.
+          Being composed of several major islands and located on the equator, the nation is considered to be an
+          archipelago. Its
+          economy is the largest and most powerful in the world with a strong industrial sector and advanced
+          technological developments.
+          The climate is normally humid and warm which allows for a diversity of flora and fauna to thrive.</p>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
 </mat-card>
 <!-- /Material Tab -->
 
 <mat-card>
-	<mat-icon>build</mat-icon>
-	<mat-icon>android</mat-icon>
+  <mat-icon>build</mat-icon>
+  <mat-icon>android</mat-icon>
 </mat-card>
 
 <!-- Material Slider -->
 <mat-card>
-	<mat-card-content>
-		<h2>Material Slider :: Configuration</h2>
+  <mat-card-content>
+    <h2>Material Slider :: Configuration</h2>
 
-		<section>
-			<mat-form-field>
-				<input matInput type="number" placeholder="Value" [(ngModel)]="slider.value">
-			</mat-form-field>
-			<mat-form-field>
-				<input matInput type="number" placeholder="Min value" [(ngModel)]="slider.min">
-			</mat-form-field>
-			<mat-form-field>
-				<input matInput type="number" placeholder="Max value" [(ngModel)]="slider.max">
-			</mat-form-field>
-			<mat-form-field>
-				<input matInput type="number" placeholder="Step size" [(ngModel)]="slider.step">
-			</mat-form-field>
-		</section>
+    <section>
+      <mat-form-field>
+        <input matInput type="number" placeholder="Value" [(ngModel)]="slider.value">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="number" placeholder="Min value" [(ngModel)]="slider.min">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="number" placeholder="Max value" [(ngModel)]="slider.max">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="number" placeholder="Step size" [(ngModel)]="slider.step">
+      </mat-form-field>
+    </section>
 
-		<section>
-			<mat-checkbox [(ngModel)]="slider.showTicks">Show ticks</mat-checkbox>
-			<mat-checkbox [(ngModel)]="slider.autoTicks" *ngIf="slider.showTicks">
-				Auto ticks
-			</mat-checkbox>
-			<mat-form-field *ngIf="slider.showTicks && !slider.autoTicks">
-				<input matInput type="number" placeholder="Tick interval" [(ngModel)]="slider.tickInterval">
-			</mat-form-field>
-		</section>
+    <section>
+      <mat-checkbox [(ngModel)]="slider.showTicks">Show ticks</mat-checkbox>
+      <mat-checkbox [(ngModel)]="slider.autoTicks" *ngIf="slider.showTicks">
+        Auto ticks
+      </mat-checkbox>
+      <mat-form-field *ngIf="slider.showTicks && !slider.autoTicks">
+        <input matInput type="number" placeholder="Tick interval" [(ngModel)]="slider.tickInterval">
+      </mat-form-field>
+    </section>
 
-		<section>
-			<mat-checkbox [(ngModel)]="slider.thumbLabel">Show thumb label</mat-checkbox>
-		</section>
+    <section>
+      <mat-checkbox [(ngModel)]="slider.thumbLabel">Show thumb label</mat-checkbox>
+    </section>
 
-		<section>
-			<mat-checkbox [(ngModel)]="slider.checked">Checked</mat-checkbox>
-		</section>
+    <section>
+      <mat-checkbox [(ngModel)]="slider.checked">Checked</mat-checkbox>
+    </section>
 
-		<section>
-			<mat-checkbox [(ngModel)]="slider.vertical">Vertical</mat-checkbox>
-			<mat-checkbox [(ngModel)]="slider.invert">Inverted</mat-checkbox>
-		</section>
+    <section>
+      <mat-checkbox [(ngModel)]="slider.vertical">Vertical</mat-checkbox>
+      <mat-checkbox [(ngModel)]="slider.invert">Inverted</mat-checkbox>
+    </section>
 
-		<section>
-			<mat-checkbox [(ngModel)]="slider.disabled">Disabled</mat-checkbox>
-		</section>
-	</mat-card-content>
+    <section>
+      <mat-checkbox [(ngModel)]="slider.disabled">Disabled</mat-checkbox>
+    </section>
+  </mat-card-content>
 
-	<mat-card-content>
-		<h2>Slider Result</h2>
-		<mat-slider [disabled]="slider.disabled" [invert]="slider.invert" [max]="slider.max" [min]="slider.min" [step]="slider.step"
-		 [thumbLabel]="slider.thumbLabel" [tickInterval]="slider.tickInterval" [value]="slider.value" [vertical]="slider.vertical">
-		</mat-slider>
-	</mat-card-content>
+  <mat-card-content>
+    <h2>Slider Result</h2>
+    <mat-slider [disabled]="slider.disabled" [invert]="slider.invert" [max]="slider.max" [min]="slider.min" [step]="slider.step"
+      [thumbLabel]="slider.thumbLabel" [tickInterval]="slider.tickInterval" [value]="slider.value" [vertical]="slider.vertical">
+    </mat-slider>
+  </mat-card-content>
 
-	<mat-card-content>
-		<h2>Slider Toggle Result</h2>
-		<mat-slide-toggle [disabled]="slider.disabled" [checked]="slider.checked" (change)="slider.checked = !slider.checked">Slide me!</mat-slide-toggle>
-	</mat-card-content>
+  <mat-card-content>
+    <h2>Slider Toggle Result</h2>
+    <mat-slide-toggle [disabled]="slider.disabled" [checked]="slider.checked" (change)="slider.checked = !slider.checked">Slide
+      me!</mat-slide-toggle>
+  </mat-card-content>
 
 </mat-card>
 <!-- /Material Slider -->
 
 <!-- Material Menu -->
 <mat-card>
-	<mat-card-content>
-		<h2>Material Menu</h2>
-		<button mat-icon-button [matMenuTriggerFor]="menu">
-          <mat-icon>more_vert</mat-icon>
-        </button>
-		<mat-menu #menu="matMenu">
-			<button mat-menu-item>
-            <mat-icon>dialpad</mat-icon>
-            <span>Redial</span>
-          </button>
-			<button mat-menu-item disabled>
-            <mat-icon>voicemail</mat-icon>
-            <span>Check voicemail</span>
-          </button>
-			<button mat-menu-item>
-            <mat-icon>notifications_off</mat-icon>
-            <span>Disable alerts</span>
-          </button>
-		</mat-menu>
-	</mat-card-content>
+  <mat-card-content>
+    <h2>Material Menu</h2>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>dialpad</mat-icon>
+        <span>Redial</span>
+      </button>
+      <button mat-menu-item disabled>
+        <mat-icon>voicemail</mat-icon>
+        <span>Check voicemail</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon>
+        <span>Disable alerts</span>
+      </button>
+    </mat-menu>
+  </mat-card-content>
 </mat-card>
 <!-- /Material Menu-->
 
 <!-- Material Dialog-->
 <mat-card>
-	<mat-card-content>
-		<h2>Material Dialog</h2>
-		<p>Last dialog result: {{lastDialogResult}}</p>
-		<button mat-raised-button (click)="openDialog()">DIALOG</button>
-		<button mat-raised-button (click)="showSnackbar()">SNACKBAR</button>
-	</mat-card-content>
+  <mat-card-content>
+    <h2>Material Dialog</h2>
+    <p>Last dialog result: {{lastDialogResult}}</p>
+    <button mat-raised-button (click)="openDialog()">DIALOG</button>
+    <button mat-raised-button (click)="showSnackbar()">SNACKBAR</button>
+  </mat-card-content>
 </mat-card>
 <!-- /Material Dialog-->
 <!-- Material Fab-->
 <button mat-fab>
-      <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
-    </button>
+  <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+</button>
 <!-- /Material Fab-->

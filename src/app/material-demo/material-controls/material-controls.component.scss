@@ -1,12 +1,17 @@
-@import '../../../global-variables';
-@import '~@angular/material/theming';
+// @import '../../../global-variables';
+// @import '~@angular/material/theming';
 
-.my-subheading-1 {
-  @include mat-typography-level-to-styles($custom-typography, subheading-1);
-}
+// .my-subheading-1 {
+//   @include mat-typography-level-to-styles($custom-typography, subheading-1);
+// }
 
 mat-sidenav-container.m2app-dark {
   background: black;
+}
+
+.mat-card {
+  margin: 10px;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .mat-slider-horizontal {

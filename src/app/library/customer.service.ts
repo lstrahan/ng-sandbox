@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable,  of } from 'rxjs';
 import { map, tap, first, take, catchError } from 'rxjs/operators';
+import * as _ from 'lodash';
 
 import { Util } from './util';
 import { Customer } from './customer';
@@ -25,7 +26,7 @@ export class CustomerService {
       return this.http.get<any>(url, httpOptions).pipe(
         first(),
         tap(res => console.log('    got customers', res)),
-        map(res => new Map(res.map(obj => [obj.key, obj.value]))),
+        map(res => new Map<string, string>(res.map(obj => [obj.key, obj.value]))),
         catchError(this.handleError<any>('CustomerService.getCustomerMap'))
       );
     }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CustomerService } from '../../customer.service';
-import { Customer } from '../../customer';
+import { CustomerService } from '../../library/customer.service';
+import { Customer } from '../../library/customer';
 
 @Component({
   selector: 'app-rxjs',
@@ -10,6 +10,7 @@ import { Customer } from '../../customer';
 export class RxjsComponent implements OnInit {
 
   results: string;
+  customer: Customer;
 
   constructor(private customerService: CustomerService) { }
 
@@ -19,6 +20,7 @@ export class RxjsComponent implements OnInit {
   getCustomers(): void {
     this.customerService.getCustomerMap().subscribe(res => {
       let str = '';
+      // console.log('RxjsComponent::getCustomers', res);
       res.forEach((v,k,m) => str += `${k}: ${v}; `);
       this.results = str;
     });
@@ -26,7 +28,8 @@ export class RxjsComponent implements OnInit {
 
   getCustomerById(id: string): void {
     this.customerService.getCustomerById(id).subscribe(res => {
-      this.results = `${res.id} ${res.firstname} ${res.lastname}`;
+      this.customer = res;
+      this.results = `${this.customer.id} ${this.customer.firstname} ${this.customer.lastname}`;
     });
   }
 }

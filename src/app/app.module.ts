@@ -7,10 +7,11 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material.module';
 
+import { MockBackendInterceptor } from './library/mock-backend-interceptor';
+import { CustomerService } from './library/customer.service';
+
 import { AppComponent } from './app.component';
 
-import { MockBackendInterceptor } from './mock-backend-interceptor';
-import { CustomerService } from './customer.service';
 import { MaterialDemoModule } from './material-demo/material-demo.module';
 import { FlexLayoutExampleModule } from './flex-layout/flex-layout.module';
 import { FlexLayout2Module } from './flex-layout-2/flex-layout-2.module';

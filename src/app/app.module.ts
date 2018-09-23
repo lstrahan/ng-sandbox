@@ -18,6 +18,7 @@ import { FlexLayout2Module } from './flex-layout-2/flex-layout-2.module';
 import { MyAgGridModule } from './ag-grid/ag-grid.module';
 import { WebsocketsModule } from './websockets/websockets.module';
 import { RxjsModule } from './rxjs/rxjs.module';
+import { D3Module } from './d3/d3.module';
 import { IndexedDbModule } from './indexed-db/indexed-db.module';
 
 const ROUTES: Routes = [
@@ -49,6 +50,10 @@ const ROUTES: Routes = [
   {
     path: 'rxjs',
     loadChildren: './rxjs/rxjs.module#RxjsModule'
+  },
+  {
+    path: 'd3',
+    loadChildren: './d3/d3.module#D3Module'
   },
   {
     path: 'indexed-db',

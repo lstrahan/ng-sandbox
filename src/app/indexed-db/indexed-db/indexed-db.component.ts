@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CustomerService }  from '../../customer.service';
+import { CustomerService }  from '../../library/customer.service';
 
 @Component({
   selector: 'app-indexed-db',

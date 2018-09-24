@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-import { RxjsComponent } from './rxjs/rxjs.component';
-import { CustomerService } from '../library/customer.service';
+import { D3Component } from './d3/d3.component';
 
 const ROUTES: Routes = [
-  { path: '', component: RxjsComponent }
+  { path: '', component: D3Component }
 ];
 
 @NgModule({
@@ -13,8 +12,7 @@ const ROUTES: Routes = [
     RouterModule.forChild(ROUTES),
     CommonModule
   ],
-  declarations: [RxjsComponent],
-  providers: [CustomerService],
+  declarations: [D3Component],
   exports: [RouterModule]
 })
-export class RxjsModule { }
+export class D3Module { }

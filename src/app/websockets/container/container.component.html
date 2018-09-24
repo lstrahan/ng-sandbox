@@ -1,12 +1,6 @@
 <h2>WebSockets using RxJs WebSocketSubject</h2>
 
-<mat-radio-group (change)="changeConnection($event)" [(ngModel)]="serverUrl">
-	<mat-radio-button [value]="echoServer">{{echoServer}}</mat-radio-button>
-	&nbsp;&nbsp;
-	<button mat-raised-button (click)="sendMessage()">SEND</button>
-	<br><br>
-	<mat-radio-button [value]="broadcastServer" [disabled]="!isBroadcastServerAvailable">{{broadcastServer}}</mat-radio-button>
-</mat-radio-group>
+{{wsServer}} <button mat-raised-button (click)="sendMessage()">SEND</button>
 <br>
 
 <br>
@@ -18,11 +12,5 @@
 		<app-web-socket-subject-client name="Client 1"></app-web-socket-subject-client>
 		<app-web-socket-subject-client name="Client 2"></app-web-socket-subject-client>
 		<app-web-socket-subject-client name="Client 3"></app-web-socket-subject-client>
-	</div>
-  <div fxLayout="column" style="width: 50%">
-    SocketIO
-		<app-socketio-client name="Client 1"></app-socketio-client>
-		<app-socketio-client name="Client 2"></app-socketio-client>
-		<app-socketio-client name="Client 3"></app-socketio-client>
 	</div>
 </div>

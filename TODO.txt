@@ -1,0 +1,8 @@
+websockets
+    https://github.com/TigorC/rxjs_websocket
+    Try this for... https://stackoverflow.com/questions/31131490/how-to-subscribe-to-an-event-on-a-service-in-angular2
+    https://blog.codewithdan.com/pushing-real-time-data-to-an-angular-service-using-web-sockets/
+
+D3
+    why isn't 'active' class getting applied when I click on a circle?
+    add onclick event listener toadd a 'selected' class and distinguish between clicking and dragging. select/unselect

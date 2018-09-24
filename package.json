@@ -40,6 +40,7 @@
     "rxjs": "^6.2.2",
     "socket.io-client": "^2.1.1",
     "vis": "^4.21.0",
+    "ws": "^6.0.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

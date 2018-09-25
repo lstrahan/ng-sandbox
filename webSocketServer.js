@@ -12,8 +12,8 @@ wss.on('connection', function connection(ws) {
 
   // broadcast
   setInterval(() => {
-    let msg = Date.now()
+    let msg = Date.now();
     console.log(`sending ${msg}`);
     ws.send(`"${msg}"`);
-  }, 1000);
+  }, 2000);
 });

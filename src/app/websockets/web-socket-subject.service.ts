@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { tap, map } from 'rxjs/operators';
+import { tap, map, retry } from 'rxjs/operators';
 import { WebSocketSubject, WebSocketSubjectConfig  } from 'rxjs/webSocket';
 
 @Injectable({
@@ -47,6 +47,7 @@ export class WebSocketSubjectService {
   getMessages(): Observable<string> {
     return this.wss.pipe(
       tap(res => console.log('WebSocketSubjectService::getMessages() received a message', res)),
+      retry(),
       map(res => res) // this can be used to modify the incoming message
     );
   }

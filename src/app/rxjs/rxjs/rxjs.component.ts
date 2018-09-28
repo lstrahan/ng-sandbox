@@ -5,19 +5,36 @@ import { ObjectMapper, JsonProperty, JsonIgnore } from 'json-object-mapper';
 import { CustomerService } from '../../library/customer.service';
 import { Customer } from '../../library/customer';
 
+class MySubClass {
+  parentId: string;
+  address: string;
+  city: string;
+  @JsonProperty({ name: 'zipcode' })
+  zip: string;
+
+  constructor() {
+    this.parentId = '';
+    this.address = '';
+    this.city = '';
+    this.zip = '';
+  }
+}
 class MyClass {
   id: string;
   firstname: string;
   @JsonProperty({ name: 'surname' })
   lastname: string;
   @JsonIgnore()
-  extraProperty: string;
+  localProperty: string;
+  @JsonProperty({type: MySubClass})
+  subdata: MySubClass[];
 
   constructor() {
     this.id = '';
     this.firstname = '';
     this.lastname = '';
-    this.extraProperty = 'this is an extra property';
+    this.localProperty = 'this is an extra property';
+    this.subdata = [];
   }
 }
 
@@ -54,8 +71,16 @@ export class RxjsComponent implements OnInit {
 
 
   deserializeClick() {
-    const jsonObj = { id: '2', firstname: 'Lance', surname: 'Strahan' };
-    
+    const jsonObj = {
+      id: '2',
+      firstname: 'Lance',
+      surname: 'Strahan',
+      subdata: [
+        {id: '2', address: '123 Some St', city: 'Monument', zipcode: '80132'},
+        {id: '2', address: '567 Another St', city: 'Colorado Springs', zipcode: '80920'}
+      ]
+    };
+
     // const jsonConvert: JsonConvert = new JsonConvert();
     // jsonConvert.operationMode = OperationMode.LOGGING; // print some debug data
     // jsonConvert.ignorePrimitiveChecks = false; // don't allow assigning number to string etc.

@@ -1,62 +1,84 @@
 import { Component, OnInit } from '@angular/core';
 // import {JsonObject, JsonProperty, JsonConvert, OperationMode, ValueCheckingMode} from 'json2typescript';
-// import {JsonProperty, deserialize} from 'json-typescript-mapper';
 import { ObjectMapper, JsonProperty, JsonIgnore, Serializer } from 'json-object-mapper';
+import {Expose, Exclude, Transform, classToPlain, Type} from 'class-transformer';
+import * as moment from 'moment';
+import {Moment} from 'moment';
 import { CustomerService } from '../../library/customer.service';
 import { Customer } from '../../library/customer';
 
 // tslint:disable:max-line-length
 // tslint:disable:no-inferrable-types
 
-class MyDateSerializer implements Serializer {
-  public serialize(value: Date): string {
-    return `"${value.toISOString()}"`;
-  }
-}
+// class MyDateSerializer implements Serializer {
+//   public serialize(value: Date): string {
+//     return `"${value.toISOString()}"`;
+//   }
+// }
 
 class MySubClass {
+  id: string = '';
   parentId: string = '';
   address: string = '';
   city: string = '';
-  @JsonProperty({ name: 'zipcode' })
+  @Expose({ name: 'zipcode' })
   zip: string = '';
-  @JsonProperty({type: Date, serializer: MyDateSerializer})
-  date: Date = new Date();
-  @JsonIgnore()
+  @Transform((value) => moment(value).utc().toISOString(), { toPlainOnly: true })
+  date: Moment;
+  @Exclude()
   propOnlyInModel: string = '';
 
-  get fullAddress(): string {
+  get getterShouldBeIgnored(): string {
     return `${this.address}, ${this.city} ${this.zip}`;
   }
 
-  constructor(json: any) {
-    this.parentId = json.parentId;
-    this.address = json.address;
-    this.city = json.city;
-    this.zip = json.zipcode;
-    this.date = new Date(json.date);
-    this.propOnlyInModel = 'this property is only in the model';
+  constructor(json?: any) {
+    this.propOnlyInModel = 'initialized in constructor';
+    if (json) {
+      return MySubClass.deserialize(json);
+    }
+  }
+
+  static deserialize(json: any): MySubClass {
+    const obj = new MySubClass();
+
+    obj.id = json.id;
+    obj.parentId = json.parentId;
+    obj.address = json.address;
+    obj.city = json.city;
+    obj.zip = json.zipcode;
+    obj.date = moment(json.date);
+
+    return obj;
   }
 }
 class MyClass {
   id: string = '';
   firstname: string = '';
-  @JsonProperty({ name: 'surname' })
+  @Expose({ name: 'surname' })
   lastname: string = '';
-  @JsonProperty({type: MySubClass})
   subdata: MySubClass[] = [];
 
-  constructor(json: any) {
-    this.id = json.id;
-    this.firstname = json.firstname;
-    this.lastname = json.surname;
-    for (let i = 0; i < json.subdata.length; i++) {
-      this.subdata.push(new MySubClass(json.subdata[i]));
+  constructor(json?: any) {
+    if (json) {
+      return MyClass.deserialize(json);
     }
   }
-  
-  serialize(): String {
-    return ObjectMapper.serialize(this);
+
+  static deserialize(json: any): MyClass {
+    const obj = new MyClass();
+    obj.id = json.id;
+    obj.firstname = json.firstname;
+    obj.lastname = json.surname;
+    for (let i = 0; i < json.subdata.length; i++) {
+      obj.subdata.push(MySubClass.deserialize(json.subdata[i]));
+    }
+
+    return obj;
+  }
+
+  serialize(): any {
+    return classToPlain(this);
   }
 }
 
@@ -94,16 +116,19 @@ export class RxjsComponent implements OnInit {
 
   deserializeClick() {
     const jsonObj = {
-      id: '2',
+      id: '1',
       firstname: 'Lance',
       surname: 'Strahan',
       subdata: [
-        {id: '2', address: '123 Some St', city: 'Monument', zipcode: '80132', date: `2018-01-01T09:30:00Z`, propOnlyInJson: 'this is only in JSON'},
-        {id: '2', address: '567 Another St', city: 'Colorado Springs', zipcode: '80920', date: `2018-02-02T09:20:00Z`, propOnlyInJson: 'this is only in JSON'}
+        {id: '1', parentId: '1', address: '123 Some St', city: 'Monument', zipcode: '80132', date: `2018-01-01T09:30:00Z`, propOnlyInJson: 'this is only in JSON'},
+        {id: '2', parentId: '1', address: '567 Another St', city: 'Colorado Springs', zipcode: '80920', date: `2018-02-02T09:20:00Z`, propOnlyInJson: 'this is only in JSON'}
       ]
     };
 
-    let c: MyClass = new MyClass(jsonObj);
+    let x: MyClass = new MyClass(jsonObj);
+    console.log('deserialized x = ', x);
+
+    let c: MyClass = MyClass.deserialize(jsonObj);
     console.log('deserialized = ', c);
 
     // const jsonConvert: JsonConvert = new JsonConvert();
@@ -111,9 +136,9 @@ export class RxjsComponent implements OnInit {
     // jsonConvert.ignorePrimitiveChecks = false; // don't allow assigning number to string etc.
     // jsonConvert.valueCheckingMode = ValueCheckingMode.DISALLOW_NULL; // never allow null
     // let c: Customer = jsonConvert.deserialize(jsonObj, MyClass);
-    
-    // let c: Customer = deserialize(Customer, jsonObj);
 
-    console.log('serialized = ', JSON.parse(ObjectMapper.serialize(c).toString()));
+    // console.log('serialized = ', JSON.parse(ObjectMapper.serialize(c).toString()));
+
+    console.log('serialized by class-transformer = ', c.serialize());
   }
 }

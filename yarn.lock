@@ -1518,6 +1518,10 @@ circular-dependency-plugin@^5.0.2:
   version "5.0.2"
   resolved "https://devstack.ds.boeing.com/nexus/repository/npm/circular-dependency-plugin/-/circular-dependency-plugin-5.0.2.tgz#da168c0b37e7b43563fb9f912c1c007c213389ef"
 
+class-transformer@^0.1.9:
+  version "0.1.9"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/class-transformer/-/class-transformer-0.1.9.tgz#29977c528233ca014e6fd9523327ebd31d11ca54"
+
 class-utils@^0.3.5:
   version "0.3.6"
   resolved "https://devstack.ds.boeing.com/nexus/repository/npm/class-utils/-/class-utils-0.3.6.tgz#f93369ae8b9a7ce02fd41faad0ca83033190c463"

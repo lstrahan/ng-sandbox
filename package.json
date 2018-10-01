@@ -30,6 +30,7 @@
     "@types/ws": "^6.0.1",
     "ag-grid-angular": "^19.0.0",
     "ag-grid-community": "^19.0.0",
+    "class-transformer": "^0.1.9",
     "core-js": "^2.5.3",
     "d3": "^5.0.0",
     "d3-selection-multi": "^1.0.1",

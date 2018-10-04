@@ -125,10 +125,10 @@ export class RxjsComponent implements OnInit {
       ]
     };
 
-    let x: MyClass = new MyClass(jsonObj);
+    const x: MyClass = new MyClass(jsonObj);
     console.log('deserialized x = ', x);
 
-    let c: MyClass = MyClass.deserialize(jsonObj);
+    const c: MyClass = MyClass.deserialize(jsonObj);
     console.log('deserialized = ', c);
 
     // const jsonConvert: JsonConvert = new JsonConvert();

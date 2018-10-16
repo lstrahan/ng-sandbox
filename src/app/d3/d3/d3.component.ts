@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import * as d3 from 'd3';
+import { MatComponent } from '../mat-component/mat.component';
 
 @Component({
   selector: 'app-d3',
   templateUrl: './d3.component.html',
-  styleUrls: ['./d3.component.scss']
+  styleUrls: ['./d3.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class D3Component implements OnInit {
 
@@ -67,29 +69,40 @@ export class D3Component implements OnInit {
   }
 
   initForeignObject() {
+    let c = d3.select<HTMLCanvasElement, {}>('canvas').node();
+    let ctx = c.getContext('2d');
+    console.log(`length = ${ctx.measureText('sdlkhsdfkjlhsdhj').width}`);
+
+
     // let fo = d3.select('g#chartContents').append('foreignObject')
     //   .attr('x', 150).attr('y', 50).attr('width', 200);
     // fo.html(`
     // <h1>xxxxxx xxxxxx xxxx</h1>
-    // <div style="color: red; background: blue;">thisisred</div>
+    // <div matTooltip="sdfsfsdfsdfs" style="color: red; background: blue;">thisisred</div>
     // `);
 
-    let x = d3.select('g#chartContents').append('rect')
-    .attr('x', 150).attr('y', 50).attr('width', 20).attr('height', 20)
-    .attr('fill', 'red');
+    d3.select('g#chartContents').append('g').attr('app-mat-component', '')
+      .attr('transform', 'translate(400,50)');
 
-    let y = x.clone().attr('x', 200).attr('y', 50).attr('width', 20).attr('height', 20)
-    .attr('fill', 'blue');
-    let z = x.clone().attr('x', 250).attr('y', 50).attr('width', 20).attr('height', 20)
-    .attr('fill', 'green');
-    x.remove();
-    d3.select('g#chartContents').append(() => y.node());
-    d3.select('g#chartContents').append(() => z.node());
+    d3.select('g#chartContents').append('text')
+    .attr('x', 150).attr('y', 50).html('<span>XXXXXXXXXX</span>ZZZZZZZZZZ');
 
-    let el = d3.create('rect')
-      .attr('x', 200).attr('y', 50).attr('width', 20).attr('height', 20)
-      .attr('fill', 'red');
-      d3.select('g#chartContents').append(() => el.node());
+    // let x = d3.select('g#chartContents').append('rect')
+    // .attr('x', 150).attr('y', 50).attr('width', 20).attr('height', 20)
+    // .attr('fill', 'red');
+
+    // let y = x.clone().attr('x', 200).attr('y', 50).attr('width', 20).attr('height', 20)
+    // .attr('fill', 'blue');
+    // let z = x.clone().attr('x', 250).attr('y', 50).attr('width', 20).attr('height', 20)
+    // .attr('fill', 'green');
+    // x.remove();
+    // d3.select('g#chartContents').append(() => y.node());
+    // d3.select('g#chartContents').append(() => z.node());
+
+    // let el = d3.create('rect')
+    //   .attr('x', 200).attr('y', 50).attr('width', 20).attr('height', 20)
+    //   .attr('fill', 'red');
+    //   d3.select('g#chartContents').append(() => el.node());
   }
 
 

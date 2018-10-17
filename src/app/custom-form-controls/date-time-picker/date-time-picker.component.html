@@ -1,0 +1,5 @@
+<div>
+  <input [(ngModel)]="value" [owlDateTime]="dt" (change)="onDataChanged($event)">
+  <mat-icon class="icon" [owlDateTimeTrigger]="dt">search</mat-icon>
+  <owl-date-time #dt (afterPickerClosed)="onDataChanged($event)"></owl-date-time>
+</div>

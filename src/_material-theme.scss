@@ -1,0 +1,5 @@
+@import 'shared-material-theme';
+@import 'shared-global-variables'; // this must be included after 'shared-material-theme'
+
+// Material styles that are specific to this project go in this file.
+// Styles that apply to all projects should go in '_shared-material-theme.scss'

@@ -1,14 +1,23 @@
 <h2>Custom Reactive/Material Form Fields</h2>
 <form [formGroup]="customFormGroup" fxLayout="column" fxLayoutAlign=" start">
-	
+
   <app-simple-custom-form-control formControlName="nameCtrl" label="Basic Form Field"></app-simple-custom-form-control>
-	<br>
+  <br>
   <mat-form-field appearance="fill">
-		<app-custom-mat-form-control formControlName="ssnCtrl"></app-custom-mat-form-control>
-		<mat-label>Material Form Field</mat-label>
-	</mat-form-field>
-	
+    <app-custom-mat-form-control formControlName="ssnCtrl"></app-custom-mat-form-control>
+    <mat-label>Material Form Field</mat-label>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <app-date-time-picker formControlName="dateCtrl"></app-date-time-picker>
+    <mat-label>Date Time Picker</mat-label>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+      <input matInput placeholder="appearance='fill'" />
+    </mat-form-field>
+    
   <button mat-raised-button color="primary" (click)="formSubmitClicked()" fxFlexAlign="start">SUBMIT</button>
-  
+
   {{results}}
 </form>

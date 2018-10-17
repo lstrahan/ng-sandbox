@@ -41,6 +41,8 @@
     "json2typescript": "^1.0.6",
     "lodash": "^4.17.4",
     "moment": "^2.19.4",
+    "ng-pick-datetime": "^6.0.16",
+    "ng-pick-datetime-moment": "^1.0.7",
     "primeicons": "^1.0.0-beta.10",
     "primeng": "^6.1.2",
     "rxjs": "^6.2.2",

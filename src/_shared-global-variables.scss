@@ -1,6 +1,4 @@
 
-@import 'material-theme.scss';
-
 $primary-palette: map-get($app-theme, primary);
 $accent-palette: map-get($app-theme, accent);
 $warn-palette: map-get($app-theme, warn);
@@ -26,6 +24,23 @@ $orange: #FFAB00;
 $amber: $orange;
 $blue: #0091EA;
 $green: #00C853;
+$white: #B4E7FF;
+
+// event status
+$eventStatus-unknown: $grey;
+$eventStatus-not-occurred: $red;
+$eventStatus-occurring: $blue;
+$eventStatus-occurred: $green;
+
+// response status
+$responseStatus-unallocated: #C4C4C4;
+$responseStatus-proposed: #80FF80;
+$responseStatus-allocated: #8080FF;
+$responseStatus-planned: #8ECB34;
+$responseStatus-executing: #FFFFFF;
+$responseStatus-completed: #00AA00;
+$responseStatus-failed: #FF6060;
+$responseStatus-cancelled: #797979;
 
 // security classifications
 $unclassified: $green;

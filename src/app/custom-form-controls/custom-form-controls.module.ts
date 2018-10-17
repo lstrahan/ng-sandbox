@@ -4,8 +4,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from '../material.module';
+import { PrimeNgModule } from '../primeng.module';
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+
 import { SimpleCustomFormControlComponent } from './simple-custom-form-control/simple-custom-form-control.component';
 import { CustomMatFormControlComponent } from './custom-mat-form-control/custom-mat-form-control.component';
+import { DateTimePickerComponent } from './date-time-picker/date-time-picker.component';
 import { MyFormComponent } from './my-form/my-form.component';
 
 const ROUTES: Routes = [
@@ -18,9 +22,12 @@ const ROUTES: Routes = [
     CommonModule,
     FormsModule, ReactiveFormsModule,
     MaterialModule,
-    FlexLayoutModule
+    PrimeNgModule,
+    FlexLayoutModule,
+    OwlDateTimeModule, OwlNativeDateTimeModule,
   ],
-  declarations: [MyFormComponent, SimpleCustomFormControlComponent, CustomMatFormControlComponent],
+  declarations: [MyFormComponent, SimpleCustomFormControlComponent, CustomMatFormControlComponent,
+    DateTimePickerComponent],
   exports: [RouterModule]
 })
 export class CustomFormControlsModule { }

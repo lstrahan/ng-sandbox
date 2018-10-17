@@ -4728,6 +4728,14 @@ ng-packagr@^3.0.0-rc.2:
     uglify-js "^3.0.7"
     update-notifier "^2.3.0"
 
+ng-pick-datetime-moment@^1.0.7:
+  version "1.0.7"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/ng-pick-datetime-moment/-/ng-pick-datetime-moment-1.0.7.tgz#c95c7d1a028bc39b3a35a4c280306e55ed77276e"
+
+ng-pick-datetime@^6.0.16:
+  version "6.0.16"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/ng-pick-datetime/-/ng-pick-datetime-6.0.16.tgz#82a400f0aba5cc905bb443616f5ac4b9bfcc88e1"
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://devstack.ds.boeing.com/nexus/repository/npm/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"

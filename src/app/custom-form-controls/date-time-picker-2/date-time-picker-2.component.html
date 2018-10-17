@@ -1,0 +1,2 @@
+<input [(ngModel)]="value" [owlDateTimeTrigger]="dt" [owlDateTime]="dt" (change)="onDataChanged($event)">
+<owl-date-time #dt (afterPickerClosed)="onDataChanged($event)"></owl-date-time>

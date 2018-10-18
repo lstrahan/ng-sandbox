@@ -5,8 +5,6 @@ import { ControlValueAccessor, NgControl } from '@angular/forms';
 import { MatFormFieldControl } from '@angular/material';
 import { Subject } from 'rxjs';
 
-import { DateFormat } from './date-format';
-
 @Component({
   selector: 'app-date-time-picker',
   templateUrl: './date-time-picker.component.html',

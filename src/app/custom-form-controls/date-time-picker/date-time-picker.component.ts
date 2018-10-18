@@ -4,32 +4,17 @@ import { Component, ElementRef, Input, OnDestroy, HostBinding, forwardRef, Optio
 import { ControlValueAccessor, NgControl } from '@angular/forms';
 import { MatFormFieldControl } from '@angular/material';
 import { Subject } from 'rxjs';
-import * as moment from 'moment';
-import { Moment } from 'moment';
-import { DateTimeAdapter, OWL_DATE_TIME_FORMATS, OWL_DATE_TIME_LOCALE } from 'ng-pick-datetime';
-import { MomentDateTimeAdapter } from 'ng-pick-datetime-moment';
 
-export const MY_CUSTOM_FORMATS = {
-  parseInput: 'YYYY-MM-DD HH:mm:ss',
-  fullPickerInput: 'YYYY-MM-DD HH:mm:ss',
-  datePickerInput: 'YYYY-MM',
-  timePickerInput: 'hh:mm:ss',
-  monthYearLabel: 'MMM YYYY',
-  dateA11yLabel: 'MMM YYYY',
-  monthYearA11yLabel: 'MMM YYYY',
-};
+import { DateFormat } from './date-format';
 
 @Component({
   selector: 'app-date-time-picker',
   templateUrl: './date-time-picker.component.html',
   styleUrls: ['./date-time-picker.component.scss'],
-  providers: [{ provide: MatFormFieldControl, useExisting: DateTimePickerComponent },
-    {provide: DateTimeAdapter, useClass: MomentDateTimeAdapter, deps: [OWL_DATE_TIME_LOCALE]},
-    {provide: OWL_DATE_TIME_FORMATS, useValue: MY_CUSTOM_FORMATS}
-  ],
+  providers: [{ provide: MatFormFieldControl, useExisting: DateTimePickerComponent }],
   encapsulation: ViewEncapsulation.None
 })
-export class DateTimePickerComponent implements ControlValueAccessor, MatFormFieldControl<Moment>, OnDestroy {
+export class DateTimePickerComponent implements ControlValueAccessor, MatFormFieldControl<string>, OnDestroy {
   @HostBinding('class.floating') get shouldLabelFloat() { return this.focused || !this.empty; }
   @HostBinding('id') id = `date-time-picker-${DateTimePickerComponent.nextId++}`;
   @HostBinding('attr.aria-describedby') describedBy = '';
@@ -45,12 +30,12 @@ export class DateTimePickerComponent implements ControlValueAccessor, MatFormFie
   private _placeholder: string;
   private _required = false;
   private _disabled = false;
-  _value: Moment = moment();
+  _value: string = '';
 
   // Implementation of ControlValueAccessor to integrate with Angular Forms
   onChange: Function;
   onTouched: Function;
-  writeValue(value) { console.log('writeValue(value) = ', value); this.value = moment(value); }
+  writeValue(inValue) { console.log('writeValue(value) = ', inValue); this.value = inValue; }
   registerOnChange(fn) { this.onChange = fn; }
   registerOnTouched(fn) { this.onTouched = fn; }
   setDisabledState(isDisabled: boolean): void { this.disabled = isDisabled; }
@@ -78,10 +63,10 @@ export class DateTimePickerComponent implements ControlValueAccessor, MatFormFie
   }
 
   @Input()
-  get value(): Moment | null {
+  get value(): string | null {
     return this._value;
   }
-  set value(newVal: Moment | null) {
+  set value(newVal: string | null) {
     this._value = newVal;
     this.stateChanges.next();
   }
@@ -120,6 +105,6 @@ export class DateTimePickerComponent implements ControlValueAccessor, MatFormFie
 
   onDataChanged(event: any) {
     console.log('onDataChanged');
-    this.onChange(this._value); // required for interaction with Angular forms
+    this.onChange(this.value); // required for interaction with Angular forms
   }
 }

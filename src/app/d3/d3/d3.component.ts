@@ -18,7 +18,7 @@ export class D3Component implements OnInit {
 
   mydrag = d3.drag();
   msg: string;
-
+    
   constructor() { }
 
   ngOnInit() {

@@ -1,12 +1,15 @@
-<div id="container" fxLayout="row" fxFill>
-	<div id="left" fxFlex="30" fxLayout="column">
-		fxFlex="30"
-		<section fxFlex="40">fxFlex="40"</section>
-		<section fxFlex>fxFlex</section>
-	</div>
-	<div id="right" fxFlex fxLayout="column">
-		fxFlex
-		<section fxFlex="70">fxFlex="70"</section>
-		<section fxFlex>fxFlex </section>
-	</div>
+<div id="container" fxLayout="row" fxFlexFill>
+  <div id="left" fxFlex="30" fxLayout="column">
+    fxFlex="30" fxLayout="column"
+    <section fxFlex="40">fxFlex="40"</section>
+    <section fxFlex>fxFlex</section>
+  </div>
+  <div id="right" fxFlex fxLayout="column">
+    fxFlex fxLayout="column"
+    <section fxFlex="70" class="scrollable">
+	  fxFlex="70"<br><br>
+      <p *ngFor="let x of [0,0,0,0,0,0,0]">{{paragraph}}</p>
+    </section>
+    <section fxFlex>fxFlex</section>
+  </div>
 </div>

@@ -13,13 +13,6 @@ import { CustomerService } from './library/customer.service';
 import { AppComponent } from './app.component';
 
 import { MaterialDemoModule } from './material-demo/material-demo.module';
-import { FlexLayoutExampleModule } from './flex-layout/flex-layout.module';
-import { FlexLayout2Module } from './flex-layout-2/flex-layout-2.module';
-import { MyAgGridModule } from './ag-grid/ag-grid.module';
-import { WebsocketsModule } from './websockets/websockets.module';
-import { RxjsModule } from './rxjs/rxjs.module';
-import { D3Module } from './d3/d3.module';
-import { IndexedDbModule } from './indexed-db/indexed-db.module';
 
 const ROUTES: Routes = [
   { path: '', redirectTo: '/material', pathMatch: 'full' },
@@ -56,8 +49,8 @@ const ROUTES: Routes = [
     loadChildren: './d3/d3.module#D3Module'
   },
   {
-    path: 'indexed-db',
-    loadChildren: './indexed-db/indexed-db.module#IndexedDbModule'
+    path: 'misc',
+    loadChildren: './misc/misc.module#MiscModule'
   }
 ];
 @NgModule({

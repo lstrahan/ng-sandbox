@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { MaterialModule } from '../material.module';
 
 import { MessageComponent } from './message/message.component';
 import { MiscComponent } from './misc/misc.component';
@@ -13,7 +14,8 @@ const ROUTES: Routes = [
 @NgModule({
   imports: [
     RouterModule.forChild(ROUTES),
-    CommonModule
+    CommonModule,
+    MaterialModule
   ],
   declarations: [MiscComponent, MessageComponent],
   entryComponents: [MessageComponent],

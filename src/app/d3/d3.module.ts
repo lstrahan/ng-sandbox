@@ -16,6 +16,7 @@ const ROUTES: Routes = [
     MaterialModule
   ],
   declarations: [D3Component, MatComponent],
+  entryComponents: [MatComponent],
   exports: [RouterModule]
 })
 export class D3Module { }

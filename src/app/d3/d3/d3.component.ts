@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ComponentFactoryResolver, ViewChild, ViewContainerRef } from '@angular/core';
 import * as d3 from 'd3';
 import { MatComponent } from '../mat-component/mat.component';
 
@@ -19,7 +19,9 @@ export class D3Component implements OnInit {
   mydrag = d3.drag();
   msg: string;
     
-  constructor() { }
+  @ViewChild('componentcontainer', { read: ViewContainerRef }) container: ViewContainerRef;
+  
+  constructor(private resolver: ComponentFactoryResolver) { }
 
   ngOnInit() {
     this.initDragHandlers();
@@ -74,18 +76,22 @@ export class D3Component implements OnInit {
     console.log(`length = ${ctx.measureText('sdlkhsdfkjlhsdhj').width}`);
 
 
-    // let fo = d3.select('g#chartContents').append('foreignObject')
-    //   .attr('x', 150).attr('y', 50).attr('width', 200);
+    let fo = d3.select('g#chartContents').append<SVGForeignObjectElement>('foreignObject')
+      .attr('x', 150).attr('y', 50).attr('width', 200);
     // fo.html(`
     // <h1>xxxxxx xxxxxx xxxx</h1>
     // <div matTooltip="sdfsfsdfsdfs" style="color: red; background: blue;">thisisred</div>
     // `);
+    
+    // const factory = this.resolver.resolveComponentFactory(MatComponent);
+    // const componentRef = this.container.createComponent(factory);
+    // fo.node().appendChild(componentRef.instance);
 
-    d3.select('g#chartContents').append('g').attr('app-mat-component', '')
-      .attr('transform', 'translate(400,50)');
+    // d3.select('g#chartContents').append('g').attr('app-mat-component', '')
+    //   .attr('transform', 'translate(400,50)');
 
-    d3.select('g#chartContents').append('text')
-    .attr('x', 150).attr('y', 50).html('<span>XXXXXXXXXX</span>ZZZZZZZZZZ');
+    // d3.select('g#chartContents').append('text')
+    // .attr('x', 150).attr('y', 50).html('<span>XXXXXXXXXX</span>ZZZZZZZZZZ');
 
     // let x = d3.select('g#chartContents').append('rect')
     // .attr('x', 150).attr('y', 50).attr('width', 20).attr('height', 20)

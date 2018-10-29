@@ -9,10 +9,12 @@ import { MaterialModule } from './material.module';
 
 import { MockBackendInterceptor } from './library/mock-backend-interceptor';
 import { CustomerService } from './library/customer.service';
+import { ToolbarService } from './library/toolbar.service';
 
 import { AppComponent } from './app.component';
 
 import { MaterialDemoModule } from './material-demo/material-demo.module';
+import { ContextualActionBarComponent } from './library/contextual-action-bar/contextual-action-bar.component';
 
 const ROUTES: Routes = [
   { path: '', redirectTo: '/material', pathMatch: 'full' },
@@ -55,7 +57,7 @@ const ROUTES: Routes = [
 ];
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, ContextualActionBarComponent
   ],
   imports: [
     RouterModule.forRoot(ROUTES, { enableTracing: false }),
@@ -67,7 +69,7 @@ const ROUTES: Routes = [
     MaterialDemoModule
   ],
   providers: [
-    CustomerService,
+    CustomerService, ToolbarService,
     { provide: HTTP_INTERCEPTORS, useClass: MockBackendInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]

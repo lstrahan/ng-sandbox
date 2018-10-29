@@ -1,32 +1,39 @@
-import { Component, OnInit, ComponentFactoryResolver, ViewContainerRef, ViewChild } from '@angular/core';
+import { Component, OnInit, ComponentFactoryResolver, ViewContainerRef, ViewChild, Type, AfterViewInit } from '@angular/core';
 import { MessageComponent } from '../message/message.component';
+import { ToolbarService } from 'src/app/library/toolbar.service';
 
 @Component({
   selector: 'app-misc',
   templateUrl: './misc.component.html',
   styleUrls: ['./misc.component.css']
 })
-export class MiscComponent implements OnInit {
+export class MiscComponent implements OnInit, AfterViewInit {
 
   @ViewChild('componentcontainer', { read: ViewContainerRef }) container: ViewContainerRef;
+  @ViewChild('button1') submenu: HTMLButtonElement;
 
-  constructor(private resolver: ComponentFactoryResolver) { }
+  constructor(private resolver: ComponentFactoryResolver,
+    private toolBarService: ToolbarService) { }
 
   ngOnInit() {
     
   }
 
+  ngAfterViewInit(): void {
+    // this.toolBarService.setSubmenu(MessageComponent);
+  }
+
   button1Click() {
-    this.container.clear();
-    const factory = this.resolver.resolveComponentFactory(MessageComponent);
-    const componentRef = this.container.createComponent(factory);
-    componentRef.instance.message = 'COMPONENT #1 was loaded!';
+    this.loadComponent(MessageComponent);
   }
 
   button2Click() {
+    this.loadComponent(MessageComponent);
+  }
+
+  loadComponent<T>(component: Type<T>) {
     this.container.clear();
-    const factory = this.resolver.resolveComponentFactory(MessageComponent);
-    const componentRef = this.container.createComponent(factory);
-    componentRef.instance.message = 'COMPONENT #2 was loaded!';
+    const factory = this.resolver.resolveComponentFactory(component);
+    this.container.createComponent(factory);
   }
 }

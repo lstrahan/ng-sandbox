@@ -1,8 +1,16 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { CustomerService } from 'src/app/library/customer.service';
 @Component({
     selector: 'app-message',
     template: `<h2>{{message}}</h2><mat-icon>accessibility</mat-icon>`
 })
-export class MessageComponent {
-    @Input() message: string;
+export class MessageComponent implements OnInit {
+    @Input() message: string = 'MessageComponent';
+
+    constructor(private customerService: CustomerService) { }
+
+    ngOnInit(): void {
+        this.message += ' this was appended inside MessageComponent.ngOnInit';
+    }
+
 }

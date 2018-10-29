@@ -14,12 +14,7 @@
 	</mat-sidenav>
 
 	<mat-sidenav-content fxLayout="column">
-		<mat-toolbar>
-			<button mat-button (click)="sidenav.toggle()">
-        <i class="material-icons">menu</i>
-      </button>
-			<span class="title">Angular Sandbox</span>
-		</mat-toolbar>
+    <app-contextual-action-bar title="Angular Sandbox" [sidenav]="sidenav"></app-contextual-action-bar>
 
     <div class="router-outlet" fxFlex>
       <router-outlet></router-outlet>

@@ -1,7 +1,7 @@
 import { Component, OnInit, ComponentFactoryResolver, ViewContainerRef, ViewChild, Type, AfterViewInit } from '@angular/core';
 import moment from 'moment-es6';
 import { MessageComponent } from '../message/message.component';
-import { ToolbarService } from 'src/app/library/toolbar.service';
+import { ToolbarService } from '../../library/toolbar.service';
 
 @Component({
   selector: 'app-misc',

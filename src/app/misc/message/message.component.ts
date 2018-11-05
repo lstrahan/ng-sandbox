@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CustomerService } from 'src/app/library/customer.service';
+import { CustomerService } from '../../library/customer.service';
 @Component({
     selector: 'app-message',
     template: `<h2>{{message}}</h2><mat-icon>accessibility</mat-icon>`

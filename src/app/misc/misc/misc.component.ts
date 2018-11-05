@@ -20,6 +20,7 @@ export class MiscComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     // this.toolBarService.setSubmenu(MessageComponent);
+    //xxxxx
   }
 
   button1Click() {

@@ -1,0 +1,37 @@
+// Custom components ////////////////////////////////////////////////
+
+// https://stackoverflow.com/questions/48427555/how-can-i-make-a-theme-able-angular-material-npm-module
+
+// ags-lib-date-time-picker
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+.owl-dt-container {
+    background-color: $primary;
+    font-family: inherit;
+}
+
+.owl-dt-container,
+.owl-dt-calendar-table .owl-dt-calendar-header,
+.owl-dt-calendar-table .owl-dt-calendar-cell-content,
+.owl-dt-weekday,
+.owl-dt-timer-content,
+.owl-dt-control-content {
+    color: $foreground;
+}
+
+.owl-dt-calendar-table .owl-dt-calendar-cell:hover {
+    background-color: $primary-light;
+    border-radius: 999px;
+}
+
+.owl-dt-calendar-table .owl-dt-calendar-cell-selected {
+    background-color: $primary-light;
+    border: 1px solid white;
+}
+
+.owl-dt-control-button-arrow svg g path {
+    fill: $foreground;
+}
+
+.owl-dt-timer-content .owl-dt-timer-input {
+    border: 1px solid $foreground;
+}

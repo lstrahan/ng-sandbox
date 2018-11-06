@@ -1,0 +1,35 @@
+// Command to run continuous compiler and live dev server. This is what you'll want to run
+// while developing. Edit environments/environment.ts to configure where services will
+// run from. (add --poll=2000 when working remotely through a VM)
+ng serve steam --configuration=dev
+
+// Build commands for each environment. This will generate the compiled output in the /dist folder
+// Before merging a new feature build and run the app for each environment. You'll need to configure
+// virtual directory in Tomcat called /STEAM that points to the <root>/AGS-HMI/STEAM/dist folder
+ng build steam --configuration=dev
+ng build steam --configuration=int
+ng build steam --configuration=test
+ng build steam --configuration=ops
+
+
+// Add this to Tomcat's <tomcat>/conf/server.xml file to point it to the compiled website
+<Context docBase="[path to your working folder]/AGS-HMI/STEAM/dist" path="/STEAM" />
+
+// Add this to Tomcat's <tomcat>/conf/context.xml file within the <Context> element
+<!-- REWRITE VALVE -->
+<Valve className="org.apache.catalina.valves.rewrite.RewriteValve" />
+
+
+// Whenever you checkout or create a branch you'll need to update the /node_modules folder
+// using the following command...
+yarn install
+
+// 1st time setup
+Install Node.js (this will also include npm)
+Install yarn
+Install the following VS Code extensions... TSLint, HTMLHint
+Open a command prompt and run 'npm install –g @angular/cli' & 'yarn add global @angular/cli'
+
+
+
+

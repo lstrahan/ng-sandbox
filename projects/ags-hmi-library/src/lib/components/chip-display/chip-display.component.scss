@@ -1,0 +1,9 @@
+ags-lib-chip-display {
+    .mat-chip-list > .mat-chip-list-wrapper > div {
+        flex-grow: 1;
+        
+        button {
+            float: right;
+        }
+    }
+}

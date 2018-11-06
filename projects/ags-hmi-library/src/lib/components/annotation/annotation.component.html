@@ -1,0 +1,13 @@
+<form [formGroup]="annotationsFormGroup" fxLayout="column">
+  <!-- Facts -->
+  <mat-form-field appearance="fill">
+    <textarea matInput formControlName="factsCtrl"></textarea>
+    <mat-label>Facts</mat-label>
+  </mat-form-field>
+
+  <!-- Assumptions -->
+  <mat-form-field appearance="fill">
+    <textarea matInput formControlName="assumptionsCtrl"></textarea>
+    <mat-label>Assumptions</mat-label>
+  </mat-form-field>
+</form>

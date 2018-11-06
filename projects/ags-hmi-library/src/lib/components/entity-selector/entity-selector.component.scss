@@ -1,0 +1,18 @@
+ags-lib-entity-selector {
+    .mat-form-field {
+        min-width: 100%;
+    }
+    .mat-icon {
+        font-size: 18px !important;
+    }
+    .mat-select-content {
+        background-color: limegreen;
+    }
+    overflow-x: visible;
+}
+.search-highlight{
+    font-weight: bold;
+}
+.hidden {
+    display: none;
+}

@@ -1,0 +1,16 @@
+<h2>WebSockets using RxJs WebSocketSubject</h2>
+
+{{wsServer}} <button mat-raised-button (click)="sendMessage()">SEND</button>
+<br>
+
+<br>
+<mat-divider></mat-divider><br>
+
+<div fxLayout="row">
+	<div fxLayout="column" style="width: 50%">
+    WebSocketSubject
+		<ags-web-socket-subject-client name="Client 1"></ags-web-socket-subject-client>
+		<ags-web-socket-subject-client name="Client 2"></ags-web-socket-subject-client>
+		<ags-web-socket-subject-client name="Client 3"></ags-web-socket-subject-client>
+	</div>
+</div>

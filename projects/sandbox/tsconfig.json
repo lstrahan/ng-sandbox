@@ -1,0 +1,24 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/app",
+    "module": "es2015",
+    "types": [],
+    "baseUrl": "./",
+    "paths": {
+      "@core/*": ["src/app/core/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@models/*": ["src/app/models/*"],
+      "environments/*": ["src/environments/*"],
+      "ags-hmi-library": ["../../projects/ags-hmi-library/src/public_api"],
+      "ags-hmi-library/*": ["../../projects/ags-hmi-library/src/public_api/*"]
+    }
+  },
+  "angularCompilerOptions": {
+    "preserveWhiteSpaces": false
+  },
+  "exclude": [
+    "test.ts",
+    "**/*.spec.ts"
+  ]
+}

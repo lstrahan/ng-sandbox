@@ -1,0 +1,115 @@
+// Note:
+// mat-color(map-get($app-theme, accent))
+// map-get($app-theme, accent) gets the accent pallete
+// mat-color(palette) gets the primary color in the palette
+
+
+
+// buttons ////////////////////////////////
+.mat-button,
+.mat-raised-button,
+.mat-flat-button,
+.mat-stroked-button {
+    text-transform: uppercase;
+}
+
+// toggle buttons ////////////////////////////////
+.mat-button-toggle-group {
+    box-shadow: none !important;
+
+    .mat-button-toggle-label-content {
+        line-height: 48px;
+        padding: 0 12px;
+    }
+
+    .mat-button-toggle {
+        color: inherit;
+        background: mat-color($app-primary, darker);
+
+        .mat-icon {
+            line-height: 1; // if this isn't here the icon gets pushed to the bottom when using custom SVG files. WTH?
+        }
+    }
+
+    .mat-button-toggle-checked {
+        color: mat-color(map-get($app-theme, accent));
+
+        .mat-button-toggle-ripple {
+            background: rgba(255, 255, 255, 0.02);
+        }
+    }
+}
+
+// toolbar ////////////////////////////////
+.mat-toolbar {
+    .mat-icon-button {
+        background: mat-color($app-primary, darker);
+        border-radius: 2px;
+        width: 48px;
+        height: 48px;
+    }
+}
+
+// card ////////////////////////////////
+.mat-card {
+    background-color: $primary-light;
+}
+
+// error //////////////////////////////////
+.mat-error {
+    color: $red;
+}
+
+// sidenav/drawer ////////////////////////////////
+.mat-sidenav,
+.mat-drawer {
+    padding: 10px;
+}
+
+// dialog ////////////////////////////////
+.mat-dialog-actions {
+    margin-top: 10px;
+    float: right;
+}
+
+// typography - caption ////////////////////////////////
+.mat-caption {
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.7px;
+}
+
+// form inputs ////////////////////////////////
+.mat-form-field.mat-focused .mat-form-field-label,
+.mat-tab-label-active {
+    color: mat-color(map-get($app-theme, accent));
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
+    background: mat-color(map-get($app-theme, accent));
+}
+
+.mat-input-element {
+    caret-color: mat-color(map-get($app-theme, accent));
+}
+
+// tabs
+.mat-ink-bar {
+    background-color: mat-color(map-get($app-theme, accent)) !important;
+    height: 3px !important;
+}
+.mat-drawer-backdrop.mat-drawer-shown {
+    background-color: rgba(0, 0 ,0, 0.6);
+}
+
+// selected option
+.mat-option.mat-selected {
+    color: $foreground !important;
+}
+
+.mat-header-cell {
+    font-size: 12px;
+}

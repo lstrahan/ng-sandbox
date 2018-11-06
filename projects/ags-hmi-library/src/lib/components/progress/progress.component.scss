@@ -1,0 +1,21 @@
+ags-lib-progress {
+
+    #progressContainer {
+        position: absolute;
+        background: rgba(42, 42, 42, 0.5);
+        height: 100%;
+        width: 100%;
+        z-index: 100;
+        display: flex;
+        
+        div {
+            margin: auto;        
+
+            span > mat-spinner > svg > circle {
+                stroke: white;
+                stroke-width: 5px;
+                opacity: 0.75;
+            }
+        }
+    }
+}

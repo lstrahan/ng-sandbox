@@ -3,43 +3,122 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-sandbox": {
-      "root": "",
-      "sourceRoot": "src",
+    "steam": {
+      "root": "projects/steam",
+      "sourceRoot": "projects/steam/src",
       "projectType": "application",
-      "prefix": "app",
-      "schematics": {},
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ng-sandbox",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.app.json",
+            "outputPath": "dist/steam",
+            "index": "projects/steam/src/index.html",
+            "main": "projects/steam/src/main.ts",
+            "tsConfig": "projects/steam/tsconfig.json",
+            "polyfills": "projects/steam/src/polyfills.ts",
+            "baseHref": "/ags/steam/",
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "projects/steam/src",
+                "projects/shared/partials"
+              ]
+            },
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "projects/steam/src/assets",
+              "projects/steam/src/favicon.ico",
+              {
+                "glob": "**/*",
+                "input": "projects/shared/WEB-INF",
+                "output": "/WEB-INF/"
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/shared/assets",
+                "output": "/assets/"
+              }
             ],
             "styles": [
-              "src/styles.scss",
-              "node_modules/primeicons/primeicons.css",
-              "node_modules/primeng/resources/primeng.min.css",
-              "node_modules/primeng/resources/themes/nova-light/theme.css",
-              "node_modules/ag-grid-community/dist/styles/ag-grid.css",
-              "node_modules/ag-grid-community/dist/styles/ag-theme-balham.css"
+              "projects/steam/src/styles.scss"
             ],
             "scripts": []
           },
           "configurations": {
-            "production": {
+            "dev": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "projects/steam/src/environments/environment.ts",
+                  "with": "projects/steam/src/environments/environment.dev.ts"
+                }
+              ]
+            },
+            "dev2": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/steam/src/environments/environment.ts",
+                  "with": "projects/steam/src/environments/environment.dev2.ts"
+                }
+              ]
+            },
+            "bower": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/steam/src/environments/environment.ts",
+                  "with": "projects/steam/src/environments/environment.bower.ts"
+                }
+              ]
+            },
+            "int": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/steam/src/environments/environment.ts",
+                  "with": "projects/steam/src/environments/environment.int.ts"
+                }
+              ]
+            },
+            "int-prod": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/steam/src/environments/environment.ts",
+                  "with": "projects/steam/src/environments/environment.int.ts"
                 }
               ],
+              "tsConfig": "projects/steam/tsconfig.prod.json",
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            },
+            "ops": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/steam/src/environments/environment.ts",
+                  "with": "projects/steam/src/environments/environment.ops.ts"
+                }
+              ],
+              "tsConfig": "projects/steam/tsconfig.prod.json",
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            },
+            "test": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/steam/src/environments/environment.ts",
+                  "with": "projects/steam/src/environments/environment.test.ts"
+                }
+              ],
+              "tsConfig": "projects/steam/tsconfig.prod.json",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -55,46 +134,37 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ng-sandbox:build"
+            "browserTarget": "steam:build"
           },
           "configurations": {
-            "production": {
-              "browserTarget": "ng-sandbox:build:production"
+            "dev": {
+              "browserTarget": "steam:build:dev"
+            },
+            "dev2": {
+              "browserTarget": "steam:build:dev2"
+            },
+            "bower": {
+              "browserTarget": "steam:build:bower"
+            },
+            "int": {
+              "browserTarget": "steam:build:int"
+            },
+            "int-prod": {
+              "browserTarget": "steam:build:int-prod"
+            },
+            "ops": {
+              "browserTarget": "steam:build:ops"
+            },
+            "test": {
+              "browserTarget": "steam:build:test"
             }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "ng-sandbox:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
-            "styles": [
-              {
-                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
-              },
-              "src/styles.css"
-            ],
-            "scripts": [],
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
+              "projects/steam/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -103,26 +173,361 @@
         }
       }
     },
-    "ng-sandbox-e2e": {
-      "root": "e2e/",
-      "projectType": "application",
+    "ags-hmi-library": {
+      "root": "projects/ags-hmi-library",
+      "sourceRoot": "projects/ags-hmi-library/src",
+      "projectType": "library",
+      "prefix": "ags-lib",
       "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ng-sandbox:serve"
+            "tsConfig": "projects/ags-hmi-library/tsconfig.json",
+            "project": "projects/ags-hmi-library/ng-package.json"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ng-sandbox:serve:production"
+              "project": "projects/ags-hmi-library/ng-package.prod.json"
             }
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": "e2e/tsconfig.e2e.json",
+            "tsConfig": [
+              "projects/ags-hmi-library/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "pipe": {
+      "root": "projects/pipe",
+      "sourceRoot": "projects/pipe/src",
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "spec": true
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/pipe",
+            "index": "projects/pipe/src/index.html",
+            "main": "projects/pipe/src/main.ts",
+            "polyfills": "projects/pipe/src/polyfills.ts",
+            "tsConfig": "projects/pipe/tsconfig.json",
+            "baseHref": "/ags/pipe/",
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "projects/pipe/src",
+                "projects/shared/partials"
+              ]
+            },
+            "assets": [
+              "projects/pipe/src/favicon.ico",
+              "projects/pipe/src/assets",
+              "projects/pipe/src/WEB-INF",
+              {
+                "glob": "**/*",
+                "input": "projects/shared/assets",
+                "output": "/assets/"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/cesium/Build/Cesium",
+                "output": "assets/cesium"
+              }
+            ],
+            "styles": [
+              "projects/pipe/src/styles.scss",
+              "node_modules/vis/dist/vis.min.css",
+              "node_modules/cesium/Build/Cesium/Widgets/widgets.css"
+            ],
+            "scripts": [
+              "node_modules/cesium/Build/Cesium/Cesium.js",
+              "node_modules/cesium-sensor-volumes/dist/cesium-sensor-volumes.min.js"
+            ]
+          },
+          "configurations": {
+            "dev": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/pipe/src/environments/environment.ts",
+                  "with": "projects/pipe/src/environments/environment.dev.ts"
+                }
+              ]
+            },
+            "int": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/pipe/src/environments/environment.ts",
+                  "with": "projects/pipe/src/environments/environment.int.ts"
+                }
+              ]
+            },
+            "ops": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/pipe/src/environments/environment.ts",
+                  "with": "projects/pipe/src/environments/environment.ops.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            },
+            "test": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/pipe/src/environments/environment.ts",
+                  "with": "projects/pipe/src/environments/environment.test.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/pipe/src/test.ts",
+            "polyfills": "projects/pipe/src/polyfills.ts",
+            "tsConfig": "projects/pipe/tsconfig.spec.json",
+            "karmaConfig": "projects/pipe/src/karma.conf.js",
+            "assets": [
+              "projects/pipe/src/assets/favicon.ico",
+              "projects/pipe/src/assets"
+            ],
+            "styles": [
+              "projects/pipe/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "pipe:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "pipe:build:production"
+            },
+            "int": {
+              "browserTarget": "pipe:build:int"
+            },
+            "dev": {
+              "browserTarget": "pipe:build:dev"
+            },
+            "int-prod": {
+              "browserTarget": "pipe:build:int-prod"
+            },
+            "ops": {
+              "browserTarget": "pipe:build:ops"
+            },
+            "test": {
+              "browserTarget": "pipe:build:test"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/pipe/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "sandbox": {
+      "root": "projects/sandbox",
+      "sourceRoot": "projects/sandbox/src",
+      "projectType": "application",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/sandbox",
+            "index": "projects/sandbox/src/index.html",
+            "main": "projects/sandbox/src/main.ts",
+            "tsConfig": "projects/sandbox/tsconfig.json",
+            "polyfills": "projects/sandbox/src/polyfills.ts",
+            "baseHref": "/ags/sandbox/",
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "projects/sandbox/src",
+                "projects/shared/partials"
+              ]
+            },
+            "assets": [
+              "projects/sandbox/src/assets",
+              "projects/sandbox/src/favicon.ico",
+              {
+                "glob": "**/*",
+                "input": "projects/shared/WEB-INF",
+                "output": "/WEB-INF/"
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/shared/assets",
+                "output": "/assets/"
+              }
+            ],
+            "styles": [
+              "projects/sandbox/src/styles.scss",
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeng/resources/themes/nova-light/theme.css",
+              "node_modules/ag-grid-community/dist/styles/ag-grid.css",
+              "node_modules/ag-grid-community/dist/styles/ag-theme-balham.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "dev": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/sandbox/src/environments/environment.ts",
+                  "with": "projects/sandbox/src/environments/environment.dev.ts"
+                }
+              ]
+            },
+            "dev2": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/sandbox/src/environments/environment.ts",
+                  "with": "projects/sandbox/src/environments/environment.dev2.ts"
+                }
+              ]
+            },
+            "bower": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/sandbox/src/environments/environment.ts",
+                  "with": "projects/sandbox/src/environments/environment.bower.ts"
+                }
+              ]
+            },
+            "int": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/sandbox/src/environments/environment.ts",
+                  "with": "projects/sandbox/src/environments/environment.int.ts"
+                }
+              ]
+            },
+            "int-prod": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/sandbox/src/environments/environment.ts",
+                  "with": "projects/sandbox/src/environments/environment.int.ts"
+                }
+              ],
+              "tsConfig": "projects/sandbox/tsconfig.prod.json",
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            },
+            "ops": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/sandbox/src/environments/environment.ts",
+                  "with": "projects/sandbox/src/environments/environment.ops.ts"
+                }
+              ],
+              "tsConfig": "projects/sandbox/tsconfig.prod.json",
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            },
+            "test": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/sandbox/src/environments/environment.ts",
+                  "with": "projects/sandbox/src/environments/environment.test.ts"
+                }
+              ],
+              "tsConfig": "projects/sandbox/tsconfig.prod.json",
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "sandbox:build"
+          },
+          "configurations": {
+            "dev": {
+              "browserTarget": "sandbox:build:dev"
+            },
+            "dev2": {
+              "browserTarget": "sandbox:build:dev2"
+            },
+            "int": {
+              "browserTarget": "sandbox:build:int"
+            },
+            "int-prod": {
+              "browserTarget": "sandbox:build:int-prod"
+            },
+            "ops": {
+              "browserTarget": "sandbox:build:ops"
+            },
+            "test": {
+              "browserTarget": "sandbox:build:test"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/sandbox/tsconfig.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]
@@ -131,5 +536,36 @@
       }
     }
   },
-  "defaultProject": "ng-sandbox"
+  "defaultProject": "steam",
+  "cli": {
+    "packageManager": "yarn"
+  },
+  "schematics": {
+    "@schematics/angular:class": {
+      "spec": false
+    },
+    "@schematics/angular:component": {
+      "spec": false,
+      "inlineStyle": false,
+      "inlineTemplate": false,
+      "prefix": "ags",
+      "styleext": "scss"
+    },
+    "@schematics/angular:directive": {
+      "spec": false,
+      "prefix": "ags"
+    },
+    "@schematics/angular:guard": {
+      "spec": false
+    },
+    "@schematics/angular:module": {
+      "spec": false
+    },
+    "@schematics/angular:pipe": {
+      "spec": false
+    },
+    "@schematics/angular:service": {
+      "spec": false
+    }
+  }
 }

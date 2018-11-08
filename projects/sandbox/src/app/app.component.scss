@@ -1,10 +1,33 @@
+@import 'material-theme';
+
 .mat-sidenav-container {
     min-height: 300px;
-    // border: 2px solid blue;
+
+    .mat-sidenav-content {
+        background: $primary-light;
+
+        #app-toolbar {
+            .mat-headline {
+                margin-bottom: 0px;
+            }
+
+            .breadcrumb {
+                .primary-title {
+                    cursor: pointer;
+                }
+
+                .separator {
+                    margin: 0 10px;
+                }
+            }
+        }
+    }
+
+    .router-outlet {
+        // border: 2px solid red;
+        padding: 10px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
 }
-.router-outlet {
-    // border: 2px solid red;
-    padding: 10px;
-    overflow-y: auto;
-    overflow-x: hidden;
-  }

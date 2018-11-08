@@ -8,9 +8,15 @@
 @import 'shared-styles';
 @import 'shared-ags-hmi-lib-components';
 @import '~vis/dist/vis.min.css';
+@import '~primeicons/primeicons.css';
+@import '~primeng/resources/primeng.min.css';
+@import '~primeng/resources/themes/nova-light/theme.css';
+@import '~ag-grid-community/dist/styles/ag-grid.css';
+@import '~ag-grid-community/dist/styles/ag-theme-balham.css';
 
 html,
 body {
+    background: $primary-light;
     height: 100%;
     margin: 0;
     padding: 0;

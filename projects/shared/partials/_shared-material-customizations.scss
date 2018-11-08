@@ -1,9 +1,5 @@
 // Note:
-// mat-color(map-get($app-theme, accent))
-// map-get($app-theme, accent) gets the accent pallete
-// mat-color(palette) gets the primary color in the palette
-
-
+// shared-global-variables.scss must always be included before this file
 
 // buttons ////////////////////////////////
 .mat-button,
@@ -24,7 +20,7 @@
 
     .mat-button-toggle {
         color: inherit;
-        background: mat-color($app-primary, darker);
+        background: $primary-dark;
 
         .mat-icon {
             line-height: 1; // if this isn't here the icon gets pushed to the bottom when using custom SVG files. WTH?
@@ -32,7 +28,7 @@
     }
 
     .mat-button-toggle-checked {
-        color: mat-color(map-get($app-theme, accent));
+        color: $accent;
 
         .mat-button-toggle-ripple {
             background: rgba(255, 255, 255, 0.02);
@@ -43,7 +39,7 @@
 // toolbar ////////////////////////////////
 .mat-toolbar {
     .mat-icon-button {
-        background: mat-color($app-primary, darker);
+        background: $primary-dark;
         border-radius: 2px;
         width: 48px;
         height: 48px;
@@ -51,9 +47,9 @@
 }
 
 // card ////////////////////////////////
-.mat-card {
-    background-color: $primary-light;
-}
+// .mat-card {
+//     background-color: $primary-light;
+// }
 
 // error //////////////////////////////////
 .mat-error {
@@ -81,7 +77,7 @@
 // form inputs ////////////////////////////////
 .mat-form-field.mat-focused .mat-form-field-label,
 .mat-tab-label-active {
-    color: mat-color(map-get($app-theme, accent));
+    color: $accent;
 }
 
 .mat-form-field-appearance-fill .mat-form-field-flex {
@@ -89,16 +85,16 @@
 }
 
 .mat-form-field.mat-focused .mat-form-field-ripple {
-    background: mat-color(map-get($app-theme, accent));
+    background: $accent;
 }
 
 .mat-input-element {
-    caret-color: mat-color(map-get($app-theme, accent));
+    caret-color: $accent;
 }
 
 // tabs
 .mat-ink-bar {
-    background-color: mat-color(map-get($app-theme, accent)) !important;
+    background-color: $accent !important;
     height: 3px !important;
 }
 .mat-drawer-backdrop.mat-drawer-shown {

@@ -1,38 +1,41 @@
-import { Component, OnInit, ComponentFactoryResolver, ViewContainerRef, ViewChild, Type, AfterViewInit } from '@angular/core';
-import moment from 'moment-es6';
+import { Component, OnInit, ComponentFactoryResolver, ViewContainerRef, ViewChild, Type } from '@angular/core';
 import { MessageComponent } from '../message/message.component';
-import { ToolbarService } from '../../library/toolbar.service';
+
+// https://jaxenter.com/dynamically-create-component-angular-142720.html
+// https://netbasal.com/dynamically-creating-components-with-angular-a7346f4a982d
 
 @Component({
   selector: 'ags-misc',
   templateUrl: './misc.component.html',
   styleUrls: ['./misc.component.css']
 })
-export class MiscComponent implements OnInit, AfterViewInit {
+export class MiscComponent implements OnInit {
 
   @ViewChild('componentcontainer', { read: ViewContainerRef }) container: ViewContainerRef;
-  @ViewChild('button1') submenu: HTMLButtonElement;
 
-  constructor(private resolver: ComponentFactoryResolver,
-    private toolBarService: ToolbarService) { }
+  constructor(private resolver: ComponentFactoryResolver) { }
 
   ngOnInit() { }
 
-  ngAfterViewInit(): void {
-    // this.toolBarService.setSubmenu(MessageComponent);
-  }
-
   button1Click() {
-    this.loadComponent(MessageComponent);
+    this.loadComponent('aaa');
   }
 
   button2Click() {
-    this.loadComponent(MessageComponent);
+    this.loadComponentGeneric<MessageComponent>(MessageComponent, 'bbb');
   }
 
-  loadComponent<T>(component: Type<T>) {
+  loadComponent(data: string) {
+    this.container.clear();
+    const factory = this.resolver.resolveComponentFactory(MessageComponent);
+    let componentRef = this.container.createComponent(factory);
+    componentRef.instance.message = data;
+  }
+
+  loadComponentGeneric<T>(component: Type<T>, data: string) {
     this.container.clear();
     const factory = this.resolver.resolveComponentFactory(component);
-    this.container.createComponent(factory);
+    let componentRef = this.container.createComponent(factory);
+    (<MessageComponent><any>componentRef.instance).message = data;
   }
 }

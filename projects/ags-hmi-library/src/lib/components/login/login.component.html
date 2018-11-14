@@ -32,9 +32,10 @@
         SIGN IN
       </button>
     </div>
+    
     <!-- Invalid login message. -->
     <div [hidden]="!(submitted && loginFailed)">
-      <mat-error id="formError" class="mat-caption">{{ERROR_MESSAGES.loginMessage}}</mat-error>
+      <mat-error id="formError">{{ERROR_MESSAGES.loginMessage}}</mat-error>
     </div>
 
   </form>

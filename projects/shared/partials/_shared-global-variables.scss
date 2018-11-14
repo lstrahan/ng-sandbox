@@ -8,9 +8,13 @@ $primary-contrast: map-get($primary-palette, lighter-contrast);
 $primary-normal: mat-color($primary-palette);
 $primary-light: mat-color($primary-palette, lighter);
 $primary-dark: mat-color($primary-palette, darker);
-$primary50: mat-color($primary-palette, 50);
-$primary400: mat-color($primary-palette, 400);
 $primary600: mat-color($primary-palette, 600);
+$primary500: mat-color($primary-palette, 500);
+$primary400: mat-color($primary-palette, 400);
+$primary300: mat-color($primary-palette, 300);
+$primary200: mat-color($primary-palette, 200);
+$primary100: mat-color($primary-palette, 100);
+$primary50: mat-color($primary-palette, 50);
 $accent: mat-color($accent-palette);
 $background: map-get(map-get($app-theme, background), background);
 $foreground: map-get(map-get($app-theme, foreground), text);
@@ -26,21 +30,31 @@ $blue: #0091EA;
 $green: #00C853;
 $white: #B4E7FF;
 
-// event status
-$eventStatus-unknown: $grey;
-$eventStatus-not-occurred: $red;
-$eventStatus-occurring: $blue;
-$eventStatus-occurred: $green;
+// AGS status
+$state-unknown: $grey;
+$state-off: $grey;
+$state-occurring: $blue;
+$state-executing: $blue;
+$state-occurred: $green;
+$state-ok: $green;
+$state-completed: $green;
+$state-caution: $orange;
+$state-proposed: $orange;
+$state-not-occurred: $red;
+$state-alert: $red;
+$state-failed: $red;
+$state-error: $red;
+$state-standby: $blue;
 
-// response status
-$responseStatus-unallocated: #C4C4C4;
-$responseStatus-proposed: #80FF80;
-$responseStatus-allocated: #8080FF;
-$responseStatus-planned: #8ECB34;
-$responseStatus-executing: #FFFFFF;
-$responseStatus-completed: #00AA00;
-$responseStatus-failed: #FF6060;
-$responseStatus-cancelled: #797979;
+// UCI status
+$uci-state-unallocated: #C4C4C4;
+$uci-state-allocated: #8080FF;
+$uci-state-proposed: #80FF80;
+$uci-state-planned: #8ECB34;
+$uci-state-executing: #FFFFFF;
+$uci-state-completed: #00AA00;
+$uci-state-failed: #FF6060;
+$uci-state-cancelled: #797979;
 
 // security classifications
 $unclassified: $green;

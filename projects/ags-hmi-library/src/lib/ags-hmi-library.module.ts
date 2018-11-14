@@ -15,6 +15,7 @@ import { EmptyComponent } from './components/empty/empty.component';
 import { EntitySelectorComponent } from './components/entity-selector/entity-selector.component';
 import { ChipDisplayComponent } from './components/chip-display/chip-display.component';
 import { DateTimePickerComponent } from './components/date-time-picker/date-time-picker.component';
+import { StateIconComponent, UciStateIconComponent } from './components/state-icon/state-icon.component';
 
 @NgModule({
   imports: [FormsModule, ReactiveFormsModule, MaterialModule, FlexLayoutModule,
@@ -30,11 +31,13 @@ import { DateTimePickerComponent } from './components/date-time-picker/date-time
     HighlightPipe,
     LoginComponent,
     OrderByPipe,
-    RemoveItemPipe,
     PageNotFoundComponent,
     ProgressComponent,
+    RemoveItemPipe,
+    StateIconComponent,
     TitleComponent,
-    TruncatePipe
+    TruncatePipe,
+    UciStateIconComponent
   ],
   exports: [
     AnnotationComponent,
@@ -46,11 +49,13 @@ import { DateTimePickerComponent } from './components/date-time-picker/date-time
     HighlightPipe,
     LoginComponent,
     OrderByPipe,
-    RemoveItemPipe,
     PageNotFoundComponent,
     ProgressComponent,
+    RemoveItemPipe,
+    StateIconComponent,
     TitleComponent,
-    TruncatePipe
+    TruncatePipe,
+    UciStateIconComponent
   ],
   entryComponents: [
   ]

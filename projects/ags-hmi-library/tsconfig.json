@@ -15,7 +15,11 @@
     "lib": [
       "dom",
       "es2015"
-    ]
+    ],
+    "baseUrl": "./",
+    "paths": {
+      "@services/*": ["src/lib/services/*"],
+    }
   },
   "angularCompilerOptions": {
     "annotateForClosureCompiler": true,

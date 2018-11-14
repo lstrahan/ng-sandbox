@@ -1,5 +1,6 @@
 import { Component, OnInit, ComponentFactoryResolver, ViewContainerRef, ViewChild, Type } from '@angular/core';
 import { MessageComponent } from '../message/message.component';
+import { IconService } from 'ags-hmi-library';
 
 // https://jaxenter.com/dynamically-create-component-angular-142720.html
 // https://netbasal.com/dynamically-creating-components-with-angular-a7346f4a982d
@@ -13,9 +14,12 @@ export class MiscComponent implements OnInit {
 
   @ViewChild('componentcontainer', { read: ViewContainerRef }) container: ViewContainerRef;
 
-  constructor(private resolver: ComponentFactoryResolver) { }
+  constructor(private resolver: ComponentFactoryResolver,
+    public  iconService: IconService) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.iconService.init();
+  }
 
   button1Click() {
     this.loadComponent('aaa');

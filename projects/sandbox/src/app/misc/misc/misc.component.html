@@ -1,6 +1,55 @@
-
-<h2>Dynamically Loaded Components</h2>
+<!-- <h2>Dynamically Loaded Components</h2>
 <button (click)="button1Click()">Component #1</button>
 <button (click)="button2Click()">Component #2</button>
 
 <ng-template #componentcontainer></ng-template>
+
+<br><br> -->
+
+<br><br>
+<div fxLayout="column">
+    Custom Icons
+    <div fxLayout="row" fxLayoutAlign="start center">
+        add-event: <mat-icon svgIcon="add-event"></mat-icon>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start center">
+        back-to-now: <mat-icon [svgIcon]="'back-to-now'"></mat-icon>
+    </div>
+</div>
+
+<br><br>
+<div fxLayout="column">
+    AGS State Icons
+    <div fxLayout="row" fxLayoutAlign="start center">
+        caution: <ags-lib-state-icon state="caution"></ags-lib-state-icon>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start center">
+        standby: <ags-lib-state-icon state="standby"></ags-lib-state-icon>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start center">
+        jibberish: <ags-lib-state-icon state="jibberish"></ags-lib-state-icon>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start center">
+        executing: <mat-icon [svgIcon]="iconService.getIconNameFromState('executing')" [ngClass]="iconService.getStateClass('executing')"></mat-icon>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start center">
+        off: <mat-icon [svgIcon]="iconService.getIconNameFromState('off')" [ngClass]="iconService.getStateClass('off')"></mat-icon>
+    </div>
+</div>
+
+<br><br>
+<div fxLayout="column">
+    UCI State Icons
+    <div fxLayout="row" fxLayoutAlign="start center">
+        unallocated: <ags-lib-uci-state-icon state="unallocated"></ags-lib-uci-state-icon>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start center">
+        completed: <ags-lib-uci-state-icon state="completed"></ags-lib-uci-state-icon>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start center">
+        executing: <mat-icon [svgIcon]="iconService.getIconNameFromUciState('executing')" [ngClass]="iconService.getUciStateClass('executing')"></mat-icon>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start center">
+        proposed: <mat-icon [svgIcon]="iconService.getIconNameFromUciState('proposed')" [ngClass]="iconService.getUciStateClass('proposed')"></mat-icon>
+    </div>
+</div>

@@ -28,6 +28,16 @@
 /*******************************
  security classifications
 ********************************/
+.classificationBanner {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    vertical-align: middle;
+    height: 18px;
+    line-height: 18px;
+    opacity: 1;
+    width: 100%;
+}
 
 .unclassified {
     color: #263238;
@@ -48,6 +58,106 @@
     color: #263238;
     background: $topsecret;
 }
+
+// state
+// 'fill' and 'color' attributes are both supplied
+// 'fill' is used when applying class to an SVG element
+// 'color' is used when applying class to a <mat-icon> or other HTML element
+.state-unknown {
+    fill: $state-unknown;
+    color: $state-unknown;
+}
+.state-off {
+    fill: $state-off;
+    color: $state-off;
+}
+.state-occurring {
+    fill: $state-occurring;
+    color: $state-occurring;
+}
+.state-executing {
+    fill: $state-executing;
+    color: $state-executing;
+}
+.state-occurred {
+    fill: $state-occurred;
+    color: $state-occurred;
+}
+.state-ok {
+    fill: $state-ok;
+    color: $state-ok;
+}
+.state-completed, .state-complete {
+    fill: $state-completed;
+    color: $state-completed;
+}
+.state-caution {
+    fill: $state-caution;
+    color: $state-caution;
+}
+.state-proposed {
+    fill: $state-proposed;
+    color: $state-proposed;
+}
+.state-not-occurred, .state-notoccurred, .state-not_occurred {
+    fill: $state-not-occurred;
+    color: $state-not-occurred;
+}
+.state-alert {
+    fill: $state-alert;
+    color: $state-alert;
+}
+.state-failed {
+    fill: $state-failed;
+    color: $state-failed;
+}
+.state-error {
+    fill: $state-error;
+    color: $state-error;
+}
+.state-standby {
+    fill: $state-standby;
+    color: $state-standby;
+}
+
+// UCI state
+.uci-state-unknown {
+    fill: $grey;
+    color: $grey;
+}
+.uci-state-unallocated {
+    fill: $uci-state-unallocated;
+    color: $uci-state-unallocated;
+}
+.uci-state-allocated {
+    fill: $uci-state-allocated;
+    color: $uci-state-allocated;
+}
+.uci-state-proposed {
+    fill: $uci-state-proposed;
+    color: $uci-state-proposed;
+}
+.uci-state-planned {
+    fill: $uci-state-planned;
+    color: $uci-state-planned;
+}
+.uci-state-executing {
+    fill: $grey; // $uci-state-executing; // using $grey instead since background is white;
+    color: $grey;
+}
+.uci-state-completed {
+    fill: $uci-state-completed;
+    color: $uci-state-completed;
+}
+.uci-state-failed {
+    fill: $uci-state-failed;
+    color: $uci-state-failed;
+}
+.uci-state-cancelled {
+    fill: $uci-state-cancelled;
+    color: $uci-state-cancelled;
+}
+
 
 /* roboto-300 - latin */
 @font-face {

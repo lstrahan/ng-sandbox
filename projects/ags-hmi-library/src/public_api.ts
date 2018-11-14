@@ -12,6 +12,7 @@ export * from './lib/components/empty/empty.component';
 export * from './lib/components/login/login.component';
 export * from './lib/components/page-not-found/page-not-found.component';
 export * from './lib/components/progress/progress.component';
+export * from './lib/components/state-icon/state-icon.component';
 export * from './lib/components/title/title.component';
 
 // services
@@ -28,8 +29,10 @@ export * from './lib/services/progress.service';
 export * from './lib/services/task-order.service';
 export * from './lib/services/time.service';
 export * from './lib/services/header.service';
+export * from './lib/services/icon.service';
 export * from './lib/services/planCollection.service';
 export * from './lib/services/czml.service';
+export * from './lib/services/scheduler.service';
 
 // models
 export * from './lib/models/access-window-limit';

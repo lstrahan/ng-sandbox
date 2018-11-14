@@ -7,7 +7,7 @@
 export class Util {
 
   /****************************************************************************
-   * GEnerate Guid
+   * Generate Guid
    ****************************************************************************/
   static newGuid() {
     let d = new Date().getTime();
@@ -109,58 +109,14 @@ export class Util {
   }
 
   /****************************************************************************
-   * Get color based on priorty value
-   ****************************************************************************/
-  getPriorityColor(priority) {
-    let color = 'inherit';
-
-    switch (priority) {
-      case priority <= 99:
-        color = '#155eab';
-        break;
-      case priority >= 100 && priority <= 199:
-        color = '#9295ca';
-        break;
-      case priority >= 200 && priority <= 299:
-        color = '#ad6fae';
-        break;
-      case priority >= 300 && priority <= 399:
-        color = '#f37b44';
-        break;
-      case priority >= 400 && priority <= 499:
-        color = '#fed501';
-        break;
-      case priority >= 500 && priority <= 599:
-        color = '#e36662';
-        break;
-      case priority >= 600 && priority <= 699:
-        color = '#81b5dd';
-        break;
-      case priority >= 700 && priority <= 799:
-        color = '#aab0b0';
-        break;
-      case priority >= 800 && priority <= 899:
-        color = '#ceb28b';
-        break;
-      case priority >= 900 && priority <= 999:
-        color = '#9dcab3';
-        break;
-      default:
-        color = 'inherit';
-    }
-
-    return color;
-  }
-
-  /****************************************************************************
    * Get the best contrasting color, either black or white, for given input color.
    * Parameters:
    *    color: hex color such as '#FF0077'
    ****************************************************************************/
-  contrastColor(color) {
+  contrastColor(hexColor) {
     // Counting the perceptive luminance
     // human eye favors green color...
-    let rgb = this.hexToRgb(color);
+    let rgb = this.hexToRgb(hexColor);
     let a = 1 - (0.299 * rgb.r + 0.587 * rgb.g + 0.114 * rgb.b) / 255;
     if (a < 0.5) {
       return '#000000';

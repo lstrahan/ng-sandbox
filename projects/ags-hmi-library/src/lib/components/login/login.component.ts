@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, ElementRef} from '@angular/core';
+import {AfterContentInit, Component,  OnInit,  Input,  ViewChild,  ElementRef} from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -12,10 +12,10 @@ import { AuthenticationService } from '../../services/authentication.service';
   styleUrls: ['./login.component.scss']
 })
 
-export class LoginComponent implements OnInit  {
+export class LoginComponent implements OnInit, AfterContentInit  {
 
   @Input() appName: string = '';
-  @ViewChild("username") username: ElementRef;
+  @ViewChild('username') username: ElementRef;
   
   private returnUrl: string = '';
 

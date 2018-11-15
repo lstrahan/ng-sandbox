@@ -8,7 +8,7 @@ import { IconService } from 'ags-hmi-library';
 @Component({
   selector: 'ags-misc',
   templateUrl: './misc.component.html',
-  styleUrls: ['./misc.component.css']
+  styleUrls: ['./misc.component.scss']
 })
 export class MiscComponent implements OnInit {
 

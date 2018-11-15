@@ -3,6 +3,14 @@
 .mat-sidenav-container {
     min-height: 300px;
 
+    // .mat-sidenav {
+    //     display: flex;
+    //     flex-direction: column;
+
+    //     span {
+    //         flex: 1 1;
+    //     }
+    // }
     .mat-sidenav-content {
         background: $primary-light;
 

@@ -1,1 +1,0 @@
-After running 'yarn install' and your ./node_modules folder is created copy the ./ags-hmi-library folder into the ./node_modules folder

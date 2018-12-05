@@ -1,0 +1,48 @@
+import { FocusMonitor } from '@angular/cdk/a11y';
+import { ElementRef, OnDestroy } from '@angular/core';
+import { ControlValueAccessor, NgControl } from '@angular/forms';
+import { MatFormFieldControl } from '@angular/material';
+import { Subject } from 'rxjs';
+import moment from 'moment-es6';
+export declare const MY_CUSTOM_FORMATS: {
+    parseInput: string;
+    fullPickerInput: string;
+    datePickerInput: string;
+    timePickerInput: string;
+    monthYearLabel: string;
+    dateA11yLabel: string;
+    monthYearA11yLabel: string;
+};
+export declare class DateTimePickerComponent implements ControlValueAccessor, MatFormFieldControl<string>, OnDestroy {
+    private fm;
+    private elRef;
+    ngControl: NgControl;
+    readonly shouldLabelFloat: boolean;
+    id: string;
+    describedBy: string;
+    static nextId: number;
+    stateChanges: Subject<void>;
+    focused: boolean;
+    errorState: boolean;
+    controlType: string;
+    private _placeholder;
+    private _required;
+    private _disabled;
+    _momentValue: moment.Moment;
+    onChange: Function;
+    onTouched: Function;
+    writeValue(inValue: string): void;
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    placeholder: string;
+    required: boolean;
+    disabled: boolean;
+    value: string | null;
+    readonly empty: boolean;
+    constructor(fm: FocusMonitor, elRef: ElementRef, ngControl: NgControl);
+    ngOnDestroy(): void;
+    setDescribedByIds(ids: string[]): void;
+    onContainerClick(event: MouseEvent): void;
+    onDataChanged(event: any): void;
+}

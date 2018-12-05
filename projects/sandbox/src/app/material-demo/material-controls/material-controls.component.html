@@ -22,12 +22,12 @@
 <!-- Material Button -->
 <mat-card>
   <mat-card-content>
-    <h2>Material Button</h2>
-    <button mat-button>FLAT</button>
-    <button mat-raised-button mat-tooltip="This is a tooltip!">RAISED</button>
-    <button mat-raised-button color="primary">PRIMARY RAISED</button>
-    <button mat-raised-button color="accent">ACCENT RAISED</button>
-    <br> ICON BUTTON: <button mat-icon-button>
+    <h2>Material Button & Material Tooltip</h2>
+    <button mat-button matTooltip="FLAT">FLAT</button>
+    <button mat-raised-button matTooltip="RAISED">RAISED</button>
+    <button mat-raised-button color="primary" matTooltip="PRIMARY RAISED">PRIMARY RAISED</button>
+    <button mat-raised-button color="accent" matTooltip="ACCENT RAISED">ACCENT RAISED</button>
+    <br> ICON BUTTON: <button mat-icon-button matTooltip="ICON BUTTON" color="accent">
       <mat-icon>search</mat-icon>
     </button>
   </mat-card-content>

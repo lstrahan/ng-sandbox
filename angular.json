@@ -3,37 +3,6 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ags-hmi-library": {
-      "root": "projects/ags-hmi-library",
-      "sourceRoot": "projects/ags-hmi-library/src",
-      "projectType": "library",
-      "prefix": "ags-lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/ags-hmi-library/tsconfig.json",
-            "project": "projects/ags-hmi-library/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "project": "projects/ags-hmi-library/ng-package.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/ags-hmi-library/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
     "sandbox": {
       "root": "projects/sandbox",
       "sourceRoot": "projects/sandbox/src",

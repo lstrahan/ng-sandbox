@@ -1,0 +1,34 @@
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { LogService } from './log.service';
+import { AuthenticationResponse } from '../models/authentication';
+export declare class AuthenticationService {
+    private http;
+    private router;
+    private logService;
+    private serviceUrl;
+    private loginRoute;
+    private AUTHENICATE;
+    private GET_DOMAINS;
+    private HTTP_OPTIONS;
+    private USERINFO_KEY;
+    private isCurrentlyLoggedIn;
+    private username;
+    constructor(http: HttpClient, router: Router, logService: LogService);
+    init(serviceUrl: string, loginRoute?: string): void;
+    redirectToLoginPage(): void;
+    getAuthenticationServicePrefix(): string;
+    getUsernameFromStorage(): string;
+    getDisplayNameFromStorage(): string;
+    getTokenFromStorage(): string;
+    getUserInfoFromStorage(): any;
+    putUserInfoInStorage(userInfo: any): void;
+    readonly isLoggedIn: boolean;
+    readonly currentUser: string;
+    readonly displayName: string;
+    readonly token: string;
+    getAllDomains(): Observable<string[]>;
+    logIn(userInfo: any, domain: string): Observable<AuthenticationResponse>;
+    logOut(): void;
+}

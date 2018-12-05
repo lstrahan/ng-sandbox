@@ -869,8 +869,9 @@ agentkeepalive@^3.4.1:
   dependencies:
     humanize-ms "^1.2.1"
 
-"ags-hmi-library@file:./ags-hmi-library":
+"ags-hmi-library@file:./ags-hmi-library-0.0.1.tgz":
   version "0.0.1"
+  resolved "file:./ags-hmi-library-0.0.1.tgz#bd1cd1dd2f0ed564324f40503372dd50078b78c0"
   dependencies:
     tslib "^1.9.0"
 

@@ -1,8 +1,9 @@
 <h2>Custom Reactive/Material Form Fields</h2>
 <form [formGroup]="customFormGroup" fxLayout="column" fxLayoutAlign=" start">
 
-  <ags-simple-custom-form-control formControlName="nameCtrl" label="Basic Form Field"></ags-simple-custom-form-control>
-  <br>
+  <!-- <ags-simple-custom-form-control formControlName="nameCtrl" label="Basic Form Field"></ags-simple-custom-form-control>
+  <br> -->
+
   <mat-form-field appearance="fill">
     <ags-custom-mat-form-control formControlName="ssnCtrl"></ags-custom-mat-form-control>
     <mat-label>Material Form Field</mat-label>
@@ -14,10 +15,14 @@
   </mat-form-field>
 
   <mat-form-field appearance="fill">
-      <input matInput placeholder="appearance='fill'" />
-    </mat-form-field>
-    
+    <input matInput placeholder="appearance='fill'" />
+  </mat-form-field>
+
+  <ags-inline-edit formControlName="nameCtrl"></ags-inline-edit>
+  <br>
+
   <button mat-raised-button color="primary" (click)="formSubmitClicked()" fxFlexAlign="start">SUBMIT</button>
 
+  <br>
   {{results}}
 </form>

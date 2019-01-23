@@ -11,6 +11,7 @@ import { SimpleCustomFormControlComponent } from './simple-custom-form-control/s
 import { CustomMatFormControlComponent } from './custom-mat-form-control/custom-mat-form-control.component';
 import { DateTimePickerComponent } from './date-time-picker/date-time-picker.component';
 import { MyFormComponent } from './my-form/my-form.component';
+import { InlineEditComponent } from './inline-edit/inline-edit.component';
 
 const ROUTES: Routes = [
   { path: '', component: MyFormComponent }
@@ -27,7 +28,8 @@ const ROUTES: Routes = [
     OwlDateTimeModule, OwlNativeDateTimeModule,
   ],
   declarations: [MyFormComponent, SimpleCustomFormControlComponent, CustomMatFormControlComponent,
-    DateTimePickerComponent],
+    DateTimePickerComponent,
+    InlineEditComponent],
   exports: [RouterModule]
 })
 export class CustomFormControlsModule { }

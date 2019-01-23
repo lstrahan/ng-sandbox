@@ -1,0 +1,9 @@
+<div fxLayout="row" fxLayoutAlign="start center">
+  <input #input type="text" [(ngModel)]="value" (change)="onInputChanged($event)" [readonly]="isReadOnly" fxFlex>
+  <button mat-icon-button (click)="isReadOnly = !isReadOnly">
+    <mat-icon>edit</mat-icon>
+  </button>
+  <button mat-icon-button (click)="clearInput()" *ngIf="!isReadOnly">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>

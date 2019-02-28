@@ -25,16 +25,11 @@ export class InlineEditComponent implements ControlValueAccessor {
 
   constructor( @Optional() @Self() public ngControl: NgControl) {
     // required for interaction with Angular forms
-    if (this.ngControl != null) { this.ngControl.valueAccessor = this; } 
+    if (this.ngControl != null) { this.ngControl.valueAccessor = this; }
   }
 
   // My functions
   onInputChanged(event: any) {
-    this.onChange(this.value); // send data out of this control (see notes below)
-  }
-
-  clearInput() {
-    this.value = '';
     this.onChange(this.value); // send data out of this control (see notes below)
   }
 }

@@ -1,0 +1,12 @@
+<div class="my-component">
+  <h2>Multi Part Component</h2>
+  <div>
+    Title: <span style="background: #f0f0f0; color: black;">
+      <ng-content select="ags-multi-part-title"></ng-content>
+    </span>
+  </div>
+  <div style="background: #f0f0f0; color: black;">
+    <ng-content select="ags-multi-part-content"></ng-content>
+  </div>
+  <div style="text-align: center;">FOOTER</div>
+</div>

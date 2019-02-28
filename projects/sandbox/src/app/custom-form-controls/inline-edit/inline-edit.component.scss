@@ -1,5 +1,5 @@
-input:not([readonly]) {
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    // border-bottom-color: inherit;
+@import 'material-theme';
+
+input:not([readonly]) + button {
+    color: $accent;
 }

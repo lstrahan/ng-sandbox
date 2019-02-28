@@ -14,18 +14,18 @@ export class MiscComponent implements OnInit {
 
   @ViewChild('componentcontainer', { read: ViewContainerRef }) container: ViewContainerRef;
 
-  scrollableCols = [
-    { field: 'lastUpdated', header: 'Last Updated' },
-    { field: 'userLogon', header: 'Last Updated By' },
-    { field: 'lastUpdated', header: 'Last Updated' },
-    { field: 'userLogon', header: 'Last Updated By' },
-    { field: 'lastUpdated', header: 'Last Updated' },
-    { field: 'userLogon', header: 'Last Updated By' }
-  ];
+  // scrollableCols = [
+  //   { field: 'lastUpdated', header: 'Last Updated' },
+  //   { field: 'userLogon', header: 'Last Updated By' },
+  //   { field: 'lastUpdated', header: 'Last Updated' },
+  //   { field: 'userLogon', header: 'Last Updated By' },
+  //   { field: 'lastUpdated', header: 'Last Updated' },
+  //   { field: 'userLogon', header: 'Last Updated By' }
+  // ];
 
-  frozenCols = [
-    { field: 'name', header: 'Name' }
-  ];
+  // frozenCols = [
+  //   { field: 'name', header: 'Name' }
+  // ];
 
   constructor(private resolver: ComponentFactoryResolver,
     public  iconService: IconService) { }

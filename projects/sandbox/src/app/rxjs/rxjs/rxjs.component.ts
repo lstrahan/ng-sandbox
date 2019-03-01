@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Expose, Exclude, Transform, classToPlain, Type} from 'class-transformer';
-import * as moment from 'moment';
-import {Moment} from 'moment';
+import moment from 'moment';
 import { CustomerService } from '../../library/customer.service';
 import { Customer } from '../../library/customer';
 
@@ -22,7 +21,7 @@ class MySubClass {
   @Expose({ name: 'zipcode' })
   zip: string = '';
   @Transform((value) => moment(value).utc().toISOString(), { toPlainOnly: true })
-  date: Moment;
+  date: moment.Moment;
   @Exclude()
   propOnlyInModel: string = '';
 

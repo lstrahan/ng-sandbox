@@ -6,106 +6,210 @@
 .mat-raised-button,
 .mat-flat-button,
 .mat-stroked-button {
-    text-transform: uppercase;
+  text-transform: uppercase;
+}
+
+.mat-button[type="submit"],
+.primary-button {
+  color: $accent;
 }
 
 // toggle buttons ////////////////////////////////
 .mat-button-toggle-group {
-    box-shadow: none !important;
+  box-shadow: none !important;
 
-    .mat-button-toggle-label-content {
-        line-height: 48px;
-        padding: 0 12px;
+  &.mat-button-toggle-group-appearance-standard {
+    border: none;
+    border-radius: 0;
+  }
+
+  .mat-button-toggle-label-content {
+    line-height: 48px;
+    padding: 0 12px;
+  }
+
+  .mat-button-toggle {
+    color: inherit;
+    background: $primary900;
+
+    .mat-icon {
+      line-height: 1; // if this isn't here the icon gets pushed to the bottom when using custom SVG files. WTH?
+    }
+  }
+
+  .mat-button-toggle-checked {
+    color: $accent;
+
+    .mat-button-toggle-ripple {
+      background: rgba(255, 255, 255, .02);
+    }
+  }
+}
+
+// form inputs ////////////////////////////////
+.mat-form-field {
+  width: 100%;
+  margin-bottom: 10px;
+
+  &.mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: rgba(0, 0, 0, .1);
+  }
+
+  &.mat-focused {
+    .mat-form-field-label {
+      color: $accent;
     }
 
-    .mat-button-toggle {
-        color: inherit;
-        background: $primary-dark;
-
-        .mat-icon {
-            line-height: 1; // if this isn't here the icon gets pushed to the bottom when using custom SVG files. WTH?
-        }
+    .mat-form-field-ripple {
+      background: $accent;
     }
+  }
 
-    .mat-button-toggle-checked {
-        color: $accent;
+  .mat-input-element {
+    caret-color: $accent;
+  }
 
-        .mat-button-toggle-ripple {
-            background: rgba(255, 255, 255, 0.02);
-        }
+  &.no-underline {
+    .mat-form-field-underline {
+      display: none;
     }
+  }
+
+  // only show underline when focused
+  // &:not(.mat-focused) .mat-form-field-underline {
+  //     display: none;
+  // }
 }
 
 // toolbar ////////////////////////////////
 .mat-toolbar {
-    .mat-icon-button {
-        background: $primary-dark;
-        border-radius: 2px;
-        width: 48px;
-        height: 48px;
-    }
+  .mat-icon-button {
+    background: $primary900;
+    border-radius: 2px;
+    width: 48px;
+    height: 48px;
+  }
 }
-
-// card ////////////////////////////////
-// .mat-card {
-//     background-color: $primary-light;
-// }
 
 // error //////////////////////////////////
 .mat-error {
-    color: $red;
+  color: $red;
 }
 
 // sidenav/drawer ////////////////////////////////
-.mat-sidenav,
-.mat-drawer {
-    padding: 10px;
+.mat-drawer-container {
+
+  // .mat-sidenav,
+  .mat-drawer {
+
+    &.mat-drawer-end,
+    &.mat-drawer-push {
+      background-color: $primary900;
+    }
+
+    &.mat-drawer-end {
+      border-left: solid 1px rgba($foreground, .12);
+    }
+  }
+
+  .mat-drawer-backdrop.mat-drawer-shown {
+    background-color: rgba(0, 0, 0, .6);
+  }
 }
 
 // dialog ////////////////////////////////
 .mat-dialog-actions {
-    margin-top: 10px;
-    float: right;
+  margin-top: 10px;
+  float: right;
 }
 
-// typography - caption ////////////////////////////////
-.mat-caption {
-    color: rgba(255, 255, 255, 0.7);
-    letter-spacing: 0.7px;
+.oneidentity-dialog-container .mat-dialog-container {
+  padding: 0;
+  margin: 0;
+  min-width: 500px;
+  max-width: 800px;
+  height: 500px;
+  background: white;
+  overflow: hidden;
 }
 
-// form inputs ////////////////////////////////
-.mat-form-field.mat-focused .mat-form-field-label,
-.mat-tab-label-active {
-    color: $accent;
+// tabs ////////////////////////////////
+.mat-tab-group {
+  .mat-tab-header {
+    .mat-tab-label {
+      text-transform: uppercase;
+    }
+
+    .mat-ink-bar {
+      background-color: $accent300;
+    }
+
+    .mat-tab-label-active {
+      opacity: 1;
+    }
+  }
 }
 
-.mat-form-field-appearance-fill .mat-form-field-flex {
-    background-color: rgba(0, 0, 0, 0.1);
+// select ////////////////////////////////
+.mat-option {
+  &.mat-selected {
+    color: $text-normal !important;
+  }
 }
 
-.mat-form-field.mat-focused .mat-form-field-ripple {
-    background: $accent;
-}
-
-.mat-input-element {
-    caret-color: $accent;
-}
-
-// tabs
-.mat-ink-bar {
-    background-color: $accent !important;
-    height: 3px !important;
-}
-.mat-drawer-backdrop.mat-drawer-shown {
-    background-color: rgba(0, 0 ,0, 0.6);
-}
-
-// selected option
-.mat-option.mat-selected {
-    color: $foreground !important;
-}
-
-.mat-header-cell {
+// table ////////////////////////////////
+.mat-table {
+  .mat-header-cell {
     font-size: 12px;
+  }
+
+  .mat-footer-row {
+    border-bottom: none;
+    border-top: 1px solid rgba($foreground, .12);
+  }
+}
+
+// progress ////////////////////////////////
+.mat-progress-bar-buffer {
+  background-color: $primary700 !important;
+}
+
+/* For progress bars that require the primary800 normal background */
+.progress-bar-primary-normal {
+  .mat-progress-bar-buffer {
+    background-color: $primary800 !important;
+  }
+}
+
+// typography tweaks
+.mat-headline {
+  letter-spacing: 0;
+}
+
+.mat-title {
+  letter-spacing: 0;
+}
+
+.mat-body-2 {
+  letter-spacing: 0;
+}
+
+.mat-body-1 {
+  letter-spacing: .25px;
+}
+
+.mat-caption {
+  letter-spacing: .4px;
+}
+
+.mat-button, .mat-tab-links {
+  letter-spacing: 1.25px;
+}
+
+.mat-subheading-1 {
+  letter-spacing: 0;
+}
+
+.mat-subheading-2 {
+  letter-spacing: .15px;
 }

@@ -4,10 +4,11 @@ $accent-palette: map-get($app-theme, accent);
 $warn-palette: map-get($app-theme, warn);
 
 $primary: mat-color($primary-palette);
-$primary-contrast: map-get($primary-palette, lighter-contrast);
-$primary-normal: mat-color($primary-palette);
 $primary-light: mat-color($primary-palette, lighter);
 $primary-dark: mat-color($primary-palette, darker);
+$primary900: mat-color($primary-palette, darker);
+$primary800: mat-color($primary-palette);
+$primary700: mat-color($primary-palette, lighter);
 $primary600: mat-color($primary-palette, 600);
 $primary500: mat-color($primary-palette, 500);
 $primary400: mat-color($primary-palette, 400);
@@ -16,8 +17,16 @@ $primary200: mat-color($primary-palette, 200);
 $primary100: mat-color($primary-palette, 100);
 $primary50: mat-color($primary-palette, 50);
 $accent: mat-color($accent-palette);
+$accent300: mat-color($accent-palette, darker);
+$accent200: mat-color($accent-palette);
+$accent100: mat-color($accent-palette, lighter);
 $background: map-get(map-get($app-theme, background), background);
 $foreground: map-get(map-get($app-theme, foreground), text);
+$text-normal: map-get(map-get($app-theme, foreground), text);
+$text-medium: rgba($text-normal, 0.6);
+$text-light: rgba($text-normal, 0.3);
+$text-disabled: rgba($text-normal, 0.38);
+$highlight: rgba($foreground, .1);
 
 $selected: #DB167B;
 
@@ -29,6 +38,11 @@ $amber: $orange;
 $blue: #0091EA;
 $green: #00C853;
 $white: #B4E7FF;
+
+$default-box-shadow:
+  0 3px 5px -1px rgba(0, 0, 0, .2),
+  0 6px 10px 0 rgba(0, 0, 0, .14),
+  0 1px 18px 0 rgba(0, 0, 0, .12);
 
 // AGS status
 $state-unknown: $grey;

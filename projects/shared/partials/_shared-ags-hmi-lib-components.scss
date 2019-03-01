@@ -15,7 +15,7 @@
 .owl-dt-weekday,
 .owl-dt-timer-content,
 .owl-dt-control-content {
-    color: $foreground;
+    color: $text-normal;
 }
 
 .owl-dt-calendar-table .owl-dt-calendar-cell:hover {
@@ -29,9 +29,9 @@
 }
 
 .owl-dt-control-button-arrow svg g path {
-    fill: $foreground;
+    fill: $text-normal;
 }
 
 .owl-dt-timer-content .owl-dt-timer-input {
-    border: 1px solid $foreground;
+    border: 1px solid $text-normal;
 }

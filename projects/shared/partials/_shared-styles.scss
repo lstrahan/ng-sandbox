@@ -1,28 +1,63 @@
+.text-normal {
+    color: $text-normal;
+}
+
+.text-medium {
+    color: $text-medium;
+}
+
+.text-disabled {
+    color: $text-disabled;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+a {
+    color: $accent;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:focus {
+    outline: 0;
+}
+
+.panel-header,
+.panel-footer {
+    height: 56px;
+    padding: 10px;
+}
+
+.search-highlight {
+    font-weight: bold;
+}
+
 /*******************************
  scroll bars
 ********************************/
-
 ::-webkit-scrollbar {
-    height: 12px;
-    width: 10px;
+    height: 8px;
+    width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
-    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba($foreground, 0.1);
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba($foreground, 0.6);
     border-radius: 10px;
 }
 
 ::-webkit-resizer {
     background-color: transparent;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
 }
 
 /*******************************
@@ -54,7 +89,9 @@
     background: $secret;
 }
 
-.topsecret, .top-secret, .top_secret {
+.topsecret,
+.top-secret,
+.top_secret {
     color: #263238;
     background: $topsecret;
 }
@@ -67,97 +104,123 @@
     fill: $state-unknown;
     color: $state-unknown;
 }
+
 .state-off {
     fill: $state-off;
     color: $state-off;
 }
+
 .state-occurring {
     fill: $state-occurring;
     color: $state-occurring;
 }
+
 .state-executing {
     fill: $state-executing;
     color: $state-executing;
 }
+
 .state-occurred {
     fill: $state-occurred;
     color: $state-occurred;
 }
+
 .state-ok {
     fill: $state-ok;
     color: $state-ok;
 }
-.state-completed, .state-complete {
+
+.state-completed,
+.state-complete {
     fill: $state-completed;
     color: $state-completed;
 }
+
 .state-caution {
     fill: $state-caution;
     color: $state-caution;
 }
+
 .state-proposed {
     fill: $state-proposed;
     color: $state-proposed;
 }
-.state-not-occurred, .state-notoccurred, .state-not_occurred {
+
+.state-not-occurred,
+.state-notoccurred,
+.state-not_occurred {
     fill: $state-not-occurred;
     color: $state-not-occurred;
 }
+
 .state-alert {
     fill: $state-alert;
     color: $state-alert;
 }
+
 .state-failed {
     fill: $state-failed;
     color: $state-failed;
 }
+
 .state-error {
     fill: $state-error;
     color: $state-error;
 }
+
 .state-standby {
     fill: $state-standby;
     color: $state-standby;
 }
 
 // UCI state
-.uci-state-unknown {
+.state-uci-unknown {
     fill: $grey;
     color: $grey;
 }
-.uci-state-unallocated {
+
+.state-uci-unallocated {
     fill: $uci-state-unallocated;
     color: $uci-state-unallocated;
 }
-.uci-state-allocated {
+
+.state-uci-allocated {
     fill: $uci-state-allocated;
     color: $uci-state-allocated;
 }
-.uci-state-proposed {
+
+.state-uci-proposed {
     fill: $uci-state-proposed;
     color: $uci-state-proposed;
 }
-.uci-state-planned {
+
+.state-uci-planned {
     fill: $uci-state-planned;
     color: $uci-state-planned;
 }
-.uci-state-executing {
+
+.state-uci-executing {
     fill: $grey; // $uci-state-executing; // using $grey instead since background is white;
     color: $grey;
 }
-.uci-state-completed {
+
+.state-uci-completed {
     fill: $uci-state-completed;
     color: $uci-state-completed;
 }
-.uci-state-failed {
+
+.state-uci-failed {
     fill: $uci-state-failed;
     color: $uci-state-failed;
 }
-.uci-state-cancelled {
+
+.state-uci-cancelled {
     fill: $uci-state-cancelled;
     color: $uci-state-cancelled;
 }
 
+
+// download fonts from this site https://google-webfonts-helper.herokuapp.com/fonts/roboto?subsets=latin
 
 /* roboto-300 - latin */
 @font-face {
@@ -165,32 +228,158 @@
     font-style: normal;
     font-weight: 300;
     src: local('Roboto Light'), local('Roboto-Light'),
-        url(/assets/fonts/roboto-v18-latin-300.woff) format('woff), /* Modern Browsers */
-        url(/assets/fonts/roboto-v18-latin-300.woff2) format('woff2); /* Super Modern Browsers */
-  }
-  /* roboto-regular - latin */
-  @font-face {
+        url('/assets/fonts/roboto-v18-latin-300.woff2') format('woff2'),
+        url('/assets/fonts/roboto-v18-latin-300.woff') format('woff');
+}
+
+/* roboto-300italic - latin */
+// @font-face {
+//     font-family: 'Roboto';
+//     font-style: italic;
+//     font-weight: 300;
+//     src: local('Roboto Light Italic'), local('Roboto-LightItalic'),
+//         url('/assets/fonts/roboto-v18-latin-300italic.woff2') format('woff2'),
+//         url('/assets/fonts/roboto-v18-latin-300italic.woff') format('woff');
+// }
+
+/* roboto-regular - latin */
+@font-face {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    src:  local('Roboto'), local('Roboto-Regular'),
-        url(/assets/fonts/roboto-v18-latin-regular.woff) format('woff), /* Modern Browsers */
-        url(/assets/fonts/roboto-v18-latin-regular.woff2) format('woff2); /* Super Modern Browsers */
-  }
-  /* roboto-500 - latin */
-  @font-face {
+    src: local('Roboto'), local('Roboto-Regular'),
+        url('/assets/fonts/roboto-v18-latin-regular.woff2') format('woff2'),
+        url('/assets/fonts/roboto-v18-latin-regular.woff') format('woff');
+}
+
+/* roboto-italic - latin */
+// @font-face {
+//     font-family: 'Roboto';
+//     font-style: italic;
+//     font-weight: 400;
+//     src: local('Roboto Italic'), local('Roboto-Italic'),
+//         url('/assets/fonts/roboto-v18-latin-italic.woff2') format('woff2'),
+//         url('/assets/fonts/roboto-v18-latin-italic.woff') format('woff');
+// }
+
+/* roboto-500 - latin */
+@font-face {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
     src: local('Roboto Medium'), local('Roboto-Medium'),
-        url(/assets/fonts/roboto-v18-latin-500.woff) format('woff),
-        url(/assets/fonts/roboto-v18-latin-500.woff2) format('woff2);
-  }
-  /* roboto-700 - latin */
-  @font-face {
+        url('/assets/fonts/roboto-v18-latin-500.woff2') format('woff2'),
+        url('/assets/fonts/roboto-v18-latin-500.woff') format('woff');
+}
+
+/* roboto-500italic - latin */
+// @font-face {
+//     font-family: 'Roboto';
+//     font-style: italic;
+//     font-weight: 500;
+//     src: local('Roboto Medium Italic'), local('Roboto-MediumItalic'),
+//         url('/assets/fonts/roboto-v18-latin-500italic.woff2') format('woff2'),
+//         url('/assets/fonts/roboto-v18-latin-500italic.woff') format('woff');
+// }
+
+/* roboto-700italic - latin */
+// @font-face {
+//     font-family: 'Roboto';
+//     font-style: italic;
+//     font-weight: 700;
+//     src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'),
+//         url('/assets/fonts/roboto-v18-latin-700italic.woff2') format('woff2'),
+//         url('/assets/fonts/roboto-v18-latin-700italic.woff') format('woff');
+// }
+
+/* roboto-700 - latin */
+@font-face {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
-    src: url(/assets/fonts/roboto-v18-latin-700.woff) format('woff), /* Modern Browsers */
-        url(/assets/fonts/roboto-v18-latin-700.woff2) format('woff2); /* Super Modern Browsers */
-  }
+    src: local('Roboto Bold'), local('Roboto-Bold'),
+        url('/assets/fonts/roboto-v18-latin-700.woff2') format('woff2'),
+
+        url('/assets/fonts/roboto-v18-latin-700.woff') format('woff');
+
+}
+
+/* roboto-mono-300 - latin */
+// @font-face {
+//     font-family: 'Roboto Mono';
+//     font-style: normal;
+//     font-weight: 300;
+//     src: local('Roboto Mono Light'), local('RobotoMono-Light'),
+//         url('/assets/fonts/roboto-mono-v5-latin-300.woff2') format('woff2'),
+//         url('/assets/fonts/roboto-mono-v5-latin-300.woff') format('woff');
+// }
+
+/* roboto-mono-300italic - latin */
+// @font-face {
+//     font-family: 'Roboto Mono';
+//     font-style: italic;
+//     font-weight: 300;
+//     src: local('Roboto Mono Light Italic'), local('RobotoMono-LightItalic'),
+//         url('/assets/fonts/roboto-mono-v5-latin-300italic.woff2') format('woff2'),
+//         url('/assets/fonts/roboto-mono-v5-latin-300italic.woff') format('woff');
+// }
+
+/* roboto-mono-regular - latin */
+@font-face {
+    font-family: 'Roboto Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto Mono'), local('RobotoMono-Regular'),
+        url('/assets/fonts/roboto-mono-v5-latin-regular.woff2') format('woff2'),
+        url('/assets/fonts/roboto-mono-v5-latin-regular.woff') format('woff');
+}
+
+/* roboto-mono-italic - latin */
+// @font-face {
+//     font-family: 'Roboto Mono';
+//     font-style: italic;
+//     font-weight: 400;
+//     src: local('Roboto Mono Italic'), local('RobotoMono-Italic'),
+//         url('/assets/fonts/roboto-mono-v5-latin-italic.woff2') format('woff2'),
+//         url('/assets/fonts/roboto-mono-v5-latin-italic.woff') format('woff');
+// }
+
+/* roboto-mono-500 - latin */
+// @font-face {
+//     font-family: 'Roboto Mono';
+//     font-style: normal;
+//     font-weight: 500;
+//     src: local('Roboto Mono Medium'), local('RobotoMono-Medium'),
+//         url('/assets/fonts/roboto-mono-v5-latin-500.woff2') format('woff2'),
+//         url('/assets/fonts/roboto-mono-v5-latin-500.woff') format('woff');
+// }
+
+/* roboto-mono-500italic - latin */
+// @font-face {
+//     font-family: 'Roboto Mono';
+//     font-style: italic;
+//     font-weight: 500;
+//     src: local('Roboto Mono Medium Italic'), local('RobotoMono-MediumItalic'),
+//         url('/assets/fonts/roboto-mono-v5-latin-500italic.woff2') format('woff2'),
+//         url('/assets/fonts/roboto-mono-v5-latin-500italic.woff') format('woff');
+// }
+
+/* roboto-mono-700 - latin */
+// @font-face {
+//     font-family: 'Roboto Mono';
+//     font-style: normal;
+//     font-weight: 700;
+//     src: local('Roboto Mono Bold'), local('RobotoMono-Bold'),
+//         url('/assets/fonts/roboto-mono-v5-latin-700.woff2') format('woff2'),
+//         url('/assets/fonts/roboto-mono-v5-latin-700.woff') format('woff');
+// }
+
+/* roboto-mono-700italic - latin */
+// @font-face {
+//     font-family: 'Roboto Mono';
+//     font-style: italic;
+//     font-weight: 700;
+//     src: local('Roboto Mono Bold Italic'), local('RobotoMono-BoldItalic'),
+//         url('/assets/fonts/roboto-mono-v5-latin-700italic.woff2') format('woff2'),
+//         url('/assets/fonts/roboto-mono-v5-latin-700italic.woff') format('woff');
+// }

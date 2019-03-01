@@ -26,14 +26,7 @@ $mat-dark-theme-background: (
 $app-theme: mat-dark-theme($app-primary, $app-accent);
 
 // do this to override typography settings
-$custom-typography: mat-typography-config($font-family: 'Roboto, Arial, sans-serif',
-$title: mat-typography-level(20px, 32px, 400),
-$subheading-2: mat-typography-level(16px, 28px, 300),
-$subheading-1: mat-typography-level(15px, 24px, 300),
-$body-2: mat-typography-level(14px, 24px, 300),
-$body-1: mat-typography-level(14px, 20px, 300),
-$caption: mat-typography-level(10px, 16px, 300),
-$input: mat-typography-level(inherit, 1.125, 300));
+$custom-typography: mat-typography-config($font-family: 'Roboto, Arial, sans-serif');
 // default typography definitions
 // $font-family:   'Roboto, "Helvetica Neue", sans-serif',
 // $display-4:     mat-typography-level(112px, 112px, 300),

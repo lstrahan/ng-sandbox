@@ -2,10 +2,10 @@
 import {Component} from '@angular/core';
 
 @Component({
-    selector: 'ags-red-component',
-    templateUrl: './red-component.component.html'
+    selector: 'ags-my-grid',
+    templateUrl: './my-grid.component.html'
 })
-export class RedComponentComponent {
+export class MyGridComponent {
     private params: any;
 
     agInit(params: any): void {

@@ -1,8 +1,11 @@
-<div id="container" fxLayout="column" fxFlexFill>
-
-  <h2 class="mat-title">ag-grid</h2>
-
-  <ag-grid-angular [gridOptions]="gridOptions" fxFlex>
+<div id="ag-grid-container" fxLayout="column" fxFlexFill>
+  <ag-grid-angular [rowData]="rowData" [gridOptions]="gridOptions" [columnDefs]="columnDefs" [defaultColDef]="defaultColDef" class="ag-theme-material"
+    (gridReady)="onGridReady($event)" (rowClicked)="onRowClicked($event)" (modelUpdated)="onModelUpdated($event)"
+    (rowDataChanged)="onRowDataChanged($event)" fxFlex>
   </ag-grid-angular>
 
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <button mat-flat-button (click)="onButtonClick($event)">Modify Data</button>
+    showing {{ rowData.length }} of {{ originalCount }}
+  </div>
 </div>

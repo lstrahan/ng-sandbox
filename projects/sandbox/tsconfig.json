@@ -10,7 +10,9 @@
       "@shared/*": ["src/app/shared/*"],
       "@models/*": ["src/app/models/*"],
       "environments/*": ["src/environments/*"]
-    }
+    },
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   },
   "angularCompilerOptions": {
     "preserveWhiteSpaces": false

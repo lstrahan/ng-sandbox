@@ -1,0 +1,28 @@
+<h2>PrimeNg p-table</h2>
+
+<div style="width: 100%; border: 2px solid black; overflow: hidden;" [style.height.px]="500" [style.max-height.px]="500">
+
+  <p-table [columns]="scrollableCols" [frozenColumns]="frozenCols" [value]="cars" [scrollable]="true" scrollHeight="100%"
+    frozenWidth="200px">
+    <ng-template pTemplate="colgroup" let-columns>
+      <colgroup>
+        <col *ngFor="let col of columns" style="width:200px">
+      </colgroup>
+    </ng-template>
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th *ngFor="let col of columns">
+          {{col.header}}
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+      <tr>
+        <td *ngFor="let col of columns">
+          {{rowData[col.field]}}
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+</div>

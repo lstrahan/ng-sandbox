@@ -1,7 +1,7 @@
-// src/app/my-grid-application/my-grid-application.component.ts
 import {Component} from '@angular/core';
 import {GridOptions} from 'ag-grid-community';
 import {RedComponentComponent} from '../red-component/red-component.component';
+import data from './data.json';
 
 @Component({
     selector: 'ags-ag-grid',
@@ -14,27 +14,22 @@ export class MyAgGridComponent {
     constructor() {
         this.gridOptions = <GridOptions>{
           enableSorting: true,
-          // enable filtering 
           enableFilter: true
         };
         this.gridOptions.columnDefs = [
-            {
-                headerName: 'ID',
-                field: 'id',
-                width: 100
-            },
-            {
-                headerName: 'Value',
-                field: 'value',
-                cellRendererFramework: RedComponentComponent,
-                width: 100
-            },
-
+            { headerName: 'Brand', field: 'brand', width: 200, pinned: 'left' },
+            { headerName: 'Year', field: 'year', width: 200 },
+            { headerName: 'Color', field: 'color', width: 200 },
+            { headerName: 'VIN', field: 'vin', width: 200, cellRendererFramework: RedComponentComponent },
+            { headerName: 'VIN', field: 'vin', width: 200 },
+            { headerName: 'VIN', field: 'vin', width: 200 },
+            { headerName: 'VIN', field: 'vin', width: 200 },
+            { headerName: 'VIN', field: 'vin', width: 200 },
+            { headerName: 'VIN', field: 'vin', width: 200 },
+            { headerName: 'VIN', field: 'vin', width: 200 },
+            { headerName: 'VIN', field: 'vin', width: 200 },
+            { headerName: 'VIN', field: 'vin', width: 200 }
         ];
-        this.gridOptions.rowData = [
-            {id: 5, value: 10},
-            {id: 10, value: 15},
-            {id: 15, value: 20}
-        ];
+        this.gridOptions.rowData = data;
     }
 }

@@ -9,6 +9,7 @@ import { AgsHmiLibraryModule } from 'ags-hmi-library';
 import { MessageComponent } from './message/message.component';
 import { MiscComponent } from './misc/misc.component';
 import { MultiPartComponent, MultiPartTitleComponent, MultiPartContentComponent } from './multi-part/multi-part.component';
+import { PrimeNgTableComponent } from './prime-ng-table/prime-ng-table.component';
 
 
 const ROUTES: Routes = [
@@ -25,7 +26,7 @@ const ROUTES: Routes = [
     AgsHmiLibraryModule
   ],
   providers: [],
-  declarations: [MiscComponent, MessageComponent, MultiPartComponent, MultiPartTitleComponent, MultiPartContentComponent],
+  declarations: [MiscComponent, MessageComponent, MultiPartComponent, MultiPartTitleComponent, MultiPartContentComponent, PrimeNgTableComponent],
   entryComponents: [MessageComponent],
   exports: [RouterModule]
 })

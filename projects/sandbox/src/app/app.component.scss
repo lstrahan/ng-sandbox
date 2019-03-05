@@ -1,10 +1,13 @@
 @import 'material-theme';
 
 .mat-sidenav-container {
-    min-height: 300px;
-
-    .mat-nav-list {
+    .mat-sidenav {
         overflow-y: auto;
+        min-width: 500px;
+
+        .mat-button {
+            line-height: 1.25em;
+        }
     }
     .mat-sidenav-content {
         background: $primary-light;

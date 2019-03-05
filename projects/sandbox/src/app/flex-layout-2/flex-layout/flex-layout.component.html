@@ -3,29 +3,29 @@
     fxFlex="30" fxLayout="column"
     <section fxFlex="40">
       fxFlex="40"
-      <button mat-flat-button (click)="mysidenav.toggle()">Sidenav</button>
+      <button mat-flat-button (click)="mydrawer.toggle()">drawer</button>
     </section>
     <section fxFlex>fxFlex</section>
   </div>
   <div id="right" fxFlex fxLayout="column">
     fxFlex fxLayout="column"
     <section fxFlex="70" class="scrollable">
-      <mat-sidenav-container hasBackdrop="false" fxFlex>
-        <mat-sidenav-content fxLayout="column" fxFlex>
+      <mat-drawer-container hasBackdrop="false" fxFlex>
+        <mat-drawer-content fxLayout="column" fxFlex>
           fxFlex="70"<br><br>
           <p *ngFor="let x of [0,0,0,0,0,0,0]">{{paragraph}}</p>
-        </mat-sidenav-content>
+        </mat-drawer-content>
 
-        <mat-sidenav #mysidenav mode="push" position="start" fxLayout="column">
-          <button mat-flat-button (click)="mysidenav.close()">Close</button><br>
+        <mat-drawer #mydrawer mode="push" position="start" fxLayout="column">
+          <button mat-flat-button (click)="mydrawer.close()">Close</button><br>
           xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br>
           xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br>
           xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br>
           xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br>
           xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br>
           xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br>
-        </mat-sidenav>
-      </mat-sidenav-container>
+        </mat-drawer>
+      </mat-drawer-container>
     </section>
     <section fxFlex>fxFlex</section>
   </div>

@@ -2,17 +2,21 @@
 
   <mat-sidenav #sidenav mode="over" (click)="sidenav.toggle()">
     <div fxLayout="column" fxFlexFill>
-        <button mat-button routerLink="/material">Material Controls</button><br>
-        <button mat-button routerLink="/formcontrols">Custom Form Controls</button><br>
-        <button mat-button routerLink="/flexlayout1">Flex Layout 1</button><br>
-        <button mat-button routerLink="/flexlayout2">Flex Layout 2</button><br>
-        <button mat-button routerLink="/ag-grid">ag-grid</button><br>
-        <button mat-button routerLink="/websockets">Web Sockets</button><br>
-        <button mat-button routerLink="/rxjs">RxJs</button><br>
-        <button mat-button routerLink="/d3">D3</button><br>
-        <button mat-button routerLink="/misc">Misc</button><br>
-        <div fxFlex></div>
-        <div>footer goes here</div>
+      <mat-grid-list cols="2" rowHeight="4:1">
+        <mat-grid-tile><button mat-button routerLink="/material">Material Controls</button></mat-grid-tile>
+        <mat-grid-tile><button mat-button routerLink="/formcontrols">Custom Form Controls</button></mat-grid-tile>
+        <mat-grid-tile><button mat-button routerLink="/flexlayout1">Flex Layout 1</button></mat-grid-tile>
+        <mat-grid-tile><button mat-button routerLink="/flexlayout2">Flex Layout 2<br>& Embedded mat-drawer</button></mat-grid-tile>
+        <mat-grid-tile><button mat-button routerLink="/ag-grid">ag-grid</button></mat-grid-tile>
+        <mat-grid-tile><button mat-button routerLink="/websockets">Web Sockets</button></mat-grid-tile>
+        <mat-grid-tile><button mat-button routerLink="/rxjs">RxJs</button></mat-grid-tile>
+        <mat-grid-tile><button mat-button routerLink="/d3">D3</button></mat-grid-tile>
+        <mat-grid-tile><button mat-button routerLink="/misc">Misc</button></mat-grid-tile>
+      </mat-grid-list>
+
+
+      <div fxFlex></div>
+      <div>footer goes here</div>
     </div>
   </mat-sidenav>
 

@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { GridOptions, ColDef, GridApi, ColumnApi, GridReadyEvent, SelectionChangedEvent, RowBounds, RowClickedEvent, ModelUpdatedEvent, RowDataChangedEvent, DateFilter } from 'ag-grid-community';
+import { GridOptions, ColDef, GridApi, ColumnApi, GridReadyEvent, SelectionChangedEvent, RowBounds,
+  RowClickedEvent, ModelUpdatedEvent, RowDataChangedEvent, DateFilter } from 'ag-grid-community';
 import { MyGridComponent } from '../my-grid-component/my-grid.component';
 import data from './data.json';
 
@@ -34,7 +35,12 @@ export class MyAgGridComponent {
       { headerName: 'Field 2', field: 'field2' },
       { headerName: 'Field 3', field: 'field3' },
       { headerName: 'Field 4', field: 'field4' },
-      { headerName: 'Field 5', field: 'field5' }
+      { headerName: 'Field 5', field: 'field5' },
+      { headerName: 'Field 6', field: 'field1' },
+      { headerName: 'Field 7', field: 'field2' },
+      { headerName: 'Field 8', field: 'field3' },
+      { headerName: 'Field 9', field: 'field4' },
+      { headerName: 'Field `10', field: 'field5' }
     ];
   }
 

@@ -19,6 +19,7 @@ export class MyAgGridComponent {
   rowData = data;
   originalCount = data.length;
 
+
   constructor() {
     this.gridOptions = <GridOptions>{ };
 

@@ -1,14 +1,20 @@
 <mat-card>
-  <mat-card-content>
+  <mat-card-content fxLayout="column">
     <h2>Typography</h2>
-    <div class="mat-headline">Headline</div>
-    <div class="mat-title">Title</div>
-    <div class="mat-subheading-2">Subheading-2</div>
-    <div class="mat-subheading-1">Subheading-1 (class="mat-subheading-1")</div>
-    <div class="mat-body-2">Body-2</div>
-    <div class="mat-body-1">Body-1</div>
-    <div class="mat-caption">Caption</div>
-    <div class="mat-button">Button</div>
+    <!-- <span class="mat-display-4">mat-display-4</span>
+    <span class="mat-display-3">mat-display-3</span>
+    <span class="mat-display-2">mat-display-2</span>
+    <span class="mat-display-1">mat-display-1</span> -->
+    <div fxLayout="row"><span class="mat-headline">Headline</span> &nbsp;&nbsp;&nbsp; <h1>h1</h1></div>
+    <div fxLayout="row"><span class="mat-title">Title</span> &nbsp;&nbsp;&nbsp; <h2>h2</h2></div>
+    <div fxLayout="row"><span class="mat-subheading-2">Subheading-2</span> &nbsp;&nbsp;&nbsp; <h3>h3</h3></div>
+    <div fxLayout="row"><span class="mat-subheading-1">Subheading-1</span> &nbsp;&nbsp;&nbsp; <h4>h4</h4></div>
+    <span class="mat-body-1">Body-1</span>
+    <span class="mat-body-2">Body-2</span>
+    <span class="mat-caption">Caption</span>
+    <span class="mat-button" style="width: 150px; border: 1px solid grey;">Button</span>
+    <button mat-button>Button</button>
+    <span class="my-subheading-1">my-subheading-1 (css defined using sass mixins)</span>
   </mat-card-content>
 </mat-card>
 

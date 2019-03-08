@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '../material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialControlsComponent, DialogContentComponent } from './material-controls/material-controls.component'
 
 export const ROUTES: Routes = [
@@ -17,7 +18,8 @@ export const ROUTES: Routes = [
     RouterModule.forChild(ROUTES),
     CommonModule,
     FormsModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule
   ],
   declarations: [DialogContentComponent, MaterialControlsComponent],
   entryComponents: [DialogContentComponent],

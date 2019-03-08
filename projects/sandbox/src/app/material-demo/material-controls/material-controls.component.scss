@@ -1,9 +1,12 @@
-// @import '../../../global-variables';
-// @import '~@angular/material/theming';
+@import 'material-theme';
 
-// .my-subheading-1 {
-//   @include mat-typography-level-to-styles($custom-typography, subheading-1);
-// }
+.my-subheading-1 {
+  // @include mat-typography-level-to-styles($custom-typography, subheading-1);
+  font-size: mat-font-size($custom-typography, subheading-1);
+  font-weight: mat-font-weight($custom-typography, subheading-1);
+  line-height: mat-line-height($custom-typography, subheading-1);
+  font-family: mat-font-family($custom-typography, subheading-1);
+}
 
 .mat-card {
   margin: 10px 0px;

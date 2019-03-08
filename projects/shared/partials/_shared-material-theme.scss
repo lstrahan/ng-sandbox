@@ -26,7 +26,21 @@ $mat-dark-theme-background: (
 $app-theme: mat-dark-theme($app-primary, $app-accent);
 
 // do this to override typography settings
-$custom-typography: mat-typography-config($font-family: 'Roboto, Arial, sans-serif');
+$custom-typography: mat-typography-config($font-family: 'Roboto, Arial, sans-serif',
+$display-4:     mat-typography-level(112px, 112px, 300),
+$display-3:     mat-typography-level(56px, 56px, 400),
+$display-2:     mat-typography-level(45px, 48px, 400),
+$display-1:     mat-typography-level(34px, 40px, 400),
+$headline:      mat-typography-level(24px, 32px, 400),
+$title:         mat-typography-level(20px, 32px, 500),
+$subheading-2:  mat-typography-level(16px, 28px, 400),
+$subheading-1:  mat-typography-level(15px, 24px, 400),
+$body-2:        mat-typography-level(14px, 24px, 500),
+$body-1:        mat-typography-level(14px, 20px, 400),
+$caption:       mat-typography-level(12px, 20px, 400),
+$button:        mat-typography-level(14px, 14px, 500),
+// Line-height must be unit-less fraction of the font-size.
+$input:         mat-typography-level(inherit, 1.125, 400));
 // default typography definitions
 // $font-family:   'Roboto, "Helvetica Neue", sans-serif',
 // $display-4:     mat-typography-level(112px, 112px, 300),
@@ -43,3 +57,36 @@ $custom-typography: mat-typography-config($font-family: 'Roboto, Arial, sans-ser
 // $button:        mat-typography-level(14px, 14px, 500),
 // // Line-height must be unit-less fraction of the font-size.
 // $input:         mat-typography-level(inherit, 1.125, 400)
+
+// typography tweaks
+.mat-headline, .mat-h1, h1 {
+  letter-spacing: 0;
+}
+
+.mat-title, .mat-h2, h2 {
+  letter-spacing: 0;
+}
+
+.mat-subheading-1, .mat-h3, h3 {
+  letter-spacing: 0;
+}
+
+.mat-subheading-2, .mat-h4, h4 {
+  letter-spacing: .15px;
+}
+
+.mat-body-2 {
+  letter-spacing: 0;
+}
+
+.mat-body-1 {
+  letter-spacing: .25px;
+}
+
+.mat-caption {
+  letter-spacing: .4px;
+}
+
+.mat-button, .mat-tab-links {
+  letter-spacing: 1.25px;
+}

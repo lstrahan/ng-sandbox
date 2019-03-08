@@ -20,18 +20,19 @@ export class MyAgGridComponent {
   originalCount = data.length;
 
   constructor() {
-    this.gridOptions = <GridOptions>{
-      enableSorting: true,
-      enableFilter: true
-    }
+    this.gridOptions = <GridOptions>{ };
+
     this.defaultColDef = <ColDef>{
-      width: 200
+      width: 200,
+      sortable: true,
+      filter: true
     };
+
     this.columnDefs = <ColDef[]>[
       { headerName: 'Name', field: 'name', pinned: 'left' },
       { headerName: 'Last Updated', field: 'lastUpdated' },
       { headerName: 'Last Updated By', field: 'userLogon' },
-      { headerName: 'Field 1', field: 'field1', suppressSorting: true, suppressFilter: true, cellRendererFramework: MyGridComponent },
+      { headerName: 'No sort or filter', field: 'field1', suppressSorting: true, suppressFilter: true, cellRendererFramework: MyGridComponent },
       { headerName: 'Field 2', field: 'field2' },
       { headerName: 'Field 3', field: 'field3' },
       { headerName: 'Field 4', field: 'field4' },

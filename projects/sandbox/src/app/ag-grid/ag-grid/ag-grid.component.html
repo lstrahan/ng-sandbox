@@ -1,8 +1,17 @@
 <div id="ag-grid-container" fxLayout="column" fxFlexFill>
-  <ag-grid-angular [rowData]="rowData" [gridOptions]="gridOptions" [columnDefs]="columnDefs" [defaultColDef]="defaultColDef" class="ag-theme-material"
-    (gridReady)="onGridReady($event)" (rowClicked)="onRowClicked($event)" (modelUpdated)="onModelUpdated($event)"
-    (rowDataChanged)="onRowDataChanged($event)" fxFlex>
+  <!-- beautify ignore:start -->
+  <ag-grid-angular fxFlex
+    class="ag-theme-material"
+    [rowData]="rowData"
+    [gridOptions]="gridOptions"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    (gridReady)="onGridReady($event)"
+    (rowClicked)="onRowClicked($event)"
+    (modelUpdated)="onModelUpdated($event)"
+    (rowDataChanged)="onRowDataChanged($event)">
   </ag-grid-angular>
+  <!-- beautify ignore:end -->
 
   <div fxLayout="row" fxLayoutAlign="space-between center">
     <button mat-flat-button (click)="onButtonClick($event)">Modify Data</button>

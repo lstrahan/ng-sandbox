@@ -1,0 +1,5 @@
+<div>
+  <mat-select [(ngModel)]="_value" [disabled]="_disabled" (selectionChange)="onDataChanged($event)">
+    <ng-content></ng-content>
+  </mat-select>
+</div>

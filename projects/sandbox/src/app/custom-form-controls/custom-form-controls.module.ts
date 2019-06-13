@@ -12,6 +12,7 @@ import { CustomMatFormControlComponent } from './custom-mat-form-control/custom-
 import { DateTimePickerComponent } from './date-time-picker/date-time-picker.component';
 import { MyFormComponent } from './my-form/my-form.component';
 import { InlineEditComponent } from './inline-edit/inline-edit.component';
+import { SelectWithClearComponent } from './select-with-clear/select-with-clear.component';
 
 const ROUTES: Routes = [
   { path: '', component: MyFormComponent }
@@ -29,7 +30,8 @@ const ROUTES: Routes = [
   ],
   declarations: [MyFormComponent, SimpleCustomFormControlComponent, CustomMatFormControlComponent,
     DateTimePickerComponent,
-    InlineEditComponent],
+    InlineEditComponent,
+    SelectWithClearComponent],
   exports: [RouterModule]
 })
 export class CustomFormControlsModule { }

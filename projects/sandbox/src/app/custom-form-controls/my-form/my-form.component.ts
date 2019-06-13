@@ -19,7 +19,8 @@ export class MyFormComponent implements OnInit {
     this.customFormGroup = this.formBuilder.group({
       nameCtrl: [],
       ssnCtrl: [],
-      dateCtrl: []
+      dateCtrl: [],
+      selectWithClearCtrl: []
     });
   }
 
@@ -27,6 +28,7 @@ export class MyFormComponent implements OnInit {
     this.customFormGroup.get('nameCtrl').setValue('John Smith');
     this.customFormGroup.get('ssnCtrl').setValue('123-456-7890');
     this.customFormGroup.get('dateCtrl').setValue('2018-01-01 19:00:00');
+    this.customFormGroup.get('selectWithClearCtrl').setValue('select with clear');
   }
 
   formSubmitClicked() {

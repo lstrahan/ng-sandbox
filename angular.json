@@ -20,7 +20,8 @@
             "stylePreprocessorOptions": {
               "includePaths": [
                 "projects/sandbox/src",
-                "projects/shared/partials"
+                "projects/shared/partials",
+                "node_modules"
               ]
             },
             "assets": [

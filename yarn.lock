@@ -372,6 +372,488 @@
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.2.15"
 
+"@material/animation@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/animation/-/animation-1.0.0.tgz#dfd8575c8b031203917dc838ac0e3c0fe0f6709b"
+  integrity sha512-Ed5/vggn6ZhSJ87yn3ZS1d826VJNFz73jHF2bSsgRtHDoB8KCuOwQMfdgAgDa4lKDF6CDIPCKBZPKrs2ubehdw==
+  dependencies:
+    tslib "^1.9.3"
+
+"@material/auto-init@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/auto-init/-/auto-init-1.0.0.tgz#0431b03f1bd533f57c4532657e236fe47711f3ab"
+  integrity sha512-xlWEjjyQquXMi9xz3RH7HW/5dsLGkVYQnm1WCYw2a6JIpIlipkkLEzBNc//agiQongIBbLndL07gO7WQeSohNA==
+  dependencies:
+    "@material/base" "^1.0.0"
+    tslib "^1.9.3"
+
+"@material/base@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/base/-/base-1.0.0.tgz#e4ef0b22c54aa887af94f5988fb1c0cb3245beba"
+  integrity sha512-5dxFp46x5FA+Epg6YHLzN+5zRt9S2wR84UdvVAEJ1egea94m9UHUg7y9tAnNSN16aexRSywmzyLwPr+i8PGEYA==
+  dependencies:
+    tslib "^1.9.3"
+
+"@material/button@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/button/-/button-1.0.0.tgz#5a7d6c7d607b81ed001770afb42c78dff75f9605"
+  integrity sha512-g5fCKZhGZCFE7CfruJJn1t6qr8SC6DvmmZtAW1w10lDblseyoYIN/72zihE6Ol4PMCGaf3c6DKMkVXPKbyY0mw==
+  dependencies:
+    "@material/elevation" "^1.0.0"
+    "@material/feature-targeting" "^0.44.1"
+    "@material/ripple" "^1.0.0"
+    "@material/rtl" "^0.42.0"
+    "@material/shape" "^1.0.0"
+    "@material/theme" "^1.0.0"
+    "@material/typography" "^1.0.0"
+
+"@material/card@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/card/-/card-1.0.0.tgz#2a359ad1dab0c3caeec3750ac3fb5a105beba5a2"
+  integrity sha512-GtTb7Ygv7wt7EjcQOj7/XN+gueD1UY8/gVxw+m3mBV/adgSo3u4NFDvVIWG4OMqtOepIp+3A7xZ+Z15X6q7xRQ==
+  dependencies:
+    "@material/elevation" "^1.0.0"
+    "@material/feature-targeting" "^0.44.1"
+    "@material/ripple" "^1.0.0"
+    "@material/rtl" "^0.42.0"
+    "@material/shape" "^1.0.0"
+    "@material/theme" "^1.0.0"
+
+"@material/checkbox@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/checkbox/-/checkbox-1.0.0.tgz#7a273aa4c4303285352f091872499235fe298571"
+  integrity sha512-Z67OLPvMxURB2NEmPZI7BKfMjCMMikoe4ddrQUz3xItpVxnAZqsl0aTHppTUas1nQUqQqTdt4adVadJvzqzffw==
+  dependencies:
+    "@material/animation" "^1.0.0"
+    "@material/base" "^1.0.0"
+    "@material/dom" "^1.0.0"
+    "@material/feature-targeting" "^0.44.1"
+    "@material/ripple" "^1.0.0"
+    "@material/rtl" "^0.42.0"
+    "@material/theme" "^1.0.0"
+    tslib "^1.9.3"
+
+"@material/chips@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/chips/-/chips-1.0.0.tgz#22f144c6a7e396b277ea08b9d0bfbfdea2070926"
+  integrity sha512-XTZciM7tDPuHG1Cc9HHCGWFbavidQMowrdmiN7m2pWntYKBJPV5HkSWWOkeoVssshgRvAhdKpgoA1qDbG99nLQ==
+  dependencies:
+    "@material/animation" "^1.0.0"
+    "@material/base" "^1.0.0"
+    "@material/checkbox" "^1.0.0"
+    "@material/elevation" "^1.0.0"
+    "@material/ripple" "^1.0.0"
+    "@material/shape" "^1.0.0"
+    "@material/theme" "^1.0.0"
+    "@material/typography" "^1.0.0"
+    tslib "^1.9.3"
+
+"@material/dialog@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/dialog/-/dialog-1.0.0.tgz#0c5599163aa8b16d3add5b1592ea92bbc836089a"
+  integrity sha512-LpIrF6SlErcdRa4Gth8S/FIxbXkFgoWlCqfAuyHMFBvs1sa2oHlCJs99o6ui2xUASuLdxd9+B+7iPFKUR/l24g==
+  dependencies:
+    "@material/animation" "^1.0.0"
+    "@material/base" "^1.0.0"
+    "@material/dom" "^1.0.0"
+    "@material/elevation" "^1.0.0"
+    "@material/ripple" "^1.0.0"
+    "@material/rtl" "^0.42.0"
+    "@material/shape" "^1.0.0"
+    "@material/theme" "^1.0.0"
+    "@material/typography" "^1.0.0"
+    focus-trap "^4.0.2"
+    tslib "^1.9.3"
+
+"@material/dom@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/dom/-/dom-1.0.0.tgz#21f2b938b040c7b7fc43fd8837a174f661552b2a"
+  integrity sha512-P2WDLk/9iZxg4RCvwqCtrObm0Qm0EF5G6X/rw21FKTg6uhwmPR75tCj2Zr1yyvVS9rjLxXZf0bQRsgvKxVE6Zw==
+  dependencies:
+    tslib "^1.9.3"
+
+"@material/drawer@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/drawer/-/drawer-1.0.0.tgz#b82643270b085773f473a414d1edaa98356fdf88"
+  integrity sha512-QCNEjNGGhmLq27kXTOVQrgPDv8Yu3F8cdWdQ3d8d8sBpibhcI+ci29h7KBpddC8/ndzubePpSz4elltopfEUOw==
+  dependencies:
+    "@material/animation" "^1.0.0"
+    "@material/base" "^1.0.0"
+    "@material/elevation" "^1.0.0"
+    "@material/list" "^1.0.0"
+    "@material/ripple" "^1.0.0"
+    "@material/rtl" "^0.42.0"
+    "@material/shape" "^1.0.0"
+    "@material/theme" "^1.0.0"
+    "@material/typography" "^1.0.0"
+    focus-trap "^4.0.2"
+    tslib "^1.9.3"
+
+"@material/elevation@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/elevation/-/elevation-1.0.0.tgz#c993d1d59b11357198d1b38947b141e4b4ab9a2d"
+  integrity sha512-TqmvEXmZDYLm2X5lEnjKCsZMDkCXpxFFxL22AfCAQB5L4d0gAS7vqDEE797y4Rp+BBKEcOP71mum1l56RI3NBQ==
+  dependencies:
+    "@material/animation" "^1.0.0"
+    "@material/feature-targeting" "^0.44.1"
+    "@material/theme" "^1.0.0"
+
+"@material/fab@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/fab/-/fab-1.0.0.tgz#febd0f51f0817951ea964065b2612dec44762f8d"
+  integrity sha512-aOwJzcWUQ8AjXaynT9k6y6zZGlb0xH5MpwJCdtlWEmIxz8VxY2NSxB35K9mAjAzBJEJKoahg0FsczbKLZ1xDLA==
+  dependencies:
+    "@material/animation" "^1.0.0"
+    "@material/elevation" "^1.0.0"
+    "@material/ripple" "^1.0.0"
+    "@material/rtl" "^0.42.0"
+    "@material/shape" "^1.0.0"
+    "@material/theme" "^1.0.0"
+    "@material/typography" "^1.0.0"
+
+"@material/feature-targeting@^0.44.1":
+  version "0.44.1"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/feature-targeting/-/feature-targeting-0.44.1.tgz#afafc80294e5efab94bee31a187273d43d34979a"
+  integrity sha512-90cc7njn4aHbH9UxY8qgZth1W5JgOgcEdWdubH1t7sFkwqFxS5g3zgxSBt46TygFBVIXNZNq35Xmg80wgqO7Pg==
+
+"@material/floating-label@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/floating-label/-/floating-label-1.0.0.tgz#9e30644abe2fe160af14f83f06dc8d15f395dc0e"
+  integrity sha512-yESFi8HEUO0PmPWvaU3VW4X8+xaoFHhj2xGxLPu2hGye4ZBjTpmjOX6y1vwYqZLD5KWXj91k695UAT6J2wtWFQ==
+  dependencies:
+    "@material/animation" "^1.0.0"
+    "@material/base" "^1.0.0"
+    "@material/rtl" "^0.42.0"
+    "@material/theme" "^1.0.0"
+    "@material/typography" "^1.0.0"
+    tslib "^1.9.3"
+
+"@material/form-field@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/form-field/-/form-field-1.0.0.tgz#fd8b17f72f146f035cd60dc6f2f24990c5af627b"
+  integrity sha512-kCJ93ROW4u+PW8jKo/ORlwM0vxxEobYR64lQddI8qSPGVoOL0zh4OHs/MqR4QQo8SxdYYunXV3K1x43U9T6yvg==
+  dependencies:
+    "@material/base" "^1.0.0"
+    "@material/ripple" "^1.0.0"
+    "@material/rtl" "^0.42.0"
+    "@material/theme" "^1.0.0"
+    "@material/typography" "^1.0.0"
+    tslib "^1.9.3"
+
+"@material/grid-list@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/grid-list/-/grid-list-1.0.0.tgz#6e3bb6964f989ffcf8c93bbf18e57e7727d6ecd3"
+  integrity sha512-iPfBseL5spzMfydJxvrZ3MQBzPMeBFUEAuKlXBSn8SecAZJxG2RmcV1X5CWk+21L+LY4D7pW6mV9LTZy7nZYyw==
+  dependencies:
+    "@material/base" "^1.0.0"
+    "@material/rtl" "^0.42.0"
+    "@material/theme" "^1.0.0"
+    "@material/typography" "^1.0.0"
+    tslib "^1.9.3"
+
+"@material/icon-button@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/icon-button/-/icon-button-1.0.0.tgz#8a276689c1dc3aa6e016c4be04ed087689915cff"
+  integrity sha512-5eFpf8zE7KVdaOSHF6icwvGA0QFQa1x0nsHDv/l0V44Esmd2Y0wat4P1/h5bQZiHVD1+siDq1a3EyteCdFVWug==
+  dependencies:
+    "@material/base" "^1.0.0"
+    "@material/ripple" "^1.0.0"
+    "@material/theme" "^1.0.0"
+    tslib "^1.9.3"
+
+"@material/image-list@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/image-list/-/image-list-1.0.0.tgz#8a45ba0ee93117d52a248eb35ca21f867c9b9427"
+  integrity sha512-FpUKhQHsESC/dP1micOfz5KeY3cEbVjTJ+XTlJAIfZ+mr1UzP4JpreEM2BluvRMisjjdryjCdLyr8kVK1/gzHQ==
+  dependencies:
+    "@material/shape" "^1.0.0"
+    "@material/theme" "^1.0.0"
+    "@material/typography" "^1.0.0"
+
+"@material/layout-grid@^0.41.0":
+  version "0.41.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/layout-grid/-/layout-grid-0.41.0.tgz#2e7d3be76313e0684d573b10c2c6a88b3230d251"
+  integrity sha512-Sa5RNoTGgfIojqJ9E94p7/k11V6q/tGk7HwKi4AQNAPjxield0zcl3G/SbsSb8YSHoK+D+7OXDN+n11x6EqF7g==
+
+"@material/line-ripple@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/line-ripple/-/line-ripple-1.0.0.tgz#d337880d08a35a3e60c1411be32355d7723ecc65"
+  integrity sha512-sFFpoFXVnqkknkac5bCrMhKGacay26AWVFfc3acaEGjQgkvF8VBV/bS41+CioACyubpc4JL69PU9Um/t7xAQVw==
+  dependencies:
+    "@material/animation" "^1.0.0"
+    "@material/base" "^1.0.0"
+    "@material/theme" "^1.0.0"
+    tslib "^1.9.3"
+
+"@material/linear-progress@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/linear-progress/-/linear-progress-1.0.0.tgz#f701600e3b087e6d786625c047617b23eb1a3679"
+  integrity sha512-iMdxZZrGtQgBpwioTMgH3/KntEN7ZtYp328jJ1EExKchyb6ixwUabwMrbPoDTbzaAI5eoB1QKQPsOfhuR7sIzQ==
+  dependencies:
+    "@material/animation" "^1.0.0"
+    "@material/base" "^1.0.0"
+    "@material/theme" "^1.0.0"
+    tslib "^1.9.3"
+
+"@material/list@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/list/-/list-1.0.0.tgz#289460c8e2444b7604b19a361f4d5ae801c10592"
+  integrity sha512-XJZrflVGwYRAZFZrJA6uY/HTkLjTfHIwZs8KRUA5pf++jr9G/XTxiMCMkZrHwn+Ja4KFw+g1gYuSpaimF5aecQ==
+  dependencies:
+    "@material/base" "^1.0.0"
+    "@material/dom" "^1.0.0"
+    "@material/feature-targeting" "^0.44.1"
+    "@material/ripple" "^1.0.0"
+    "@material/rtl" "^0.42.0"
+    "@material/shape" "^1.0.0"
+    "@material/theme" "^1.0.0"
+    "@material/typography" "^1.0.0"
+    tslib "^1.9.3"
+
+"@material/menu-surface@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/menu-surface/-/menu-surface-1.0.0.tgz#d56283fd277862a1e98ecb873fe8b5150f7dc6cf"
+  integrity sha512-eAau37kYAbJX3D0d6CbOqjoeHEySYBBhojxAdePZg9BoX/gCwZMqwdOR5Y1J2XXD33F1iaVUBpDUWDxW0uvA9Q==
+  dependencies:
+    "@material/animation" "^1.0.0"
+    "@material/base" "^1.0.0"
+    "@material/elevation" "^1.0.0"
+    "@material/feature-targeting" "^0.44.1"
+    "@material/rtl" "^0.42.0"
+    "@material/shape" "^1.0.0"
+    "@material/theme" "^1.0.0"
+    tslib "^1.9.3"
+
+"@material/menu@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/menu/-/menu-1.0.0.tgz#42dc1a031567ddeec269bdce3038a0189f0b8aae"
+  integrity sha512-ZB2DB0emhXbK/HKIVC0/l5DCkhvg9faXDm4nKY9BpIy5ILvAjpsHccs7FE7+1aT1EyLxNnvh36MFKI8w7PeS7w==
+  dependencies:
+    "@material/base" "^1.0.0"
+    "@material/feature-targeting" "^0.44.1"
+    "@material/list" "^1.0.0"
+    "@material/menu-surface" "^1.0.0"
+    "@material/ripple" "^1.0.0"
+    "@material/rtl" "^0.42.0"
+    tslib "^1.9.3"
+
+"@material/notched-outline@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/notched-outline/-/notched-outline-1.0.0.tgz#50fb6fc7f6bff130da366239a40649bbccd7a4e4"
+  integrity sha512-P33NGEJMoWaXfjCleEoZnW9ZUA5c4V+jatMcsx/LidYUyXpl5f70V28ZOjwten4z+yBTezdIOx1cyjYrIn8CJw==
+  dependencies:
+    "@material/animation" "^1.0.0"
+    "@material/base" "^1.0.0"
+    "@material/floating-label" "^1.0.0"
+    "@material/rtl" "^0.42.0"
+    "@material/shape" "^1.0.0"
+    "@material/theme" "^1.0.0"
+    tslib "^1.9.3"
+
+"@material/radio@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/radio/-/radio-1.0.0.tgz#1374317894b0c424f09abb6c6346be8c207c4914"
+  integrity sha512-juvn6oKiBs7IIWb7dnEUrotFFmEmoDJoY3heuHi2ZS3VBSXCoYs67ohYza4YEQw6B3+nPFFSOSElc4g0DyhZUA==
+  dependencies:
+    "@material/animation" "^1.0.0"
+    "@material/base" "^1.0.0"
+    "@material/feature-targeting" "^0.44.1"
+    "@material/ripple" "^1.0.0"
+    "@material/theme" "^1.0.0"
+    tslib "^1.9.3"
+
+"@material/ripple@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/ripple/-/ripple-1.0.0.tgz#62cb68705bb35df61d969cc17493b6efa30d7004"
+  integrity sha512-WUjc6LU2D9mRjfHJPQgj8ljG0NuppwOAM6bIt5wyJ3aiUyYQqW05cvB7YCbYE7WHgfxFtL6UOrGuUG4Z+izJDw==
+  dependencies:
+    "@material/animation" "^1.0.0"
+    "@material/base" "^1.0.0"
+    "@material/dom" "^1.0.0"
+    "@material/feature-targeting" "^0.44.1"
+    "@material/theme" "^1.0.0"
+    tslib "^1.9.3"
+
+"@material/rtl@^0.42.0":
+  version "0.42.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/rtl/-/rtl-0.42.0.tgz#1836e78186c2d8b996f6fbf97adab203535335bc"
+  integrity sha512-VrnrKJzhmspsN8WXHuxxBZ69yM5IwhCUqWr1t1eNfw3ZEvEj7i1g3P31HGowKThIN1dc1Wh4LE14rCISWCtv5w==
+
+"@material/select@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/select/-/select-1.0.0.tgz#dbeef4a01cbd8b2ed4a790fdee40738e140e0263"
+  integrity sha512-PSKG10EPm7FMq3pdbAZKqEQ6SWrr+A071oGVvA4JO7ZhVR6WAEwGoSNOyx89sPvmd84PNeeiZKdohXQd59wQdw==
+  dependencies:
+    "@material/animation" "^1.0.0"
+    "@material/base" "^1.0.0"
+    "@material/floating-label" "^1.0.0"
+    "@material/line-ripple" "^1.0.0"
+    "@material/menu" "^1.0.0"
+    "@material/menu-surface" "^1.0.0"
+    "@material/notched-outline" "^1.0.0"
+    "@material/ripple" "^1.0.0"
+    "@material/rtl" "^0.42.0"
+    "@material/shape" "^1.0.0"
+    "@material/theme" "^1.0.0"
+    "@material/typography" "^1.0.0"
+    tslib "^1.9.3"
+
+"@material/shape@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/shape/-/shape-1.0.0.tgz#bef17de1f282e5c71138338a34078d8402308f65"
+  integrity sha512-zfXEacPQZmH+ujVtaFyfAsYiF46j1QCcFzJeZVouG4pznrbA7XD6614Ywg0wbyWX5iB6hD52ld/IN+R/6oxKqA==
+  dependencies:
+    "@material/feature-targeting" "^0.44.1"
+
+"@material/slider@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/slider/-/slider-1.0.0.tgz#c5058cc89f0109861cba2c70950e9d762924cbed"
+  integrity sha512-34DoVKWeZf9tnHjWU7Zmbn59vSh3NZ9Px7dQlWeCek7p/27hQqK4Rd2SjuIK1ewV0BYpboS2KcUSSyB4gcScrg==
+  dependencies:
+    "@material/animation" "^1.0.0"
+    "@material/base" "^1.0.0"
+    "@material/rtl" "^0.42.0"
+    "@material/theme" "^1.0.0"
+    "@material/typography" "^1.0.0"
+    tslib "^1.9.3"
+
+"@material/snackbar@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/snackbar/-/snackbar-1.0.0.tgz#64e9496d0e4de90968d8bafc0cddb9b662be4bdd"
+  integrity sha512-w+cK2zq4KJ/aAPkxQR6zRVoBU1TCdw1qNRwybKKTsPP6NmZ7UZisb/HJUrb43kh+xhPxYmgyCo320+VoAz3wcg==
+  dependencies:
+    "@material/animation" "^1.0.0"
+    "@material/base" "^1.0.0"
+    "@material/button" "^1.0.0"
+    "@material/dom" "^1.0.0"
+    "@material/icon-button" "^1.0.0"
+    "@material/ripple" "^1.0.0"
+    "@material/rtl" "^0.42.0"
+    "@material/shape" "^1.0.0"
+    "@material/theme" "^1.0.0"
+    "@material/typography" "^1.0.0"
+    tslib "^1.9.3"
+
+"@material/switch@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/switch/-/switch-1.0.0.tgz#4c09f56fabe8469184f97152c13db0d645487ef3"
+  integrity sha512-GvcuTbW2u58XOcOEjCCTo/tm2vZXoZHXLh+DnMXIKxon3VOgIP5NbC/gOSAE28NnCuP6k2xkqA81OPW61Qt20w==
+  dependencies:
+    "@material/animation" "^1.0.0"
+    "@material/base" "^1.0.0"
+    "@material/dom" "^1.0.0"
+    "@material/elevation" "^1.0.0"
+    "@material/feature-targeting" "^0.44.1"
+    "@material/ripple" "^1.0.0"
+    "@material/rtl" "^0.42.0"
+    "@material/theme" "^1.0.0"
+    tslib "^1.9.3"
+
+"@material/tab-bar@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/tab-bar/-/tab-bar-1.0.0.tgz#0f9359beb98bcc835b812492db3233e161aa07cb"
+  integrity sha512-kw7xr+4dBDoNmZWqJHlr0db0LCXu3am0Ag4aw2Q0o8JhYssa1ViU4OfO+yh+VZsfbSVFk/R8ZgElXnQrIwV/vA==
+  dependencies:
+    "@material/base" "^1.0.0"
+    "@material/elevation" "^1.0.0"
+    "@material/tab" "^1.0.0"
+    "@material/tab-scroller" "^1.0.0"
+    tslib "^1.9.3"
+
+"@material/tab-indicator@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/tab-indicator/-/tab-indicator-1.0.0.tgz#00add40860202bfbc1566bfc762d863ef29cf2d9"
+  integrity sha512-4wT+dAc6YOe7ASPt68soHSqKlr/VVl5JcS883M8I2kAtJe92BglsHYW2ALa9IdqwWcvhFaw0sXZKWohLRwibMw==
+  dependencies:
+    "@material/animation" "^1.0.0"
+    "@material/base" "^1.0.0"
+    "@material/theme" "^1.0.0"
+    tslib "^1.9.3"
+
+"@material/tab-scroller@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/tab-scroller/-/tab-scroller-1.0.0.tgz#f45259b9d0c7a66e43d11d3f247b2dcfdf5cbe2b"
+  integrity sha512-KqLHbyUr9ehrL3ey1wqj+2vadEnkqean+p82IniyIfYHtRSF5Tw35VMG9Amu5dCYnsfWZ1aDSEu3aLEZQnTt5w==
+  dependencies:
+    "@material/animation" "^1.0.0"
+    "@material/base" "^1.0.0"
+    "@material/dom" "^1.0.0"
+    "@material/tab" "^1.0.0"
+    tslib "^1.9.3"
+
+"@material/tab@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/tab/-/tab-1.0.0.tgz#3c88ee115b36bedb983485f1edef2f6c9bb69afa"
+  integrity sha512-dxQaIytVUE8mEk+teOzO+vCeLHsbYvyV/CZjROaMB/usZ+DauLXzc4PEfSVDsq6ziumWxG9pA1oEPKagA70SqA==
+  dependencies:
+    "@material/base" "^1.0.0"
+    "@material/ripple" "^1.0.0"
+    "@material/rtl" "^0.42.0"
+    "@material/tab-indicator" "^1.0.0"
+    "@material/theme" "^1.0.0"
+    "@material/typography" "^1.0.0"
+    tslib "^1.9.3"
+
+"@material/textfield@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/textfield/-/textfield-1.0.0.tgz#6aa88dfab377ecfe71945fec27d61cd273db1437"
+  integrity sha512-wHw9EZQnryz7gKiBbNncq/xmEONXkVRYS8XPUtsce+4ZRAttuujIrz4gnV0uZkxwRxO/YRdDkXSmAzxce8hrMw==
+  dependencies:
+    "@material/animation" "^1.0.0"
+    "@material/base" "^1.0.0"
+    "@material/dom" "^1.0.0"
+    "@material/floating-label" "^1.0.0"
+    "@material/line-ripple" "^1.0.0"
+    "@material/notched-outline" "^1.0.0"
+    "@material/ripple" "^1.0.0"
+    "@material/rtl" "^0.42.0"
+    "@material/shape" "^1.0.0"
+    "@material/theme" "^1.0.0"
+    "@material/typography" "^1.0.0"
+    tslib "^1.9.3"
+
+"@material/theme@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/theme/-/theme-1.0.0.tgz#6fd9ee1bb7fd2a5bdc6b7465cb15fe345e435670"
+  integrity sha512-Bg/BQLU5MmCwtQ3DHcSs9DodZB8PTvuItv1wXrP54S/wBVwryIB5uMDmERhnItbNnAFbkKhlAuhn1asMmMzfkQ==
+  dependencies:
+    "@material/feature-targeting" "^0.44.1"
+
+"@material/toolbar@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/toolbar/-/toolbar-1.0.0.tgz#fb125e55afa2e5b693354bfec14292bd4e7a37a7"
+  integrity sha512-O0/SLL0Mhrfonyvk9Q0UYcPaI945UhXs13QrA/NdK8MYZnJr4pI5ySvHs1TU+VQzueIf2E87XhtUwDidTZSe9g==
+  dependencies:
+    "@material/base" "^1.0.0"
+    "@material/elevation" "^1.0.0"
+    "@material/ripple" "^1.0.0"
+    "@material/rtl" "^0.42.0"
+    "@material/theme" "^1.0.0"
+    "@material/typography" "^1.0.0"
+    tslib "^1.9.3"
+
+"@material/top-app-bar@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/top-app-bar/-/top-app-bar-1.0.0.tgz#6151f5fb563b2ac3e2b923ae0c4ad37c239e1ea2"
+  integrity sha512-3EzNl3h+gu7TkeMJPC0CwH6ClV0+oxY0+64tFY5KYQaZxzi+zFjcVOVu/BEK56iYXXOhAprKQgw0/raBpu1n9g==
+  dependencies:
+    "@material/animation" "^1.0.0"
+    "@material/base" "^1.0.0"
+    "@material/elevation" "^1.0.0"
+    "@material/ripple" "^1.0.0"
+    "@material/rtl" "^0.42.0"
+    "@material/shape" "^1.0.0"
+    "@material/theme" "^1.0.0"
+    "@material/typography" "^1.0.0"
+    tslib "^1.9.3"
+
+"@material/typography@^1.0.0":
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@material/typography/-/typography-1.0.0.tgz#327ecfcac5ee3af8a3a102f3f125a761202f4189"
+  integrity sha512-Oeqbjci1cC7jTE8/n3dwnkqKe9ZeWiaE+rgMtRYtRFw1HvAw14SpGA5EEAS/Li2Hu2KZ50FYCe3HYqShfxtChA==
+  dependencies:
+    "@material/feature-targeting" "^0.44.1"
+
 "@ngtools/json-schema@^1.1.0":
   version "1.1.0"
   resolved "https://devstack.ds.boeing.com/nexus/repository/npm/@ngtools/json-schema/-/json-schema-1.1.0.tgz#c3a0c544d62392acc2813a42c8a0dc6f58f86922"
@@ -3379,6 +3861,14 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
+focus-trap@^4.0.2:
+  version "4.0.2"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/focus-trap/-/focus-trap-4.0.2.tgz#4ee2b96547c9ea0e4252a2d4b2cca68944194663"
+  integrity sha512-HtLjfAK7Hp2qbBtLS6wEznID1mPT+48ZnP2nkHzgjpL4kroYHg0CdqJ5cTXk+UO5znAxF5fRUkhdyfgrhh8Lzw==
+  dependencies:
+    tabbable "^3.1.2"
+    xtend "^4.0.1"
+
 follow-redirects@^1.0.0:
   version "1.7.0"
   resolved "https://devstack.ds.boeing.com/nexus/repository/npm/follow-redirects/-/follow-redirects-1.7.0.tgz#489ebc198dc0e7f64167bd23b03c4c19b5784c76"
@@ -4980,6 +5470,54 @@ map-visit@^1.0.0:
   integrity sha1-7Nyo8TFE5mDxtb1B8S80edmN+48=
   dependencies:
     object-visit "^1.0.0"
+
+material-components-web@^1.0.0:
+  version "1.0.0"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/material-components-web/-/material-components-web-1.0.0.tgz#5faca1f79fe5689eb80e4f1850eb60bd2ba0666f"
+  integrity sha512-Brj9pPmPCO6tJVJFP1DWoZocj+b7pJ50DfLXRz/dUTDrJzeo/nGKGUCp6y/TV93TOy++HXb/uxG5in2BDhI0ww==
+  dependencies:
+    "@material/animation" "^1.0.0"
+    "@material/auto-init" "^1.0.0"
+    "@material/base" "^1.0.0"
+    "@material/button" "^1.0.0"
+    "@material/card" "^1.0.0"
+    "@material/checkbox" "^1.0.0"
+    "@material/chips" "^1.0.0"
+    "@material/dialog" "^1.0.0"
+    "@material/dom" "^1.0.0"
+    "@material/drawer" "^1.0.0"
+    "@material/elevation" "^1.0.0"
+    "@material/fab" "^1.0.0"
+    "@material/feature-targeting" "^0.44.1"
+    "@material/floating-label" "^1.0.0"
+    "@material/form-field" "^1.0.0"
+    "@material/grid-list" "^1.0.0"
+    "@material/icon-button" "^1.0.0"
+    "@material/image-list" "^1.0.0"
+    "@material/layout-grid" "^0.41.0"
+    "@material/line-ripple" "^1.0.0"
+    "@material/linear-progress" "^1.0.0"
+    "@material/list" "^1.0.0"
+    "@material/menu" "^1.0.0"
+    "@material/menu-surface" "^1.0.0"
+    "@material/notched-outline" "^1.0.0"
+    "@material/radio" "^1.0.0"
+    "@material/ripple" "^1.0.0"
+    "@material/rtl" "^0.42.0"
+    "@material/select" "^1.0.0"
+    "@material/shape" "^1.0.0"
+    "@material/slider" "^1.0.0"
+    "@material/snackbar" "^1.0.0"
+    "@material/switch" "^1.0.0"
+    "@material/tab" "^1.0.0"
+    "@material/tab-bar" "^1.0.0"
+    "@material/tab-indicator" "^1.0.0"
+    "@material/tab-scroller" "^1.0.0"
+    "@material/textfield" "^1.0.0"
+    "@material/theme" "^1.0.0"
+    "@material/toolbar" "^1.0.0"
+    "@material/top-app-bar" "^1.0.0"
+    "@material/typography" "^1.0.0"
 
 md5.js@^1.3.4:
   version "1.3.5"
@@ -7569,6 +8107,11 @@ symbol-observable@1.2.0:
   resolved "https://devstack.ds.boeing.com/nexus/repository/npm/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
   integrity sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ==
 
+tabbable@^3.1.2:
+  version "3.1.2"
+  resolved "https://devstack.ds.boeing.com/nexus/repository/npm/tabbable/-/tabbable-3.1.2.tgz#f2d16cccd01f400e38635c7181adfe0ad965a4a2"
+  integrity sha512-wjB6puVXTYO0BSFtCmWQubA/KIn7Xvajw0x0l6eJUudMG/EAiJvIUnyNX6xO4NpGrJ16lbD0eUseB9WxW0vlpQ==
+
 tapable@^1.0.0, tapable@^1.1.0:
   version "1.1.1"
   resolved "https://devstack.ds.boeing.com/nexus/repository/npm/tapable/-/tapable-1.1.1.tgz#4d297923c5a72a42360de2ab52dadfaaec00018e"
@@ -7747,7 +8290,7 @@ tsickle@0.34.0:
     mkdirp "^0.5.1"
     source-map "^0.7.3"
 
-tslib@^1.7.1, tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
+tslib@^1.7.1, tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
   version "1.9.3"
   resolved "https://devstack.ds.boeing.com/nexus/repository/npm/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
   integrity sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
@@ -8319,7 +8862,7 @@ xregexp@4.0.0:
   resolved "https://devstack.ds.boeing.com/nexus/repository/npm/xregexp/-/xregexp-4.0.0.tgz#e698189de49dd2a18cc5687b05e17c8e43943020"
   integrity sha512-PHyM+sQouu7xspQQwELlGwwd05mXUFqwFYfqPO0cC7x4fxyHnnuetmQr6CjJiafIDoH4MogHb9dOoJzR/Y4rFg==
 
-xtend@^4.0.0, xtend@~4.0.1:
+xtend@^4.0.0, xtend@^4.0.1, xtend@~4.0.1:
   version "4.0.1"
   resolved "https://devstack.ds.boeing.com/nexus/repository/npm/xtend/-/xtend-4.0.1.tgz#a5c6d532be656e23db820efb943a1f04998d63af"
   integrity sha1-pcbVMr5lbiPbgg77lDofBJmNY68=

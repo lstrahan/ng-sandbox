@@ -20,7 +20,8 @@ export class MyFormComponent implements OnInit {
       nameCtrl: [],
       ssnCtrl: [],
       dateCtrl: [],
-      selectWithClearCtrl: []
+      selectWithClearCtrl: [],
+      selectedDestinationCtrl: []
     });
   }
 

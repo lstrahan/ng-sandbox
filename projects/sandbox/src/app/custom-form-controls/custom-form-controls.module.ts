@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from '../material.module';
-import { PrimeNgModule } from '../primeng.module';
+import { OverlayModule } from '@angular/cdk/overlay';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 
 import { SimpleCustomFormControlComponent } from './simple-custom-form-control/simple-custom-form-control.component';
@@ -13,6 +13,12 @@ import { DateTimePickerComponent } from './date-time-picker/date-time-picker.com
 import { MyFormComponent } from './my-form/my-form.component';
 import { InlineEditComponent } from './inline-edit/inline-edit.component';
 import { SelectWithClearComponent } from './select-with-clear/select-with-clear.component';
+
+import { PortalModule } from '@angular/cdk/portal';
+import { PrimeNgModule } from '../primeng.module';
+import { CustomSelectComponent } from './custom-dropdown/custom-select.component';
+import { CustomSelectOptionComponent } from './custom-dropdown/custom-select-option.component';
+import { DropdownComponent } from './custom-dropdown/dropdown.component';
 
 const ROUTES: Routes = [
   { path: '', component: MyFormComponent }
@@ -27,11 +33,10 @@ const ROUTES: Routes = [
     PrimeNgModule,
     FlexLayoutModule,
     OwlDateTimeModule, OwlNativeDateTimeModule,
+    OverlayModule, PortalModule
   ],
   declarations: [MyFormComponent, SimpleCustomFormControlComponent, CustomMatFormControlComponent,
-    DateTimePickerComponent,
-    InlineEditComponent,
-    SelectWithClearComponent],
+    DateTimePickerComponent, InlineEditComponent, SelectWithClearComponent, DropdownComponent, CustomSelectComponent, CustomSelectOptionComponent],
   exports: [RouterModule]
 })
 export class CustomFormControlsModule { }

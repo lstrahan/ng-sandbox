@@ -29,7 +29,8 @@
   <ags-inline-edit formControlName="nameCtrl"></ags-inline-edit>
   <br>
 
-    <custom-select label="Destination" placeholder="Pick Your Holiday Destination"
+  <mat-form-field appearance="fill">
+    <custom-select placeholder="Pick Your Holiday Destination"
       formControlName="selectedDestinationCtrl">
       <custom-select-option key="Paris" value="Paris"></custom-select-option>
       <custom-select-option key="Mauritius" value="Mauritius"></custom-select-option>
@@ -38,6 +39,7 @@
       <custom-select-option key="Goa" value="Goa"></custom-select-option>
       <custom-select-option key="Thailand" value="Thailand"></custom-select-option>
     </custom-select>
+  </mat-form-field>
 
   <button mat-raised-button color="primary" (click)="formSubmitClicked()" fxFlexAlign="start">SUBMIT</button>
 

@@ -1,18 +1,16 @@
 import {
-  AfterViewInit,
-  Component,
-  ContentChildren,
-  ElementRef,
-  forwardRef,
-  Input,
-  QueryList,
-  ViewChild
+  AfterViewInit, Component, ContentChildren, ElementRef, forwardRef,
+  Input, QueryList, ViewChild, Optional, Self, HostBinding
 } from '@angular/core';
-import { ActiveDescendantKeyManager } from '@angular/cdk/a11y';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ActiveDescendantKeyManager, FocusMonitor } from '@angular/cdk/a11y';
+import { coerceBooleanProperty } from '@angular/cdk/coercion';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, NgControl } from '@angular/forms';
+import { MatFormFieldControl } from '@angular/material';
+
 import { CustomDropdownService } from './custom-dropdown.service';
 import { CustomSelectOptionComponent } from './custom-select-option.component';
 import { DropdownComponent } from './dropdown.component';
+import { Subject } from 'rxjs';
 
 // http://prideparrot.com/blog/archive/2019/3/how_to_create_custom_dropdown_cdk
 
@@ -21,30 +19,63 @@ import { DropdownComponent } from './dropdown.component';
   templateUrl: './custom-select.html',
   styleUrls: ['./_custom-select.scss'],
   providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => CustomSelectComponent),
-      multi: true
-    },
-    CustomDropdownService
+    CustomDropdownService,
+    { provide: MatFormFieldControl, useExisting: CustomSelectComponent }
   ]
 })
-export class CustomSelectComponent implements AfterViewInit, ControlValueAccessor {
+export class CustomSelectComponent implements AfterViewInit, ControlValueAccessor, MatFormFieldControl<string> {
 
-  @Input()
-  public label: string;
+  // Implementation of MatFormFieldControl so that control can be used inside a <mat-form-field> container
+  static nextId = 0;
+  stateChanges = new Subject<void>();
+  focused = false;
+  errorState = false;
+  controlType = 'custom-mat-form-control';
 
-  @Input()
-  public placeholder: string;
+  @HostBinding('class.floating') get shouldLabelFloat() { return this.focused || !this.empty; }
+  @HostBinding('id') id = `custom-mat-form-control-${CustomSelectComponent.nextId++}`;
+  @HostBinding('attr.aria-describedby') describedBy = '';
 
   @Input()
   public selected: string;
 
   @Input()
-  public required = false;
+  get placeholder(): string { return this._placeholder; }
+  set placeholder(value: string) {
+    this._placeholder = 'value';
+    this.stateChanges.next();
+  }
+  private _placeholder: string;
 
   @Input()
-  public disabled = false;
+  get required(): boolean { return this._required; }
+  set required(value: boolean) {
+    this._required = coerceBooleanProperty(value);
+    this.stateChanges.next();
+  }
+  private _required = false;
+
+  @Input()
+  get disabled(): boolean { return this._disabled; }
+  set disabled(value: boolean) {
+    this._disabled = coerceBooleanProperty(value);
+    this.stateChanges.next();
+  }
+  private _disabled = false;
+
+  @Input()
+  get value(): string | null {
+    return this._valuePart1;
+  }
+  set value(newVal: string | null) {
+    this._valuePart1 = newVal;
+    this.stateChanges.next();
+  }
+  _valuePart1: string = '';
+
+  get empty() {
+    return !this._valuePart1;
+  }
 
   @ViewChild('input')
   public input: ElementRef;
@@ -59,14 +90,23 @@ export class CustomSelectComponent implements AfterViewInit, ControlValueAccesso
 
   public displayText: string;
 
-  public onChangeFn = (_: any) => {};
+  public onChangeFn = (_: any) => { };
 
-  public onTouchedFn = () => {};
+  public onTouchedFn = () => { };
+
 
   private keyManager: ActiveDescendantKeyManager<CustomSelectOptionComponent>;
 
-  constructor(private dropdownService: CustomDropdownService) {
+  constructor(private fm: FocusMonitor, private elRef: ElementRef,
+    @Optional() @Self() public ngControl: NgControl, private dropdownService: CustomDropdownService) {
+
     this.dropdownService.register(this);
+
+    fm.monitor(elRef.nativeElement, true).subscribe(origin => {
+      this.focused = !!origin;
+      this.stateChanges.next();
+    });
+    if (this.ngControl != null) { this.ngControl.valueAccessor = this; } // required for interaction with Angular forms
   }
 
   public ngAfterViewInit() {
@@ -163,5 +203,16 @@ export class CustomSelectComponent implements AfterViewInit, ControlValueAccesso
 
   public onChange() {
     this.onChangeFn(this.selected);
+  }
+
+  // Implementation of MatFormFieldControl so that control can be used inside a <mat-form-field> container
+  setDescribedByIds(ids: string[]) {
+    this.describedBy = ids.join(' ');
+  }
+
+  onContainerClick(event: MouseEvent) {
+    if ((event.target as Element).tagName.toLowerCase() !== 'input') {
+      this.elRef.nativeElement.querySelector('input').focus();
+    }
   }
 }

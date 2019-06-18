@@ -10,6 +10,8 @@ import { CustomSelectComponent } from './custom-select.component';
 })
 export class CustomSelectOptionComponent implements Highlightable {
 
+
+
   @Input()
   public key: string;
 
@@ -37,7 +39,6 @@ export class CustomSelectOptionComponent implements Highlightable {
   public setActiveStyles(): void {
     this.active = true;
   }
-
 
   public setInactiveStyles(): void {
     this.active = false;

@@ -38,6 +38,7 @@ export class CustomSelectOptionComponent implements Highlightable {
     this.active = true;
   }
 
+
   public setInactiveStyles(): void {
     this.active = false;
   }

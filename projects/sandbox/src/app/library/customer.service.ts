@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 import { map, tap, first, take, catchError } from 'rxjs/operators';
 import * as _ from 'lodash';
 
-import { Util } from '../library/util';
+import { Util } from 'ags-hmi-library';
 import { Customer } from './customer';
 
 const httpOptions = {
@@ -45,7 +45,7 @@ export class CustomerService {
   }
 
   /*
-
+  
     createCustomer(customer: Customer): Observable<Customer> {
       console.log('CustomerService.createCustomer');
       const url = Util.urlJoin(this.baseUrl, '/eventModel/event');
@@ -56,7 +56,7 @@ export class CustomerService {
         catchError(this.handleError<Customer>('CustomerService.createCustomer'))
       );
     }
-
+  
     updateCustomer(customer: Customer): Observable<Customer> {
       console.log('CustomerService.updateCustomer');
       const url = Util.urlJoin(this.baseUrl, '/eventModel/event');
@@ -67,7 +67,7 @@ export class CustomerService {
         catchError(this.handleError<Customer>('CustomerService.updateCustomer'))
       );
     }
-
+  
     deleteCustomer(id: string): Observable<any> {
       console.log('CustomerService.deleteCustomer');
       const url = Util.urlJoin(this.baseUrl, '/eventModel/event', id);

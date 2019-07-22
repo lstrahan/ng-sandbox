@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from '../material.module';
 import { TableModule } from 'primeng/table';
+import { AgsHmiLibraryModule } from 'ags-hmi-library';
 
 import { MessageComponent } from './message/message.component';
 import { MiscComponent } from './misc/misc.component';
@@ -21,7 +22,8 @@ const ROUTES: Routes = [
     CommonModule,
     MaterialModule,
     TableModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    AgsHmiLibraryModule
   ],
   providers: [],
   declarations: [MiscComponent, MessageComponent, MultiPartComponent, MultiPartTitleComponent, MultiPartContentComponent, PrimeNgTableComponent],

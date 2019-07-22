@@ -5,8 +5,8 @@
   "private": true,
   "scripts": {
     "start": "ng serve steam",
-    "build-steam-dev": "ng build steam --configuration=dev",
-    "build-pipe-dev": "ng build pipe --configuration=dev",
+    "build-steam-dev": "ng build ags-hmi-library --prod && ng build steam --configuration=dev",
+    "build-pipe-dev": "ng build ags-hmi-library --prod && ng build pipe --configuration=dev",
     "lint": "tslint src/app/**/*.ts",
     "lint-pipe": "tslint projects/pipe/src/app/**/*.ts"
   },
@@ -28,6 +28,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.5.0",
     "ag-grid-angular": "^20.0.0",
     "ag-grid-community": "^20.0.0",
+    "ags-hmi-library": "file:./ags-hmi-library-0.0.1.tgz",
     "cesium": "^1.52.0",
     "cesium-sensor-volumes": "^1.32.0",
     "class-transformer": "^0.2.0",

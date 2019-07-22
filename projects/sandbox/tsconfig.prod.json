@@ -6,7 +6,9 @@
       "@core/*": ["src/app/core/*"],
       "@shared/*": ["src/app/shared/*"],
       "@models/*": ["src/app/models/*"],
-      "environments/*": ["src/environments/*"]
+      "environments/*": ["src/environments/*"],
+      "ags-hmi-library": ["../../dist/ags-hmi-library"],
+      "ags-hmi-library/*": ["../../dist/ags-hmi-library/*"]
     }
   }
 }

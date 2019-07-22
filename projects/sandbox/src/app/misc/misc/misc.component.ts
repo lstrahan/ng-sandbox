@@ -1,6 +1,6 @@
 import { Component, OnInit, ComponentFactoryResolver, ViewContainerRef, ViewChild, Type } from '@angular/core';
 import { MessageComponent } from '../message/message.component';
-import { IconService } from '../../library/icon.service';
+import { IconService } from 'ags-hmi-library';
 
 // https://jaxenter.com/dynamically-create-component-angular-142720.html
 // https://netbasal.com/dynamically-creating-components-with-angular-a7346f4a982d

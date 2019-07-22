@@ -3,3 +3,4 @@
 /.vscode
 /yarn-error.log
 /yarn.lock
+/ags-hmi-library*

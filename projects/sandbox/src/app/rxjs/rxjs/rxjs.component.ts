@@ -88,6 +88,7 @@ export class RxjsComponent implements OnInit {
 
   results: string;
   customer: Customer;
+  serialized: string;
 
   constructor(private customerService: CustomerService) { }
 
@@ -111,7 +112,7 @@ export class RxjsComponent implements OnInit {
   }
 
 
-  deserializeClick() {
+  testClassTransformerClick() {
     const jsonObj = {
       id: '1',
       firstname: 'Lance',
@@ -122,20 +123,7 @@ export class RxjsComponent implements OnInit {
       ]
     };
 
-    const x: MyClass = new MyClass(jsonObj);
-    console.log('deserialized x = ', x);
-
     const c: MyClass = MyClass.deserialize(jsonObj);
-    console.log('deserialized = ', c);
-
-    // const jsonConvert: JsonConvert = new JsonConvert();
-    // jsonConvert.operationMode = OperationMode.LOGGING; // print some debug data
-    // jsonConvert.ignorePrimitiveChecks = false; // don't allow assigning number to string etc.
-    // jsonConvert.valueCheckingMode = ValueCheckingMode.DISALLOW_NULL; // never allow null
-    // let c: Customer = jsonConvert.deserialize(jsonObj, MyClass);
-
-    // console.log('serialized = ', JSON.parse(ObjectMapper.serialize(c).toString()));
-
-    console.log('serialized by class-transformer = ', c.serialize());
+    this.serialized = c.serialize();
   }
 }

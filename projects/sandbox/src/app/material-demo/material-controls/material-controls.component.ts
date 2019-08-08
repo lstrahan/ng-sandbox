@@ -82,6 +82,10 @@ export class MaterialControlsComponent implements OnInit {
   set tickInterval(v) {
     this.slider.tickInterval = Number(v);
   }
+
+  consoleLog(msg: string) {
+    console.log(msg);
+  }
 }
 
 

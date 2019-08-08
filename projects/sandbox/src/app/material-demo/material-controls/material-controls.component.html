@@ -62,6 +62,10 @@
       <mat-chip *ngFor="let chipColor of availableColors" selected="true" color="{{chipColor.color}}">
         {{chipColor.name}}
       </mat-chip>
+      <mat-chip selected="true" color="warn">
+        With icon&nbsp;
+        <mat-icon (click)="consoleLog('clicked')">delete</mat-icon>
+      </mat-chip>
     </mat-chip-list>
   </mat-card-content>
 </mat-card>

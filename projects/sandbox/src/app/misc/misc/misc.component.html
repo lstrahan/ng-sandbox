@@ -1,3 +1,5 @@
+<ags-password-generator></ags-password-generator>
+
 <h2>Dynamically Loaded Components</h2>
 <button (click)="button1Click()">Component #1</button>
 <button (click)="button2Click()">Component #2</button>
@@ -69,7 +71,28 @@
     unallocated: <ags-lib-uci-state-icon state="unallocated"></ags-lib-uci-state-icon>
   </div>
   <div fxLayout="row" fxLayoutAlign="start center">
+    proposed: <ags-lib-uci-state-icon state="proposed"></ags-lib-uci-state-icon>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="start center">
+    allocated: <ags-lib-uci-state-icon state="allocated"></ags-lib-uci-state-icon>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="start center">
+    planned: <ags-lib-uci-state-icon state="planned"></ags-lib-uci-state-icon>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="start center">
+    executing: <ags-lib-uci-state-icon state="executing"></ags-lib-uci-state-icon>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="start center">
+    execution_approved: <ags-lib-uci-state-icon state="execution_approved"></ags-lib-uci-state-icon>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="start center">
     completed: <ags-lib-uci-state-icon state="completed"></ags-lib-uci-state-icon>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="start center">
+    failed: <ags-lib-uci-state-icon state="failed"></ags-lib-uci-state-icon>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="start center">
+    cancelled: <ags-lib-uci-state-icon state="cancelled"></ags-lib-uci-state-icon>
   </div>
   <div fxLayout="row" fxLayoutAlign="start center">
     executing: <mat-icon [svgIcon]="iconService.getIconNameFromUciState('executing')" [ngClass]="iconService.getUciStateClass('executing')"></mat-icon>

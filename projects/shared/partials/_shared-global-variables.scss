@@ -17,15 +17,19 @@ $primary200: mat-color($primary-palette, 200);
 $primary100: mat-color($primary-palette, 100);
 $primary50: mat-color($primary-palette, 50);
 $accent: mat-color($accent-palette);
+$accent800: mat-color($accent-palette);
 $accent300: mat-color($accent-palette, darker);
 $accent200: mat-color($accent-palette);
 $accent100: mat-color($accent-palette, lighter);
+$warn: mat-color($warn-palette);
 $background: map-get(map-get($app-theme, background), background);
 $foreground: map-get(map-get($app-theme, foreground), text);
 $text-normal: map-get(map-get($app-theme, foreground), text);
-$text-medium: rgba($text-normal, 0.6);
-$text-light: rgba($text-normal, 0.3);
-$text-disabled: rgba($text-normal, 0.38);
+$text-medium: rgba($text-normal, .6);
+$text-disabled: rgba($text-normal, .38);
+$text-dark-normal: rgba(#000, .87);
+$text-dark-medium: rgba($text-normal, .6);
+$text-dark-disabled: rgba($text-normal, .38);
 $highlight: rgba($foreground, .1);
 
 $selected: #DB167B;
@@ -38,40 +42,16 @@ $amber: $orange;
 $blue: #0091EA;
 $green: #00C853;
 $white: #B4E7FF;
+$cyan: #80deea;
 
 $default-box-shadow:
   0 3px 5px -1px rgba(0, 0, 0, .2),
   0 6px 10px 0 rgba(0, 0, 0, .14),
   0 1px 18px 0 rgba(0, 0, 0, .12);
 
-// AGS status
-$state-unknown: $grey;
-$state-off: $grey;
-$state-occurring: $blue;
-$state-executing: $blue;
-$state-occurred: $green;
-$state-ok: $green;
-$state-completed: $green;
-$state-caution: $orange;
-$state-proposed: $orange;
-$state-not-occurred: $red;
-$state-alert: $red;
-$state-failed: $red;
-$state-error: $red;
-$state-standby: $blue;
-
-// UCI status
-$uci-state-unallocated: #C4C4C4;
-$uci-state-allocated: #8080FF;
-$uci-state-proposed: #80FF80;
-$uci-state-planned: #8ECB34;
-$uci-state-executing: #FFFFFF;
-$uci-state-completed: #00AA00;
-$uci-state-failed: #FF6060;
-$uci-state-cancelled: #797979;
-
 // security classifications
 $unclassified: $green;
 $confidential: $blue;
 $secret: $red;
-$topsecret: $yellow;
+$topsecret: $orange;
+// topsecret SCI SAR is yellow, todo (mwt)

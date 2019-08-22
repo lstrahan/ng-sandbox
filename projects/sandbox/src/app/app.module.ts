@@ -51,6 +51,10 @@ const ROUTES: Routes = [
   {
     path: 'misc',
     loadChildren: './misc/misc.module#MiscModule'
+  },
+  {
+    path: 'sp500',
+    loadChildren: './sp500/sp500.module#SP500Module'
   }
 ];
 @NgModule({

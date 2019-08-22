@@ -1,59 +1,61 @@
 .text-normal {
-    color: $text-normal;
+  color: $text-normal;
 }
 
 .text-medium {
-    color: $text-medium;
+  color: $text-medium;
+  fill: $text-medium;
 }
 
 .text-disabled {
-    color: $text-disabled;
+  color: $text-disabled;
 }
 
 .no-margin {
-    margin: 0;
+  margin: 0;
 }
 
 a {
-    color: $accent;
-    text-decoration: none;
-    cursor: pointer;
+  color: $accent;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 a:focus {
-    outline: 0;
+  outline: 0;
 }
 
 .panel-header,
 .panel-footer {
-    height: 56px;
-    padding: 10px;
+  height: 56px;
+  padding: 10px;
 }
 
 .search-highlight {
-    font-weight: bold;
+  color: black;
+  background-color: white;
 }
 
 /*******************************
  scroll bars
 ********************************/
 ::-webkit-scrollbar {
-    height: 8px;
-    width: 8px;
+  height: 8px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: rgba($foreground, 0.1);
-    border-radius: 10px;
+  background-color: rgba($foreground, 0.1);
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgba($foreground, 0.6);
-    border-radius: 10px;
+  background-color: rgba($foreground, 0.6);
+  border-radius: 10px;
 }
 
 ::-webkit-resizer {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 ::-webkit-scrollbar-corner {
@@ -64,159 +66,217 @@ a:focus {
  security classifications
 ********************************/
 .classificationBanner {
-    font-weight: bold;
-    text-transform: uppercase;
-    text-align: center;
-    vertical-align: middle;
-    height: 18px;
-    line-height: 18px;
-    opacity: 1;
-    width: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  vertical-align: middle;
+  height: 18px;
+  line-height: 18px;
+  opacity: 1;
+  width: 100%;
 }
 
 .unclassified {
-    color: #263238;
-    background: $unclassified;
+  color: #263238;
+  background: $unclassified;
 }
 
 .confidential {
-    color: #FFFFFF;
-    background: $confidential;
+  color: #FFFFFF;
+  background: $confidential;
 }
 
 .secret {
-    color: #FFFFFF;
-    background: $secret;
+  color: #FFFFFF;
+  background: $secret;
 }
 
 .topsecret,
 .top-secret,
 .top_secret {
-    color: #263238;
-    background: $topsecret;
+  color: #263238;
+  background: $topsecret;
 }
+
+// AGS status
+$state-unknown: $grey;
+$state-off: $grey;
+$state-occurring: $blue;
+$state-executing: $blue;
+$state-execution_approved: #01FFFF;
+$state-occurred: $green;
+$state-ok: $green;
+$state-completed: $green;
+$state-caution: $orange;
+$state-proposed: $orange;
+$state-not-occurred: $red;
+$state-alert: $red;
+$state-failed: $red;
+$state-error: $red;
+$state-standby: $blue;
 
 // state
 // 'fill' and 'color' attributes are both supplied
 // 'fill' is used when applying class to an SVG element
 // 'color' is used when applying class to a <mat-icon> or other HTML element
 .state-unknown {
-    fill: $state-unknown;
-    color: $state-unknown;
+  fill: $state-unknown;
+  color: $state-unknown;
 }
 
 .state-off {
-    fill: $state-off;
-    color: $state-off;
+  fill: $state-off;
+  color: $state-off;
 }
 
 .state-occurring {
-    fill: $state-occurring;
-    color: $state-occurring;
+  fill: $state-occurring;
+  color: $state-occurring;
 }
 
 .state-executing {
-    fill: $state-executing;
-    color: $state-executing;
+  fill: $state-executing;
+  color: $state-executing;
 }
 
 .state-occurred {
-    fill: $state-occurred;
-    color: $state-occurred;
+  fill: $state-occurred;
+  color: $state-occurred;
 }
 
 .state-ok {
-    fill: $state-ok;
-    color: $state-ok;
+  fill: $state-ok;
+  color: $state-ok;
 }
 
 .state-completed,
 .state-complete {
-    fill: $state-completed;
-    color: $state-completed;
+  fill: $state-completed;
+  color: $state-completed;
 }
 
 .state-caution {
-    fill: $state-caution;
-    color: $state-caution;
+  fill: $state-caution;
+  color: $state-caution;
 }
 
 .state-proposed {
-    fill: $state-proposed;
-    color: $state-proposed;
+  fill: $state-proposed;
+  color: $state-proposed;
 }
 
 .state-not-occurred,
 .state-notoccurred,
 .state-not_occurred {
-    fill: $state-not-occurred;
-    color: $state-not-occurred;
+  fill: $state-not-occurred;
+  color: $state-not-occurred;
 }
 
 .state-alert {
-    fill: $state-alert;
-    color: $state-alert;
+  fill: $state-alert;
+  color: $state-alert;
 }
 
 .state-failed {
-    fill: $state-failed;
-    color: $state-failed;
+  fill: $state-failed;
+  color: $state-failed;
 }
 
 .state-error {
-    fill: $state-error;
-    color: $state-error;
+  fill: $state-error;
+  color: $state-error;
 }
 
 .state-standby {
-    fill: $state-standby;
-    color: $state-standby;
+  fill: $state-standby;
+  color: $state-standby;
 }
+
+// UCI status
+$uci-state-unknown: $grey;
+$uci-state-unallocated: #C4C4C4;
+$uci-state-proposed: #80FF80;
+$uci-state-allocated-pending-approval: #FFFF01;
+$uci-state-allocated: #8080FF;
+$uci-state-planned-pending-approval: #FFAAFF;
+$uci-state-planned: #8ECB34;
+$uci-state-awaiting-execution-approval: #FFFF01;
+$uci-state-execution-approved: #01FFFF;
+$uci-state-executing: $grey; //#FFFFFF; // using $grey instead since background is almost white;
+$uci-state-completed: #00AA00;
+$uci-state-dropped: #FFAA02;
+$uci-state-failed: #FF6060;
+$uci-state-cancelled: #797979;
 
 // UCI state
 .state-uci-unknown {
-    fill: $grey;
-    color: $grey;
+  fill: $uci-state-unknown;
+  color: $uci-state-unknown;
 }
 
 .state-uci-unallocated {
-    fill: $uci-state-unallocated;
-    color: $uci-state-unallocated;
-}
-
-.state-uci-allocated {
-    fill: $uci-state-allocated;
-    color: $uci-state-allocated;
+  fill: $uci-state-unallocated;
+  color: $uci-state-unallocated;
 }
 
 .state-uci-proposed {
-    fill: $uci-state-proposed;
-    color: $uci-state-proposed;
+  fill: $uci-state-proposed;
+  color: $uci-state-proposed;
+}
+
+.state-uci-allocated-pending-approval {
+  fill: $uci-state-allocated-pending-approval;
+  color: $uci-state-allocated-pending-approval;
+}
+
+.state-uci-allocated {
+  fill: $uci-state-allocated;
+  color: $uci-state-allocated;
+}
+
+.state-uci-planned-pending-approval {
+  fill: $uci-state-planned-pending-approval;
+  color: $uci-state-planned-pending-approval;
 }
 
 .state-uci-planned {
-    fill: $uci-state-planned;
-    color: $uci-state-planned;
+  fill: $uci-state-planned;
+  color: $uci-state-planned;
+}
+
+.state-uci-awaiting-execution-approval {
+  fill: $uci-state-awaiting-execution-approval;
+  color: $uci-state-awaiting-execution-approval;
+}
+
+.state-uci-execution-approved {
+  fill: $uci-state-execution-approved;
+  color: $uci-state-execution-approved;
 }
 
 .state-uci-executing {
-    fill: $grey; // $uci-state-executing; // using $grey instead since background is white;
-    color: $grey;
+  fill: $uci-state-executing;
+  color: $uci-state-executing;
 }
 
 .state-uci-completed {
-    fill: $uci-state-completed;
-    color: $uci-state-completed;
+  fill: $uci-state-completed;
+  color: $uci-state-completed;
+}
+
+.state-uci-dropped {
+  fill: $uci-state-dropped;
+  color: $uci-state-dropped;
 }
 
 .state-uci-failed {
-    fill: $uci-state-failed;
-    color: $uci-state-failed;
+  fill: $uci-state-failed;
+  color: $uci-state-failed;
 }
 
 .state-uci-cancelled {
-    fill: $uci-state-cancelled;
-    color: $uci-state-cancelled;
+  fill: $uci-state-cancelled;
+  color: $uci-state-cancelled;
 }
 
 
@@ -224,12 +284,12 @@ a:focus {
 
 /* roboto-300 - latin */
 @font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 300;
-    src: local('Roboto Light'), local('Roboto-Light'),
-        url('/assets/fonts/roboto-v18-latin-300.woff2') format('woff2'),
-        url('/assets/fonts/roboto-v18-latin-300.woff') format('woff');
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'),
+    url('/assets/fonts/roboto-v18-latin-300.woff2') format('woff2'),
+    url('/assets/fonts/roboto-v18-latin-300.woff') format('woff');
 }
 
 /* roboto-300italic - latin */
@@ -244,12 +304,12 @@ a:focus {
 
 /* roboto-regular - latin */
 @font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Roboto'), local('Roboto-Regular'),
-        url('/assets/fonts/roboto-v18-latin-regular.woff2') format('woff2'),
-        url('/assets/fonts/roboto-v18-latin-regular.woff') format('woff');
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'),
+    url('/assets/fonts/roboto-v18-latin-regular.woff2') format('woff2'),
+    url('/assets/fonts/roboto-v18-latin-regular.woff') format('woff');
 }
 
 /* roboto-italic - latin */
@@ -264,12 +324,12 @@ a:focus {
 
 /* roboto-500 - latin */
 @font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    src: local('Roboto Medium'), local('Roboto-Medium'),
-        url('/assets/fonts/roboto-v18-latin-500.woff2') format('woff2'),
-        url('/assets/fonts/roboto-v18-latin-500.woff') format('woff');
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'),
+    url('/assets/fonts/roboto-v18-latin-500.woff2') format('woff2'),
+    url('/assets/fonts/roboto-v18-latin-500.woff') format('woff');
 }
 
 /* roboto-500italic - latin */
@@ -294,13 +354,13 @@ a:focus {
 
 /* roboto-700 - latin */
 @font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Roboto Bold'), local('Roboto-Bold'),
-        url('/assets/fonts/roboto-v18-latin-700.woff2') format('woff2'),
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'),
+    url('/assets/fonts/roboto-v18-latin-700.woff2') format('woff2'),
 
-        url('/assets/fonts/roboto-v18-latin-700.woff') format('woff');
+    url('/assets/fonts/roboto-v18-latin-700.woff') format('woff');
 
 }
 
@@ -326,12 +386,12 @@ a:focus {
 
 /* roboto-mono-regular - latin */
 @font-face {
-    font-family: 'Roboto Mono';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Roboto Mono'), local('RobotoMono-Regular'),
-        url('/assets/fonts/roboto-mono-v5-latin-regular.woff2') format('woff2'),
-        url('/assets/fonts/roboto-mono-v5-latin-regular.woff') format('woff');
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Mono'), local('RobotoMono-Regular'),
+    url('/assets/fonts/roboto-mono-v5-latin-regular.woff2') format('woff2'),
+    url('/assets/fonts/roboto-mono-v5-latin-regular.woff') format('woff');
 }
 
 /* roboto-mono-italic - latin */

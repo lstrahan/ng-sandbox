@@ -133,6 +133,12 @@
   overflow: hidden;
 }
 
+.small-edit-dialog {
+  .mat-dialog-container {
+    padding: 10px 20px 0 20px;
+  }
+}
+
 // tabs ////////////////////////////////
 .mat-tab-group {
   .mat-tab-header {
@@ -181,3 +187,8 @@
   }
 }
 
+// snack-bar ////////////////////////////////
+.mat-snack-bar-container {
+  background: $primary900;
+  color: white;
+}

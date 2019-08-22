@@ -4,9 +4,10 @@
 
 // ags-lib-date-time-picker
 @import "~ng-pick-datetime/assets/style/picker.min.css";
+
 .owl-dt-container {
-    background-color: $primary;
-    font-family: inherit;
+  background-color: $primary;
+  font-family: inherit;
 }
 
 .owl-dt-container,
@@ -15,23 +16,42 @@
 .owl-dt-weekday,
 .owl-dt-timer-content,
 .owl-dt-control-content {
-    color: $text-normal;
+  color: $text-normal;
 }
 
 .owl-dt-calendar-table .owl-dt-calendar-cell:hover {
-    background-color: $primary-light;
-    border-radius: 999px;
+  background-color: $primary-light;
+  border-radius: 999px;
 }
 
 .owl-dt-calendar-table .owl-dt-calendar-cell-selected {
-    background-color: $primary-light;
-    border: 1px solid white;
+  background-color: $primary-light;
+  border: 1px solid white;
 }
 
 .owl-dt-control-button-arrow svg g path {
-    fill: $text-normal;
+  fill: $text-normal;
 }
 
 .owl-dt-timer-content .owl-dt-timer-input {
-    border: 1px solid $text-normal;
+  border: 1px solid $text-normal;
+}
+
+// ags-lib-inline-edit component
+.ags-lib-inline-edit {
+  input:not([readonly])+button {
+    color: $accent;
+  }
+
+  input {
+    caret-color: $accent;
+  }
+}
+
+// ags-lib-error component
+.ags-lib-error {
+  .mat-button {
+    background: $accent;
+    color: black;
+  }
 }

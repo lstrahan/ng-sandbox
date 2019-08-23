@@ -20,23 +20,12 @@
             "stylePreprocessorOptions": {
               "includePaths": [
                 "projects/sandbox/src",
-                "projects/shared/partials",
                 "node_modules"
               ]
             },
             "assets": [
               "projects/sandbox/src/assets",
-              "projects/sandbox/src/favicon.ico",
-              {
-                "glob": "**/*",
-                "input": "projects/shared/WEB-INF",
-                "output": "/WEB-INF/"
-              },
-              {
-                "glob": "**/*",
-                "input": "projects/shared/assets",
-                "output": "/assets/"
-              }
+              "projects/sandbox/src/favicon.ico"
             ],
             "styles": [
               "projects/sandbox/src/styles.scss"
@@ -52,73 +41,8 @@
                 }
               ]
             },
-            "dev2": {
-              "fileReplacements": [
-                {
-                  "replace": "projects/sandbox/src/environments/environment.ts",
-                  "with": "projects/sandbox/src/environments/environment.dev2.ts"
-                }
-              ]
-            },
-            "bower": {
-              "fileReplacements": [
-                {
-                  "replace": "projects/sandbox/src/environments/environment.ts",
-                  "with": "projects/sandbox/src/environments/environment.bower.ts"
-                }
-              ]
-            },
-            "int": {
-              "fileReplacements": [
-                {
-                  "replace": "projects/sandbox/src/environments/environment.ts",
-                  "with": "projects/sandbox/src/environments/environment.int.ts"
-                }
-              ]
-            },
-            "int-prod": {
-              "fileReplacements": [
-                {
-                  "replace": "projects/sandbox/src/environments/environment.ts",
-                  "with": "projects/sandbox/src/environments/environment.int.ts"
-                }
-              ],
-              "tsConfig": "projects/sandbox/tsconfig.prod.json",
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true
-            },
-            "ops": {
-              "fileReplacements": [
-                {
-                  "replace": "projects/sandbox/src/environments/environment.ts",
-                  "with": "projects/sandbox/src/environments/environment.ops.ts"
-                }
-              ],
-              "tsConfig": "projects/sandbox/tsconfig.prod.json",
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true
-            },
-            "test": {
-              "fileReplacements": [
-                {
-                  "replace": "projects/sandbox/src/environments/environment.ts",
-                  "with": "projects/sandbox/src/environments/environment.test.ts"
-                }
-              ],
+            "prod": {
+              "fileReplacements": [],
               "tsConfig": "projects/sandbox/tsconfig.prod.json",
               "optimization": true,
               "outputHashing": "all",
@@ -141,20 +65,8 @@
             "dev": {
               "browserTarget": "sandbox:build:dev"
             },
-            "dev2": {
-              "browserTarget": "sandbox:build:dev2"
-            },
-            "int": {
-              "browserTarget": "sandbox:build:int"
-            },
-            "int-prod": {
-              "browserTarget": "sandbox:build:int-prod"
-            },
-            "ops": {
-              "browserTarget": "sandbox:build:ops"
-            },
-            "test": {
-              "browserTarget": "sandbox:build:test"
+            "prod": {
+              "browserTarget": "sandbox:build:prod"
             }
           }
         },
@@ -172,7 +84,7 @@
       }
     }
   },
-  "defaultProject": "steam",
+  "defaultProject": "sandbox",
   "cli": {
     "packageManager": "yarn"
   },

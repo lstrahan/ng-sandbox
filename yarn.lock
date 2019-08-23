@@ -1554,12 +1554,6 @@ agentkeepalive@^3.4.1:
   dependencies:
     humanize-ms "^1.2.1"
 
-"ags-hmi-library@file:./ags-hmi-library-1.4.0.tgz":
-  version "1.4.0"
-  resolved "file:./ags-hmi-library-1.4.0.tgz#2aaf62db6c3c32fbe56fc554be5e9203378ff60d"
-  dependencies:
-    tslib "^1.9.0"
-
 ajv-errors@^1.0.0:
   version "1.0.1"
   resolved "https://devstack.ds.boeing.com/nexus/repository/npm/ajv-errors/-/ajv-errors-1.0.1.tgz#f35986aceb91afadec4102fbd85014950cefa64d"

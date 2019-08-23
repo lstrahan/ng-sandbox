@@ -28,7 +28,6 @@
     "@ngxs/logger-plugin": "^3.4.3",
     "@ngxs/storage-plugin": "^3.4.3",
     "@ngxs/store": "^3.4.3",
-    "ags-hmi-library": "file:./ags-hmi-library-1.4.0.tgz",
     "ag-grid-angular": "^20.1.0",
     "ag-grid-community": "^20.1.0",
     "cesium": "^1.51.0",

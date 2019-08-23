@@ -1,1 +1,0 @@
-These filenames are prepended with '_shared-' so that the names do not conflict with filenames in the individual app folders

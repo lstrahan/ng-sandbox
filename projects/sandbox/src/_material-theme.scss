@@ -1,5 +1,29 @@
-@import 'shared-material-theme';
-@import 'shared-global-variables'; // this must be included after 'shared-material-theme'
+@import '~@angular/material/theming';
 
-// Material styles that are specific to this project go in this file.
-// Styles that apply to all projects should go in '_shared-material-theme.scss'
+// @include mat-core($custom-typography); // don't include this here or it will duplicate your material styles all over the place
+
+$app-primary: mat-palette($mat-blue-grey, 800, 700, 900);
+$app-accent: mat-palette($mat-cyan, 200, 100, 300);
+
+// override the default background colors for dark theme
+$mat-dark-theme-background: (status-bar: black,
+  app-bar: mat-color($app-primary, darker),
+  background: mat-color($app-primary, darker),
+  hover: rgba(white, 0.04), // TODO(kara): check style with Material Design UX
+  card: mat-color($app-primary),
+  dialog: mat-color($app-primary),
+  disabled-button: rgba(white, 0.12),
+  raised-button: mat-color($app-primary),
+  focused-button: $light-focused,
+  selected-button: mat-color($app-primary, darker),
+  selected-disabled-button: mat-color($app-primary),
+  disabled-button-toggle: black,
+  unselected-chip: mat-color($app-primary, lighter),
+  disabled-list-option: black);
+
+$app-theme: mat-dark-theme($app-primary, $app-accent);
+@include angular-material-theme($app-theme);
+
+$custom-typography: mat-typography-config($font-family: 'Roboto, Arial, sans-serif');
+@include mat-core($custom-typography);
+

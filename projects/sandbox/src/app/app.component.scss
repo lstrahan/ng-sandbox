@@ -1,5 +1,3 @@
-@import 'material-theme';
-
 .mat-sidenav-container {
     .mat-sidenav {
         overflow-y: auto;
@@ -10,8 +8,6 @@
         }
     }
     .mat-sidenav-content {
-        background: $primary-light;
-
         #app-toolbar {
             .mat-headline {
                 margin-bottom: 0px;

@@ -1,9 +1,0 @@
-$mdc-theme-primary: $primary;
-$mdc-theme-secondary: $accent;
-@import "~material-components-web/material-components-web";
-
-.mdc-fab {
-  background-color: $mdc-theme-primary;
-  color: $mdc-theme-on-primary;
-  // box-shadow: none;
-}

@@ -1,3 +1,7 @@
+add primeng components
+
+upgrade ag-grid
+
 websockets
     https://github.com/TigorC/rxjs_websocket
     Try this for... https://stackoverflow.com/questions/31131490/how-to-subscribe-to-an-event-on-a-service-in-angular2

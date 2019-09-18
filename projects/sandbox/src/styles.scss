@@ -2,9 +2,27 @@
 
 @import 'material-theme';
 @import '~vis/dist/vis.min.css';
-@import '~primeicons/primeicons.css';
-@import '~primeng/resources/primeng.min.css';
 @import "~material-components-web/material-components-web";
+// @import '~primeicons/primeicons.css';
+// @import '~primeng/resources/primeng.min.css';
+
+$primary-palette: map-get($app-theme, primary);
+$accent-palette: map-get($app-theme, accent);
+$warn-palette: map-get($app-theme, warn);
+
+$primary: mat-color($primary-palette);
+$primary-light: mat-color($primary-palette, lighter);
+$primary-dark: mat-color($primary-palette, darker);
+$primary900: mat-color($primary-palette, darker);
+$primary800: mat-color($primary-palette);
+$primary700: mat-color($primary-palette, lighter);
+$accent: mat-color($accent-palette);
+$background: map-get(map-get($app-theme, background), background);
+$foreground: map-get(map-get($app-theme, foreground), text);
+$text-normal: map-get(map-get($app-theme, foreground), text);
+$text-medium: rgba($text-normal, .6);
+$highlight: rgba($foreground, .1);
+
 
 html,
 body {
@@ -111,3 +129,79 @@ a:focus {
     url('/assets/fonts/roboto-mono-v5-latin-regular.woff') format('woff');
 }
 
+// ag-grid ////////////////////////////////////////////////////////////////////////////////////////
+$icons-path: '~ag-grid-community/src/styles/ag-theme-material/icons/';
+$foreground-color: $foreground;
+$background-color: $primary800;
+$header-foreground-color: $text-medium;
+$border-color: $highlight;
+$icon-color: $foreground-color;
+$secondary-font-weight: 400; // used in the header
+$hover-color: $highlight;
+$primary-color: $border-color;
+@import '~ag-grid-community/src/styles/ag-grid';
+@import '~ag-grid-community/src/styles/ag-theme-material/sass/ag-theme-material';
+
+// Then overwrite the icon-background mixin like such:
+@mixin icon-background($icon) {
+  -webkit-mask: url('#{$icons-path}#{$icon}.svg') no-repeat center;
+  mask: url('#{$icons-path}#{$icon}.svg') no-repeat center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  background-color: $icon-color;
+  background: $icon-color;
+  background-size: 14px 14px;
+  display: inline-block;
+}
+
+$icons: aggregation arrows asc checkbox-checked-readonly checkbox-checked checkbox-indeterminate-readonly checkbox-indeterminate checkbox-unchecked-readonly checkbox-unchecked column columns contracted copy cut desc expanded eye-slash eye filter group indeterminate left loading menu minus none not-allowed paste pin pivot plus right small-left small-right small-up small-down tick cross tree-open tree-closed tree-indeterminate;
+
+@each $icon in $icons {
+  .ag-theme-material .ag-icon-#{$icon} {
+    @include icon-background('#{$icon}');
+  }
+}
+
+ag-grid-angular.ag-theme-material {
+  overflow: auto;
+
+  .ag-row .ag-cell.ag-cell-focus {
+    border: none;
+  }
+}
+
+
+// datetimepicker /////////////////////////////////////////////////////////////////////////////////
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+
+.owl-dt-container {
+  background-color: $primary;
+  font-family: inherit;
+}
+
+.owl-dt-container,
+.owl-dt-calendar-table .owl-dt-calendar-header,
+.owl-dt-calendar-table .owl-dt-calendar-cell-content,
+.owl-dt-weekday,
+.owl-dt-timer-content,
+.owl-dt-control-content {
+  color: $text-normal;
+}
+
+.owl-dt-calendar-table .owl-dt-calendar-cell:hover {
+  background-color: $primary-light;
+  border-radius: 999px;
+}
+
+.owl-dt-calendar-table .owl-dt-calendar-cell-selected {
+  background-color: $primary-light;
+  border: 1px solid white;
+}
+
+.owl-dt-control-button-arrow svg g path {
+  fill: $text-normal;
+}
+
+.owl-dt-timer-content .owl-dt-timer-input {
+  border: 1px solid $text-normal;
+}

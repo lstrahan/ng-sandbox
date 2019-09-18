@@ -11,7 +11,7 @@ import { MessageComponent } from '../message/message.component';
 })
 export class MiscComponent implements OnInit {
 
-  @ViewChild('componentcontainer', { read: ViewContainerRef }) container: ViewContainerRef;
+  @ViewChild('componentcontainer', { read: ViewContainerRef, static: false }) container: ViewContainerRef;
 
   constructor(private resolver: ComponentFactoryResolver) { }
 

@@ -15,7 +15,6 @@ import { InlineEditComponent } from './inline-edit/inline-edit.component';
 import { SelectWithClearComponent } from './select-with-clear/select-with-clear.component';
 
 import { PortalModule } from '@angular/cdk/portal';
-import { PrimeNgModule } from '../primeng.module';
 import { CustomSelectComponent } from './custom-dropdown/custom-select.component';
 import { CustomSelectOptionComponent } from './custom-dropdown/custom-select-option.component';
 import { DropdownComponent } from './custom-dropdown/dropdown.component';
@@ -30,7 +29,6 @@ const ROUTES: Routes = [
     CommonModule,
     FormsModule, ReactiveFormsModule,
     MaterialModule,
-    PrimeNgModule,
     FlexLayoutModule,
     OwlDateTimeModule, OwlNativeDateTimeModule,
     OverlayModule, PortalModule

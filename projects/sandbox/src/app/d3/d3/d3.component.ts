@@ -18,9 +18,9 @@ export class D3Component implements OnInit {
 
   mydrag = d3.drag();
   msg: string;
-    
-  @ViewChild('componentcontainer', { read: ViewContainerRef }) container: ViewContainerRef;
-  
+
+  @ViewChild('componentcontainer', { read: ViewContainerRef, static: false }) container: ViewContainerRef;
+
   constructor(private resolver: ComponentFactoryResolver) { }
 
   ngOnInit() {
@@ -82,7 +82,7 @@ export class D3Component implements OnInit {
     // <h1>xxxxxx xxxxxx xxxx</h1>
     // <div matTooltip="sdfsfsdfsdfs" style="color: red; background: blue;">thisisred</div>
     // `);
-    
+
     // const factory = this.resolver.resolveComponentFactory(MatComponent);
     // const componentRef = this.container.createComponent(factory);
     // fo.node().appendChild(componentRef.instance);

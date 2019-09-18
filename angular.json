@@ -16,7 +16,6 @@
             "main": "projects/sandbox/src/main.ts",
             "tsConfig": "projects/sandbox/tsconfig.json",
             "polyfills": "projects/sandbox/src/polyfills.ts",
-            "baseHref": "/ags/sandbox/",
             "stylePreprocessorOptions": {
               "includePaths": [
                 "projects/sandbox/src",

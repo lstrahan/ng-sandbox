@@ -4,30 +4,30 @@
   "newProjectRoot": "projects",
   "projects": {
     "sandbox": {
-      "root": "projects/sandbox",
-      "sourceRoot": "projects/sandbox/src",
+      "root": "",
+      "sourceRoot": "src",
       "projectType": "application",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/sandbox",
-            "index": "projects/sandbox/src/index.html",
-            "main": "projects/sandbox/src/main.ts",
-            "tsConfig": "projects/sandbox/tsconfig.json",
-            "polyfills": "projects/sandbox/src/polyfills.ts",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "tsConfig": "tsconfig.json",
+            "polyfills": "src/polyfills.ts",
             "stylePreprocessorOptions": {
               "includePaths": [
-                "projects/sandbox/src",
+                "src",
                 "node_modules"
               ]
             },
             "assets": [
-              "projects/sandbox/src/assets",
-              "projects/sandbox/src/favicon.ico"
+              "src/assets",
+              "src/favicon.ico"
             ],
             "styles": [
-              "projects/sandbox/src/styles.scss"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -35,14 +35,14 @@
             "dev": {
               "fileReplacements": [
                 {
-                  "replace": "projects/sandbox/src/environments/environment.ts",
-                  "with": "projects/sandbox/src/environments/environment.dev.ts"
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev.ts"
                 }
               ]
             },
             "prod": {
               "fileReplacements": [],
-              "tsConfig": "projects/sandbox/tsconfig.prod.json",
+              "tsConfig": "tsconfig.prod.json",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -73,7 +73,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/sandbox/tsconfig.json"
+              "tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"

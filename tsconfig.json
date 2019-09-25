@@ -12,6 +12,13 @@
     "target": "es5",
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
+    "baseUrl": "./",
+    "paths": {
+      "@core/*": ["src/app/core/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@models/*": ["src/app/models/*"],
+      "environments/*": ["src/environments/*"]
+    },
     "typeRoots": [
       "node_modules/@types"
     ],

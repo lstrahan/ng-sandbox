@@ -1,10 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'material-theme';
-@import '~vis/dist/vis.min.css';
-@import "~material-components-web/material-components-web";
-// @import '~primeicons/primeicons.css';
-// @import '~primeng/resources/primeng.min.css';
 
 $primary-palette: map-get($app-theme, primary);
 $accent-palette: map-get($app-theme, accent);

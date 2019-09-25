@@ -13,6 +13,7 @@ import { CustomerService } from './library/customer.service';
 import { AppComponent } from './app.component';
 
 import { MaterialDemoModule } from './material-demo/material-demo.module';
+import { ClassTransformerComponent } from './class-transformer/class-transformer.component';
 
 const ROUTES: Routes = [
   { path: '', redirectTo: '/material', pathMatch: 'full' },
@@ -45,6 +46,10 @@ const ROUTES: Routes = [
     loadChildren: './rxjs/rxjs.module#RxjsModule'
   },
   {
+    path: 'class-transformer',
+    component: ClassTransformerComponent
+  },
+  {
     path: 'd3',
     loadChildren: './d3/d3.module#D3Module'
   },
@@ -59,7 +64,8 @@ const ROUTES: Routes = [
 ];
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ClassTransformerComponent
   ],
   imports: [
     RouterModule.forRoot(ROUTES, { enableTracing: false }),

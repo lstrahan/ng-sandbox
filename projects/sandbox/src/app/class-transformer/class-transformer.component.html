@@ -1,0 +1,30 @@
+<button mat-raised-button (click)="testClassTransformerClick()">Test #1</button>
+@Exclude(), @Expose(), @Transform()<br><br>
+
+<button mat-raised-button (click)="testClassTransformer2Click()">Test #2</button>
+Polymorphic array<br><br>
+
+<button mat-raised-button (click)="testClassTransformer3Click()">Test #3</button>
+Polymorphic property: Pet.animal = Elephant, then Bird<br><br>
+
+<div fxLayout="row">
+    <div>
+        JSON<br>
+        <pre>{{ json | json }}</pre>
+    </div>
+    <span style="width: 100px;"></span>
+    <div>
+        plainToClass<br>
+        <pre>{{ classObj | json }}</pre>
+    </div>
+    <span style="width: 100px;"></span>
+    <div>
+        classToPlain<br>
+        <pre>{{ plainObj | json }}</pre>
+    </div>
+</div>
+
+
+
+
+

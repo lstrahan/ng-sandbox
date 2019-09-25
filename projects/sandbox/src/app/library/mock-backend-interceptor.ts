@@ -42,6 +42,14 @@ export class MockBackendInterceptor implements HttpInterceptor {
         }
       }
 
+      // DELETE customer/$id
+      if (request.url.match(/\/customer\/\d+$/) && request.method === 'DELETE') {
+        console.log(`MOCK ${request.url}`);
+        let urlParts = request.url.split('/');
+        let id = urlParts[urlParts.length - 1];
+        return of(new HttpResponse({ status: 200, body: `success: id = ${id}` }));
+      }
+
       // example POST endpoint
       if (request.url.endsWith('/exampleEndpoint') && request.method === 'POST') {
         let reqBody = request.body;

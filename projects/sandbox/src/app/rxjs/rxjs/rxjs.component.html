@@ -2,9 +2,9 @@
 <button mat-raised-button (click)="getCustomers()">GET CUSTOMERS</button>
 &nbsp;
 <button mat-raised-button (click)="getCustomerById('2')">GET CUSTOMER #2</button>
+&nbsp;
+<button mat-raised-button (click)="sequentialCalls(['1','2'])">SEQUENTIAL CALLS</button>
 <br><br>
 {{results}}
 <br><br>
-<button mat-raised-button (click)="testClassTransformerClick()">Test class-transformer</button>
-<pre>{{ serialized | json }}</pre>
-<br><br>
+

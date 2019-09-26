@@ -1,5 +1,6 @@
 import { Expose, Exclude, Transform, classToPlain, Type, plainToClass, TypeHelpOptions } from 'class-transformer';
 import moment from 'moment';
+import _ from 'lodash';
 
 export const personJson = {
   id: '1',
@@ -135,7 +136,8 @@ export class Zoo {
       subTypes: [
         { value: Elephant, name: 'Elephant' },
         { value: Bird, name: 'Bird' },
-        { value: Animal, name: 'Unknown' }
+        { value: Animal, name: 'Unknown' },
+        { value: Animal, name: '' }
       ]
     }
   })
@@ -195,6 +197,9 @@ export class Pet {
   }
 
   toPlainObject(): any {
-    return classToPlain(this);
+    const origObj = _.cloneDeep(this);
+    const plainObj = classToPlain(this);
+    (<Pet>plainObj).animal.animalType = origObj.animal.animalType;
+    return plainObj;
   }
 }

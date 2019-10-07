@@ -41,15 +41,15 @@ export class ClassTransformerComponent implements OnInit {
     console.log(myPet.toPlainObject());  // Animal
 
     myPet = new Pet(petsJson[0]);
-    console.log(myPet.animal.constructor.name);  // Elephant
+    console.log(myPet);  // Elephant
 
     myPet = new Pet(petsJson[1]);
-    console.log(myPet.animal.constructor.name);  // Bird
+    console.log(myPet);  // Bird
 
     myPet.animal = new Animal();
     myPet.animal.animalType = 'Bird';
-    myPet = new Pet(myPet.toPlainObject())
-    console.log(myPet.animal.constructor.name);  // Bird
+    myPet = new Pet(myPet.toPlainObject());
+    console.log(myPet);  // Bird
 
     this.classObj = myPet;
     this.plainObj = myPet.toPlainObject();

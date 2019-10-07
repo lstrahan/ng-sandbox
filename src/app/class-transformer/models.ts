@@ -173,8 +173,11 @@ export const petsJson = [
 // The 'Pet' class has a polymorphic property 'animal' that contain any class that extends 'Animal'
 export class Pet {
   name: string;
+  propNotInJson: string = '';
+  arrayNotInJson: string[] = [];
+
   @Type((type: TypeHelpOptions) => {
-    console.log(type);
+    // console.log(type);
     return Animal;
   },
   {
@@ -197,6 +200,7 @@ export class Pet {
   }
 
   toPlainObject(): any {
+    // return classToPlain(this);
     const origObj = _.cloneDeep(this);
     const plainObj = classToPlain(this);
     (<Pet>plainObj).animal.animalType = origObj.animal.animalType;

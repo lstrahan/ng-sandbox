@@ -7,6 +7,8 @@
     "start": "ng serve"
   },
   "dependencies": {
+    "@ag-grid-community/all-modules": "^22.0.0",
+    "@ag-grid-community/angular": "^22.0.0",
     "@angular/animations": "^8.2.5",
     "@angular/cdk": "^8.1.4",
     "@angular/common": "^8.2.5",
@@ -24,8 +26,6 @@
     "@ngxs/logger-plugin": "^3.5.1",
     "@ngxs/storage-plugin": "^3.5.1",
     "@ngxs/store": "^3.5.1",
-    "ag-grid-angular": "^20.1.0",
-    "ag-grid-community": "^20.1.0",
     "cesium": "^1.51.0",
     "cesium-sensor-volumes": "^1.32.0",
     "class-transformer": "^0.2.3",

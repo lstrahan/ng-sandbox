@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { GridOptions, ColDef, GridApi, ColumnApi, GridReadyEvent, SelectionChangedEvent, RowBounds,
-  RowClickedEvent, ModelUpdatedEvent, RowDataChangedEvent, DateFilter } from 'ag-grid-community';
+  RowClickedEvent, ModelUpdatedEvent, RowDataChangedEvent, DateFilter } from '@ag-grid-community/all-modules';
+import { AllCommunityModules } from '@ag-grid-community/all-modules';
 import { MyGridComponent } from '../my-grid-component/my-grid.component';
 import data from './data.json';
 
@@ -19,9 +20,10 @@ export class MyAgGridComponent {
   rowData = data;
   originalCount = data.length;
 
+  modules = AllCommunityModules;
 
   constructor() {
-    this.gridOptions = <GridOptions>{ };
+    this.gridOptions = <GridOptions>{};
 
     this.defaultColDef = <ColDef>{
       width: 200,

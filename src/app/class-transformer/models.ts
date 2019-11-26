@@ -1,6 +1,7 @@
 import { Expose, Exclude, Transform, classToPlain, Type, plainToClass, TypeHelpOptions } from 'class-transformer';
 import moment from 'moment';
 import _ from 'lodash';
+import { basename } from 'path';
 
 export const personJson = {
   id: '1',
@@ -64,21 +65,28 @@ export const zooJson = {
   name: 'Colorado Springs Zoo',
   city: 'Colorado Springs, CO',
   animals: [
-    { animalType: 'Elephant', weight: 1000, numLegs: 4, trunkLength: 5 },
-    { animalType: 'Elephant', weight: 1200, numLegs: 4, trunkLength: 6 },
-    { animalType: 'Bird', weight: .75, numLegs: 2, wingSpan: 2 },
-    { animalType: 'Bird', weight: 2.0, numLegs: 2, wingSpan: 5 },
-    { animalType: 'Unknown', weight: 2.0, numLegs: 2 }
+    { animalType: 'Elephant', weight: 1000, numLegs: 4, lastUpdated: '2019-03-21T01:01:00.0Z', trunkLength: 5 },
+    { animalType: 'Elephant', weight: 1200, numLegs: 4, lastUpdated: '2019-03-21T02:02:00.0Z', trunkLength: 6 },
+    { animalType: 'Bird', weight: .75, numLegs: 2, lastUpdated: '2019-03-21T03:03:00.0Z', wingSpan: 2 },
+    { animalType: 'Bird', weight: 2.0, numLegs: 2, lastUpdated: '2019-03-21T04:04:00.0Z', wingSpan: 5 },
+    { animalType: 'Unknown', weight: 2.0, numLegs: 2, lastUpdated: '2019-03-21T05:05:00.0Z' }
   ]
 };
-
-
 
 
 export class Animal {
   animalType: string = 'Unknown'; // Elephant | Bird
   weight: number = 0;
   numLegs: number = 0;
+
+  // @Type(() => Date)
+  @Transform(value => {
+    return value.toISOString();
+  }, { toPlainOnly: true })
+  @Transform(value => {
+    return moment.utc(value);
+  }, { toClassOnly: true })
+  lastUpdated: moment.Moment;
 
   constructor(json?: any) {
     if (json) {
@@ -94,6 +102,14 @@ export class Animal {
 export class Elephant extends Animal {
   animalType: string = 'Elephant';
   trunkLength: number = 0;
+
+  @Expose({ name: 'lastModified'})
+  get lastUpdated(): moment.Moment {
+    return super.lastUpdated;
+  }
+  set lastUpdated(value: moment.Moment) {
+    super.lastUpdated = value;
+  }
 
   constructor(json?: any) {
     super(json);
@@ -111,6 +127,14 @@ export class Bird extends Animal {
   animalType: string = 'Bird';
   wingSpan: number = 0;
 
+  @Expose({ name: 'lastModified'})
+  get lastUpdated(): moment.Moment {
+    return super.lastUpdated;
+  }
+  set lastUpdated(value: moment.Moment) {
+    super.lastUpdated = value;
+  }
+
   constructor(json?: any) {
     super(json);
     if (json) {
@@ -127,8 +151,8 @@ export class Bird extends Animal {
 
 // The 'Zoo' class has a polymorphic array 'animals' that can contain elements of any class that extends 'Animal'
 export class Zoo {
-  name: string = '';
-  city: string = '';
+  name: string;
+  city: string;
   @Type(() => Animal, {
     keepDiscriminatorProperty: true,
     discriminator: {
@@ -141,7 +165,7 @@ export class Zoo {
       ]
     }
   })
-  animals: Animal[] | Bird[] | Elephant[] = new Array<Animal>();
+  animals: Animal[] | Bird[] | Elephant[];
 
   constructor(json?: any) {
     if (json) {
@@ -180,17 +204,17 @@ export class Pet {
     // console.log(type);
     return Animal;
   },
-  {
-    keepDiscriminatorProperty: true,
-    discriminator: {
-      property: 'animalType',
-      subTypes: [
-        { value: Elephant, name: 'Elephant' },
-        { value: Bird, name: 'Bird' },
-        { value: Animal, name: 'Animal' }
-      ]
-    }
-  })
+    {
+      keepDiscriminatorProperty: true,
+      discriminator: {
+        property: 'animalType',
+        subTypes: [
+          { value: Elephant, name: 'Elephant' },
+          { value: Bird, name: 'Bird' },
+          { value: Animal, name: 'Animal' }
+        ]
+      }
+    })
   animal: Animal | Bird | Elephant = new Animal();
 
   constructor(json?: any) {

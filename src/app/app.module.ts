@@ -54,6 +54,10 @@ const ROUTES: Routes = [
     loadChildren: './d3/d3.module#D3Module'
   },
   {
+    path: 'ngxs',
+    loadChildren: './ngxs/ngxs.module#NgxsModule'
+  },
+  {
     path: 'misc',
     loadChildren: './misc/misc.module#MiscModule'
   },

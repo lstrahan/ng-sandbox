@@ -18,7 +18,7 @@ export class CustomerService {
 
   constructor(private http: HttpClient) { }
 
-  getCustomerMap(): Observable<Map<string, string>> {
+  getCustomerIndex(): Observable<Map<string, string>> {
     console.log('CustomerService.getCustomerMap');
     const url = Util.urlJoin(this.baseUrl, '/customers');
     console.log(`    GET ${url}`);
@@ -44,6 +44,38 @@ export class CustomerService {
     );
   }
 
+  createCustomer(customer: Customer): Observable<Customer> {
+    console.log('CustomerService.createCustomer');
+    const url = Util.urlJoin(this.baseUrl, '/customer');
+    console.log(`    POST ${url}`, customer);
+    return this.http.post<Customer>(url, _.toPlainObject(customer), httpOptions).pipe(
+      tap(res => console.log(`    created customer`, res)),
+      map(res => new Customer(res)),
+      catchError(this.handleError<Customer>('CustomerService.createCustomer'))
+    );
+  }
+
+  updateCustomer(customer: Customer): Observable<Customer> {
+    console.log('CustomerService.updateCustomer');
+    const url = Util.urlJoin(this.baseUrl, '/customer');
+    console.log(`    PUT ${url}`, customer);
+    return this.http.put<Customer>(url, _.toPlainObject(customer), httpOptions).pipe(
+      tap(res => console.log(`    updated customer`, res)),
+      map(res => new Customer(res)),
+      catchError(this.handleError<Customer>('CustomerService.updateCustomer'))
+    );
+  }
+
+  deleteCustomer(id: string): Observable<any> {
+    console.log('CustomerService.deleteCustomer');
+    const url = Util.urlJoin(this.baseUrl, '/customer', id);
+    console.log(`    DELETE ${url} ${id}`);
+    return this.http.delete<any>(url, httpOptions).pipe(
+      tap(res => console.log(`    deleted customer`)),
+      catchError(this.handleError<any>('CustomerService.deleteCustomer'))
+    );
+  }
+
   sequentialDelete(ids: string[]): Observable<string> {
     console.log('CustomerService.sequentialCalls');
     const url1 = Util.urlJoin(this.baseUrl, `/customer/${ids[0]}`);
@@ -65,44 +97,9 @@ export class CustomerService {
     return concat(...reqArray).pipe(
       last(),
       tap(res => console.log('    deleted customer', res)),
-      catchError(this.handleError<any>('CustomerService.sequentialCalls'))
+      catchError(this.handleError<any>('CustomerService.sequentialDelete'))
     );
   }
-
-  /*
-
-    createCustomer(customer: Customer): Observable<Customer> {
-      console.log('CustomerService.createCustomer');
-      const url = Util.urlJoin(this.baseUrl, '/eventModel/event');
-      console.log(`    POST ${url}`, customer);
-      return this.http.post<Customer>(url, customer, httpOptions).pipe(
-        tap(res => console.log(`    created event`, res)),
-        map(res => new Customer(res)),
-        catchError(this.handleError<Customer>('CustomerService.createCustomer'))
-      );
-    }
-
-    updateCustomer(customer: Customer): Observable<Customer> {
-      console.log('CustomerService.updateCustomer');
-      const url = Util.urlJoin(this.baseUrl, '/eventModel/event');
-      console.log(`    PUT ${url}`, customer);
-      return this.http.put<Customer>(url, customer, httpOptions).pipe(
-        tap(res => console.log(`    updated event`, res)),
-        map(res => new Customer(res)),
-        catchError(this.handleError<Customer>('CustomerService.updateCustomer'))
-      );
-    }
-
-    deleteCustomer(id: string): Observable<any> {
-      console.log('CustomerService.deleteCustomer');
-      const url = Util.urlJoin(this.baseUrl, '/eventModel/event', id);
-      console.log(`    DELETE ${url} ${id}`);
-      return this.http.delete<any>(url, httpOptions).pipe(
-        tap(res => console.log(`    deleted event`)),
-        catchError(this.handleError<any>('CustomerService.deleteCustomer'))
-      );
-    }
-  */
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
@@ -110,16 +107,5 @@ export class CustomerService {
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };
-  }
-
-  stringSort(a: string, b: string) {
-    a = a.toLowerCase();
-    b = b.toLowerCase();
-    if (a > b) {
-      return 1;
-    } else if (a < b) {
-      return -1;
-    }
-    return 0;
   }
 }

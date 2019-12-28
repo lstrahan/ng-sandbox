@@ -1,0 +1,26 @@
+Component Two<br>
+<br>
+<div fxLayout="column">
+    <div *ngFor="let customer of customerIndex1$ | async | keyvalue">
+        {{ customer.value }}
+    </div>
+
+    <br><br>
+
+    <div *ngFor="let customer of customerIndex2$ | async | keyvalue">
+        {{ customer.value }}
+    </div>
+
+    <br><br>
+    
+    <div *ngFor="let customer of customerIndex3$ | async | keyvalue">
+        {{ customer.value }}
+    </div>
+
+    <br><br>
+    
+    <div *ngFor="let customer of customerIndex4$ | async | keyvalue">
+        {{ customer.value }}
+    </div>
+</div>
+

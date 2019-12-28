@@ -2,7 +2,7 @@ import { Component, Optional, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MatSnackBar } from '@angular/material';
 
 @Component({
-  selector: 'ags-material-controls',
+  selector: 'my-material-controls',
   templateUrl: './material-controls.component.html',
   styleUrls: ['./material-controls.component.scss']
 })

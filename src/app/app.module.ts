@@ -55,7 +55,7 @@ const ROUTES: Routes = [
   },
   {
     path: 'ngxs',
-    loadChildren: './ngxs/ngxs.module#NgxsModule'
+    loadChildren: './ngxs/ngxs-demo.module#NgxsDemoModule'
   },
   {
     path: 'misc',

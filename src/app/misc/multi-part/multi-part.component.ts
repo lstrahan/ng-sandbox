@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDrawer } from '@angular/material';
 
 @Component({
-  selector: 'ags-multi-part',
+  selector: 'my-multi-part',
   templateUrl: './multi-part.component.html',
   styleUrls: ['./multi-part.component.scss']
 })
@@ -16,13 +16,13 @@ export class MultiPartComponent implements OnInit {
 }
 
 @Component({
-  selector: 'ags-multi-part-title',
+  selector: 'my-multi-part-title',
   template: '<ng-content></ng-content>'
 })
 export class MultiPartTitleComponent { }
 
 @Component({
-  selector: 'ags-multi-part-content',
+  selector: 'my-multi-part-content',
   template: '<ng-content></ng-content>'
 })
 export class MultiPartContentComponent { }

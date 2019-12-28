@@ -1,0 +1,22 @@
+Component One
+<form [formGroup]="customFormGroup" fxLayout="row" fxLayoutAlign=" start">
+    <mat-form-field appearance="fill">
+        <input matInput formControlName="firstNameCtrl">
+        <mat-label>First Name</mat-label>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <input matInput formControlName="lastNameCtrl">
+        <mat-label>Last Name</mat-label>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="addBtnClicked()">Add</button>
+</form>
+
+<mat-divider></mat-divider>
+
+<my-component-two></my-component-two>
+
+<mat-divider></mat-divider>
+
+<my-component-three></my-component-three>

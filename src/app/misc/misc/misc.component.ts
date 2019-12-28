@@ -5,7 +5,7 @@ import { MessageComponent } from '../message/message.component';
 // https://netbasal.com/dynamically-creating-components-with-angular-a7346f4a982d
 
 @Component({
-  selector: 'ags-misc',
+  selector: 'my-misc',
   templateUrl: './misc.component.html',
   styleUrls: ['./misc.component.scss']
 })

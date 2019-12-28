@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'ags-password-generator',
+  selector: 'my-password-generator',
   templateUrl: './password-generator.component.html',
   styleUrls: ['./password-generator.component.scss']
 })

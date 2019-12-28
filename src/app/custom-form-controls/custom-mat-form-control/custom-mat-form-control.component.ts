@@ -6,7 +6,7 @@ import { MatFormFieldControl } from '@angular/material';
 import { Subject } from 'rxjs';
 
 @Component({
-  selector: 'ags-custom-mat-form-control',
+  selector: 'my-custom-mat-form-control',
   templateUrl: './custom-mat-form-control.component.html',
   styleUrls: ['./custom-mat-form-control.component.scss'],
   providers: [{ provide: MatFormFieldControl, useExisting: CustomMatFormControlComponent }]

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../../library/customer.service';
 
 @Component({
-  selector: 'ags-indexed-db',
+  selector: 'my-indexed-db',
   templateUrl: './indexed-db.component.html',
   styleUrls: ['./indexed-db.component.css']
 })
@@ -14,7 +14,7 @@ export class IndexedDbComponent implements OnInit {
   }
 
   buttonClicked() {
-    this.customerService.getCustomerMap().subscribe();
+    this.customerService.getCustomerIndex().subscribe();
 
     this.myFunction<string>();
     this.myFunction<number>();

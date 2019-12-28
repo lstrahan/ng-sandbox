@@ -6,7 +6,7 @@ import { Customer } from '../../library/customer';
 // tslint:disable:no-inferrable-types
 
 @Component({
-  selector: 'ags-rxjs',
+  selector: 'my-rxjs',
   templateUrl: './rxjs.component.html',
   styleUrls: ['./rxjs.component.css']
 })
@@ -21,7 +21,7 @@ export class RxjsComponent implements OnInit {
   }
 
   getCustomers(): void {
-    this.customerService.getCustomerMap().subscribe(res => {
+    this.customerService.getCustomerIndex().subscribe(res => {
       let str = '';
       // console.log('RxjsComponent::getCustomers', res);
       res.forEach((v, k, m) => str += `${k}: ${v}; `);

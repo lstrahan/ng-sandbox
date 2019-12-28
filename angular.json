@@ -95,12 +95,12 @@
       "spec": false,
       "inlineStyle": false,
       "inlineTemplate": false,
-      "prefix": "ags",
+      "prefix": "my",
       "styleext": "scss"
     },
     "@schematics/angular:directive": {
       "spec": false,
-      "prefix": "ags"
+      "prefix": "my"
     },
     "@schematics/angular:guard": {
       "spec": false

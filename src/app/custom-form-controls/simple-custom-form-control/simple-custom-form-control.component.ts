@@ -2,7 +2,7 @@ import { Component, Input, Optional, Self } from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
 
 @Component({
-  selector: 'ags-simple-custom-form-control',
+  selector: 'my-simple-custom-form-control',
   templateUrl: './simple-custom-form-control.component.html',
   styleUrls: ['./simple-custom-form-control.component.scss']
 })

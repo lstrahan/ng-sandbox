@@ -6,7 +6,7 @@ import { MatFormFieldControl } from '@angular/material';
 import { Subject } from 'rxjs';
 
 @Component({
-  selector: 'ags-date-time-picker',
+  selector: 'my-date-time-picker',
   templateUrl: './date-time-picker.component.html',
   styleUrls: ['./date-time-picker.component.scss'],
   providers: [{ provide: MatFormFieldControl, useExisting: DateTimePickerComponent }],

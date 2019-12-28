@@ -6,7 +6,7 @@ import { MatFormFieldControl } from '@angular/material';
 import { Subject } from 'rxjs';
 
 @Component({
-  selector: 'ags-select-with-clear',
+  selector: 'my-select-with-clear',
   templateUrl: './select-with-clear.component.html',
   styleUrls: ['./select-with-clear.component.scss'],
   providers: [{ provide: MatFormFieldControl, useExisting: SelectWithClearComponent }]

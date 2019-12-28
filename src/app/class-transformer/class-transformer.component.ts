@@ -3,7 +3,7 @@ import _ from 'lodash';
 import { Person, Zoo, zooJson, personJson, Pet, Bird, petsJson, Animal } from './models';
 
 @Component({
-  selector: 'ags-class-transformer',
+  selector: 'my-class-transformer',
   templateUrl: './class-transformer.component.html',
   styleUrls: ['./class-transformer.component.scss']
 })

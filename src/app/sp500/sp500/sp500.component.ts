@@ -7,7 +7,7 @@ import { tap, map } from 'rxjs/operators';
 import moment from 'moment';
 
 @Component({
-  selector: 'ags-sp500',
+  selector: 'my-sp500',
   templateUrl: './sp500.component.html',
   styleUrls: ['./sp500.component.scss']
 })

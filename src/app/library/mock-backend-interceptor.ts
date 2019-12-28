@@ -3,14 +3,15 @@ import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTT
 import { Observable, of, throwError } from 'rxjs';
 import { mergeMap, delay } from 'rxjs/operators';
 import * as _ from 'lodash';
+import { Util } from './util';
 
 @Injectable()
 export class MockBackendInterceptor implements HttpInterceptor {
 
   customers = [
-    { id: '1', firstname: 'John', lastname: 'Smith' },
-    { id: '2', firstname: 'Bob', lastname: 'Roberts' },
-    { id: '3', firstname: 'Charles', lastname: 'Dickens' }
+    { id: 'ecc36ae7-e2c4-4b75-855b-aad52b7610fa', firstname: 'John', lastname: 'Smith' },
+    { id: '810d2ec0-5710-4c84-ad4b-89c47d94bef7', firstname: 'Bob', lastname: 'Roberts' },
+    { id: '727e38d3-2157-456a-84a7-9311ebf8f465', firstname: 'Charles', lastname: 'Dickens' }
   ];
   constructor() { }
 
@@ -42,11 +43,25 @@ export class MockBackendInterceptor implements HttpInterceptor {
         }
       }
 
+      // POST customer
+      if (request.url.endsWith('/customer') && request.method === 'POST') {
+        let newCustomer = request.body;
+        console.log(`MOCK ${request.url}`, newCustomer);
+        if (newCustomer) {
+          newCustomer.id = Util.newGuid();
+          this.customers.push(newCustomer);
+          return of(new HttpResponse({ status: 200, body: newCustomer }));
+        } else {
+          return throwError({ error: { message: 'Error' } });
+        }
+      }
+
       // DELETE customer/$id
       if (request.url.match(/\/customer\/\d+$/) && request.method === 'DELETE') {
         console.log(`MOCK ${request.url}`);
         let urlParts = request.url.split('/');
         let id = urlParts[urlParts.length - 1];
+        this.customers = this.customers.filter(x => x.id !== id);
         return of(new HttpResponse({ status: 200, body: `success: id = ${id}` }));
       }
 

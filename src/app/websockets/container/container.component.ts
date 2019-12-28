@@ -3,7 +3,7 @@ import { WebSocketSubjectService } from '../web-socket-subject.service';
 import { MatRadioChange } from '@angular/material';
 
 @Component({
-  selector: 'ags-container',
+  selector: 'my-container',
   templateUrl: './container.component.html',
   styleUrls: ['./container.component.scss']
 })

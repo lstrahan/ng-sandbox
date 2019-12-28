@@ -6,7 +6,7 @@ import { MyGridComponent } from '../my-grid-component/my-grid.component';
 import data from './data.json';
 
 @Component({
-  selector: 'ags-ag-grid',
+  selector: 'my-ag-grid',
   templateUrl: './ag-grid.component.html',
   styleUrls: ['./ag-grid.component.scss'],
   encapsulation: ViewEncapsulation.None

@@ -4,7 +4,7 @@ import { takeWhile } from 'rxjs/operators';
 import { WebSocketSubjectService } from '../web-socket-subject.service';
 
 @Component({
-  selector: 'ags-web-socket-subject-client',
+  selector: 'my-web-socket-subject-client',
   templateUrl: './websocket-client.component.html',
   styleUrls: ['./websocket-client.component.scss']
 })

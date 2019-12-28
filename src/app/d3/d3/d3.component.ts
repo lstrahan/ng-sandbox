@@ -3,7 +3,7 @@ import * as d3 from 'd3';
 import { MatComponent } from '../mat-component/mat.component';
 
 @Component({
-  selector: 'ags-d3',
+  selector: 'my-d3',
   templateUrl: './d3.component.html',
   styleUrls: ['./d3.component.scss'],
   encapsulation: ViewEncapsulation.None

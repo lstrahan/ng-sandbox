@@ -2,7 +2,7 @@ import { Component, Optional, Self, Input } from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
 
 @Component({
-  selector: 'ags-inline-edit',
+  selector: 'my-inline-edit',
   templateUrl: './inline-edit.component.html',
   styleUrls: ['./inline-edit.component.scss']
 })

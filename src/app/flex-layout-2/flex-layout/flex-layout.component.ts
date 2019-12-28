@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'ags-flex-layout',
+  selector: 'my-flex-layout',
   templateUrl: './flex-layout.component.html',
   styleUrls: ['./flex-layout.component.scss']
 })

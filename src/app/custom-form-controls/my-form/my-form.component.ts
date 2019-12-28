@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'ags-my-form',
+  selector: 'my-my-form',
   templateUrl: './my-form.component.html',
   styleUrls: ['./my-form.component.scss']
 })

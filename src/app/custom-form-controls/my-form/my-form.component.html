@@ -1,16 +1,16 @@
 <h2>Custom Reactive/Material Form Fields</h2>
 <form [formGroup]="customFormGroup" fxLayout="column" fxLayoutAlign=" start">
 
-  <!-- <ags-simple-custom-form-control formControlName="nameCtrl" label="Basic Form Field"></ags-simple-custom-form-control>
+  <!-- <my-simple-custom-form-control formControlName="nameCtrl" label="Basic Form Field"></my-simple-custom-form-control>
   <br> -->
 
   <mat-form-field appearance="fill">
-    <ags-custom-mat-form-control formControlName="ssnCtrl"></ags-custom-mat-form-control>
+    <my-custom-mat-form-control formControlName="ssnCtrl"></my-custom-mat-form-control>
     <mat-label>Material Form Field</mat-label>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
-    <ags-date-time-picker formControlName="dateCtrl"></ags-date-time-picker>
+    <my-date-time-picker formControlName="dateCtrl"></my-date-time-picker>
     <mat-label>Date Time Picker</mat-label>
   </mat-form-field>
 
@@ -19,14 +19,14 @@
   </mat-form-field>
 
   <mat-form-field appearance="fill">
-    <ags-select-with-clear formControlName="selectWithClearCtrl">
+    <my-select-with-clear formControlName="selectWithClearCtrl">
       <mat-option value="1">one</mat-option>
       <mat-option value="2">two</mat-option>
       <mat-option value="3">three</mat-option>
-    </ags-select-with-clear>
+    </my-select-with-clear>
   </mat-form-field>
 
-  <ags-inline-edit formControlName="nameCtrl"></ags-inline-edit>
+  <my-inline-edit formControlName="nameCtrl"></my-inline-edit>
   <br>
 
   <mat-form-field appearance="fill">

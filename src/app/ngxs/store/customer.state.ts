@@ -3,7 +3,7 @@ import * as _ from 'lodash';
 import { AddCustomer, RemoveCustomer, LoadAllCustomers as LoadCustomerIndex } from './customer.actions';
 import { CustomerService } from '../../library/customer.service';
 import { Customer } from '../../library/customer';
-import { tap, take } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 
 export interface CustomerStatemodel {
     customerIndex: Map<string, string>;
@@ -35,7 +35,7 @@ export class CustomerState {
     @Action(AddCustomer)
     addCustomer(ctx: StateContext<CustomerStatemodel>, { payload }: AddCustomer) {
         return this.customerService.createCustomer(payload).pipe(
-            tap((result) => {           
+            tap((result) => {
                 // const newIndex = ctx.getState().customerIndex; // doesn't work. I think because Map type is mutable so it doesn't appear to change
                 const clonedIndex = _.cloneDeep(ctx.getState().customerIndex);
                 ctx.patchState({ customerIndex: clonedIndex.set(payload.id, payload.firstname + ' ' + payload.lastname) });

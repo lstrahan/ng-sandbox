@@ -1,8 +1,9 @@
 import { State, Action, StateContext, Selector, Store } from '@ngxs/store';
-import { AddCustomer, LoadCustomerIndex as LoadCustomerIndex } from './customer.actions';
+import * as _ from 'lodash';
+import { AddCustomer, RemoveCustomer, LoadAllCustomers as LoadCustomerIndex } from './customer.actions';
 import { CustomerService } from '../../library/customer.service';
 import { Customer } from '../../library/customer';
-import { tap } from 'rxjs/operators';
+import { tap, take } from 'rxjs/operators';
 
 export interface CustomerStatemodel {
     customerIndex: Map<string, string>;
@@ -11,7 +12,7 @@ export interface CustomerStatemodel {
 @State<CustomerStatemodel>({
     name: 'customers',
     defaults: {
-        customerIndex: new Map<string, string>()
+        customerIndex: new Map<string, string>(),
     }
 })
 export class CustomerState {
@@ -32,11 +33,22 @@ export class CustomerState {
     }
 
     @Action(AddCustomer)
-    addCustomer({ getState, patchState }: StateContext<CustomerStatemodel>, { payload }: AddCustomer) {
+    addCustomer(ctx: StateContext<CustomerStatemodel>, { payload }: AddCustomer) {
         return this.customerService.createCustomer(payload).pipe(
+            tap((result) => {           
+                // const newIndex = ctx.getState().customerIndex; // doesn't work. I think because Map type is mutable so it doesn't appear to change
+                const clonedIndex = _.cloneDeep(ctx.getState().customerIndex);
+                ctx.patchState({ customerIndex: clonedIndex.set(payload.id, payload.firstname + ' ' + payload.lastname) });
+            }));
+    }
+
+    @Action(RemoveCustomer)
+    removeCustomer(ctx: StateContext<CustomerStatemodel>, { payload }: RemoveCustomer) {
+        return this.customerService.deleteCustomer(payload).pipe(
             tap((result) => {
-                // patchState({ customerIndex: getState().customerIndex.set(result.id, result.firstname + ' ' + result.lastname) });
-                this.store.dispatch(new LoadCustomerIndex);
+                const clonedIndex = _.cloneDeep(ctx.getState().customerIndex);
+                clonedIndex.delete(payload);
+                ctx.patchState({ customerIndex: clonedIndex });
             }));
     }
 }

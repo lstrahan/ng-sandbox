@@ -4,7 +4,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { Store } from '@ngxs/store';
 
 import { Customer } from '../../library/customer';
-import { LoadCustomerIndex, AddCustomer } from '../store/customer.actions';
+import { AddCustomer, LoadAllCustomers } from '../store/customer.actions';
 
 @Component({
   selector: 'my-component-one',
@@ -21,7 +21,7 @@ export class ComponentOneComponent implements OnInit {
       lastNameCtrl: []
     });
 
-    this.store.dispatch(new LoadCustomerIndex);
+    this.store.dispatch(new LoadAllCustomers);
   }
 
   ngOnInit() { }

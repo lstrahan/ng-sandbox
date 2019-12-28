@@ -13,14 +13,19 @@ Component Two<br>
 
     <br><br>
     
-    <div *ngFor="let customer of customerIndex3$ | async | keyvalue">
+    <div *ngFor="let customer of customers3$ | async | keyvalue">
         {{ customer.value }}
     </div>
 
     <br><br>
     
-    <div *ngFor="let customer of customerIndex4$ | async | keyvalue">
-        {{ customer.value }}
+    <div *ngFor="let customer of customers4$ | async | keyvalue">
+        <div fxLayout="row" fxLayoutAlign="start center">
+            {{ customer.value }}
+            <button mat-icon-button	(click)="deleteCustomer(customer.key)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>
     </div>
 </div>
 

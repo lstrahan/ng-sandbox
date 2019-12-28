@@ -19,12 +19,22 @@ export class MockBackendInterceptor implements HttpInterceptor {
     // wrap in delayed observable to simulate server api call
     return of(null).pipe(delay(500), mergeMap(() => {
 
-      // GET customers
-      if (request.url.endsWith('/customers') && request.method === 'GET') {
+      // GET customer-index
+      if (request.url.endsWith('/customer-index') && request.method === 'GET') {
         console.log(`MOCK ${request.url}`);
         let dataObj = this.customers.map(item => ({ key: item.id, value: item.firstname + ' ' + item.lastname }));
         if (dataObj) {
           return of(new HttpResponse({ status: 200, body: dataObj }));
+        } else {
+          return throwError({ error: { message: 'Error' } });
+        }
+      }
+
+      // GET customers
+      if (request.url.endsWith('/customers') && request.method === 'GET') {
+        console.log(`MOCK ${request.url}`);
+        if (this.customers) {
+          return of(new HttpResponse({ status: 200, body: this.customers }));
         } else {
           return throwError({ error: { message: 'Error' } });
         }

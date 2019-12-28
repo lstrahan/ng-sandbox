@@ -1,0 +1,10 @@
+{
+  "indent_size": 2,
+  "css": {
+    "allowed_file_extensions": ["css", "scss", "sass", "less"],
+    "space_around_combinator": true
+  },
+  "html": {
+    "allowed_file_extensions": ["html"]
+  }
+}

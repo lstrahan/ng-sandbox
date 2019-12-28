@@ -1,11 +1,21 @@
 {
-  "tagname-lowercase": false,
-  "attr-lowercase": false,
-  "attr-value-double-quotes": true,
-  "doctype-first": false,
-  "tag-pair": true,
-  "spec-char-escape": true,
-  "id-unique": true,
-  "src-not-empty": true,
-  "attr-no-duplication": true
+  "attr-lowercase": false,          // Allow lower and uppercase attributes
+  "attr-no-duplication": true,      // Don't specify same attribute more than once
+  "attr-value-double-quotes": true, // Attribute value must be enclosed in double quotes
+  "doctype-first": false,           // Doctype does not need to be first
+  "id-class-value": "dash",         // ID and Class names must be lowercase and separated by a dash
+  "id-unique": true,                // ID attributes must be unique in the document
+  "inline-style-disabled": false,   // Disallow use of style attributes
+  "spec-char-escape": true,         // Special characters must be escaped
+  "src-not-empty": true,            // Src of img must be set to a value
+  "style-disabled": true,           // Disallow use of <style> tags
+  "tagname-lowercase": false,       // Tag names must be lowercase.
+  "tag-pair": true                  // Tags must be paired
 }
+
+
+// tagname-lowercase: set to false by Lance because some 3rd party controls (PrimeNg) use camelCase
+// inline-style-disabled: set to false by Lance. Sometimes when it is just one little
+//    setting I prefer the convenience of just placing it inline.
+
+

@@ -19,15 +19,28 @@ export class CustomerService {
   constructor(private http: HttpClient) { }
 
   getCustomerIndex(): Observable<Map<string, string>> {
-    console.log('CustomerService.getCustomerMap');
-    const url = Util.urlJoin(this.baseUrl, '/customers');
+    console.log('CustomerService.getCustomerIndex');
+    const url = Util.urlJoin(this.baseUrl, '/customer-index');
     console.log(`    GET ${url}`);
 
     return this.http.get<any>(url, httpOptions).pipe(
       // first(),
       tap(res => console.log('    got customers', res)),
       map(res => new Map<string, string>(res.map(obj => [obj.key, obj.value]))),
-      catchError(this.handleError<any>('CustomerService.getCustomerMap'))
+      catchError(this.handleError<any>('CustomerService.getCustomerIndex'))
+    );
+  }
+
+  getCustomers(): Observable<Customer[]> {
+    console.log('CustomerService.getCustomers');
+    const url = Util.urlJoin(this.baseUrl, '/customers');
+    console.log(`    GET ${url}`);
+
+    return this.http.get<Customer[]>(url, httpOptions).pipe(
+      // first(),
+      tap(res => console.log('    got customers', res)),
+      map(res => res.map(item => new Customer(item))),
+      catchError(this.handleError<any>('CustomerService.getCustomers'))
     );
   }
 

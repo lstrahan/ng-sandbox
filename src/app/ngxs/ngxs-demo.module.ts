@@ -9,7 +9,6 @@ import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { ComponentTwoComponent } from './component-two/component-two.component';
 import { ComponentOneComponent } from './component-one/component-one.component';
-import { ComponentThreeComponent } from './component-three/component-three.component';
 import { CustomerState } from './store/customer.state';
 
 const ROUTES: Routes = [
@@ -17,7 +16,7 @@ const ROUTES: Routes = [
 ];
 
 @NgModule({
-  declarations: [ComponentTwoComponent, ComponentOneComponent, ComponentThreeComponent],
+  declarations: [ComponentTwoComponent, ComponentOneComponent],
   imports: [
     RouterModule.forChild(ROUTES),
     CommonModule,

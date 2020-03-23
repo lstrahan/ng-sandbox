@@ -1,7 +1,7 @@
 import { Customer } from 'src/app/library/customer';
 
-export class LoadAllCustomers {
-    static readonly type = '[customers] load all';
+export class LoadCustomerIndex {
+    static readonly type = '[customers] loadIndex';
     constructor() { }
 }
 

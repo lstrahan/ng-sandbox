@@ -4,7 +4,8 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { Store } from '@ngxs/store';
 
 import { Customer } from '../../library/customer';
-import { AddCustomer, LoadCustomerIndex } from '../store/customer.actions';
+import { AddCustomer, LoadCustomerIndex, SelectCustomer } from '../store/customer.actions';
+import { CustomerStateModel, CustomerState } from '../store/customer.state';
 
 @Component({
   selector: 'my-component-one',
@@ -18,10 +19,9 @@ export class ComponentOneComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private store: Store) {
     this.customFormGroup = this.formBuilder.group({
       firstNameCtrl: [],
-      lastNameCtrl: []
+      lastNameCtrl: [],
+      idCtrl: []
     });
-
-    this.store.dispatch(new LoadCustomerIndex);
   }
 
   ngOnInit() { }
@@ -32,5 +32,13 @@ export class ComponentOneComponent implements OnInit {
     newCustomer.lastname = this.customFormGroup.get('lastNameCtrl').value;
 
     this.store.dispatch(new AddCustomer(newCustomer));
+  }
+
+  selectBtnClicked() {
+    const id = this.customFormGroup.get('idCtrl').value;
+    this.store.dispatch(new SelectCustomer(id));
+
+    const x = this.store.selectSnapshot<Map<string, string>>(CustomerState.getCustomerIndex);
+    console.log(`selectSnapshot `, x);
   }
 }

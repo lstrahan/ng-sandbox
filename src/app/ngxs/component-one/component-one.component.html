@@ -1,16 +1,34 @@
 Component One updates the state
-<form [formGroup]="customFormGroup" fxLayout="row" fxLayoutAlign=" start">
+<form [formGroup]="customFormGroup" fxLayout="column">
+  <div fxLayout="row" fxLayoutAlign=" start">
     <mat-form-field appearance="fill">
-        <input matInput formControlName="firstNameCtrl">
-        <mat-label>First Name</mat-label>
+      <input matInput formControlName="firstNameCtrl">
+      <mat-label>First Name</mat-label>
     </mat-form-field>
 
+    &nbsp;
+
     <mat-form-field appearance="fill">
-        <input matInput formControlName="lastNameCtrl">
-        <mat-label>Last Name</mat-label>
+      <input matInput formControlName="lastNameCtrl">
+      <mat-label>Last Name</mat-label>
     </mat-form-field>
+
+    &nbsp;
 
     <button mat-raised-button color="primary" (click)="addBtnClicked()">Add</button>
+
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign=" start">
+    <mat-form-field appearance="fill">
+      <input matInput formControlName="idCtrl">
+      <mat-label>ID</mat-label>
+    </mat-form-field>
+
+    &nbsp;
+
+    <button mat-raised-button color="primary" (click)="selectBtnClicked()">Select</button>
+  </div>
 </form>
 
 <mat-divider></mat-divider>

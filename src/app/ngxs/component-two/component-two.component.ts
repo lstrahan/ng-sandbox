@@ -22,7 +22,11 @@ export class ComponentTwoComponent implements OnInit {
   customers3$: Observable<Map<string, string>>;
   // method 4 (part 1)
   customers4$: Observable<Map<string, string>>;
-  
+
+  @Select(state => state.customers.selectedId) selectedId$: Observable<string>;
+
+  selectedName: string = '';
+
   constructor(private store: Store) { }
 
   ngOnInit() {
@@ -30,11 +34,15 @@ export class ComponentTwoComponent implements OnInit {
     this.customers3$ = this.store.select(CUSTOMERS_STATE_TOKEN).pipe(map(res => res.customerIndex));
     // method 4 (part 2)
     this.customers4$ = this.store.select(CustomerState.getCustomerIndex);
+
+    this.selectedId$.subscribe(id => {
+      this.store.select(CustomerState.getCustomerById(id))
+        .subscribe(x => this.selectedName = x);
+    })
   }
 
   deleteCustomer(id: string) {
     console.log('delete ', id);
-    this.store.select(CustomerState.getCustomerById('ecc36ae7-e2c4-4b75-855b-aad52b7610fa')).subscribe(x => console.log('getCustomerById = ', x));
     this.store.dispatch(new RemoveCustomer(id));
   }
 }

@@ -1,12 +1,12 @@
-import { State, Action, StateContext, Selector, Store, StateToken, createSelector } from '@ngxs/store';
+import { State, Action, StateContext, Selector, Store, StateToken, createSelector, NgxsOnInit } from '@ngxs/store';
 import * as _ from 'lodash';
-import { AddCustomer, RemoveCustomer, LoadCustomerIndex } from './customer.actions';
+import { AddCustomer, RemoveCustomer, LoadCustomerIndex, UpdateCustomerIndex, SelectCustomer } from './customer.actions';
 import { CustomerService } from '../../library/customer.service';
-import { Customer } from '../../library/customer';
 import { tap } from 'rxjs/operators';
 
 export interface CustomerStateModel {
   customerIndex: Map<string, string>;
+  selectedId: string;
 }
 
 export const CUSTOMERS_STATE_TOKEN = new StateToken<CustomerStateModel>('customers');
@@ -15,9 +15,10 @@ export const CUSTOMERS_STATE_TOKEN = new StateToken<CustomerStateModel>('custome
   name: CUSTOMERS_STATE_TOKEN,
   defaults: {
     customerIndex: new Map<string, string>(),
+    selectedId: ''
   }
 })
-export class CustomerState {
+export class CustomerState implements NgxsOnInit  {
 
   constructor(private store: Store, private customerService: CustomerService) { }
 
@@ -40,6 +41,10 @@ export class CustomerState {
   //   return this.store.selectSnapshot<string>(state => state.customers.customerIndex.get('ecc36ae7-e2c4-4b75-855b-aad52b7610fa'));
   // }
 
+  ngxsOnInit(ctx?: StateContext<CustomerStateModel>) {
+    console.log('>>>>>>>>>>>>>>>>>>>>>> ngxsOnInit');
+    ctx.dispatch(new LoadCustomerIndex());
+  }
 
   @Action(LoadCustomerIndex)
   loadCustomerIndex(ctx: StateContext<CustomerStateModel>) {
@@ -47,6 +52,12 @@ export class CustomerState {
       tap((result) => {
         ctx.patchState({ customerIndex: result });
       }));
+  }
+
+  // update customerIndex directly without making a service call. 
+  @Action(UpdateCustomerIndex)
+  updateCustomerIndex(ctx: StateContext<CustomerStateModel>, { payload }: UpdateCustomerIndex) {
+    ctx.patchState({ customerIndex: payload });
   }
 
   @Action(AddCustomer)
@@ -67,5 +78,10 @@ export class CustomerState {
         clonedIndex.delete(payload);
         ctx.patchState({ customerIndex: clonedIndex });
       }));
+  }
+
+  @Action(SelectCustomer)
+  selectCustomer(ctx: StateContext<CustomerStateModel>, { payload }: SelectCustomer) {
+    ctx.patchState({ selectedId: payload });
   }
 }

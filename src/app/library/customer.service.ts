@@ -3,10 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of, concat } from 'rxjs';
 import { map, tap, first, take, catchError, concatMap, endWith, last } from 'rxjs/operators';
 import * as _ from 'lodash';
-import { Store } from '@ngxs/store';
-
-import { CustomerState, CUSTOMERS_STATE_TOKEN } from '../ngxs/store/customer.state';
-import { RemoveCustomer } from '../ngxs/store/customer.actions';
 
 import { Customer } from './customer';
 import { Util } from './util';
@@ -20,7 +16,7 @@ export class CustomerService {
 
   baseUrl: string = 'http://127.0.0.1';
 
-  constructor(private http: HttpClient, private store: Store) { }
+  constructor(private http: HttpClient) { }
 
   getCustomerIndex(): Observable<Map<string, string>> {
     console.log('CustomerService.getCustomerIndex');
@@ -31,7 +27,6 @@ export class CustomerService {
       // first(),
       tap(res => console.log('    got customers', res)),
       map(res => new Map<string, string>(res.map(obj => [obj.key, obj.value]))),
-      tap(res => console.log('    got customers', res)),
       catchError(this.handleError<any>('CustomerService.getCustomerIndex'))
     );
   }

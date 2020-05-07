@@ -9,18 +9,18 @@
   "dependencies": {
     "@ag-grid-community/all-modules": "^22.0.0",
     "@ag-grid-community/angular": "^22.0.0",
-    "@angular/animations": "^8.2.5",
+    "@angular/animations": "^9.1.4",
     "@angular/cdk": "^8.1.4",
-    "@angular/common": "^8.2.5",
-    "@angular/compiler": "^8.2.5",
-    "@angular/core": "^8.2.5",
-    "@angular/elements": "^8.2.5",
+    "@angular/common": "^9.1.4",
+    "@angular/compiler": "^9.1.4",
+    "@angular/core": "^9.1.4",
+    "@angular/elements": "^9.1.4",
     "@angular/flex-layout": "^8.0.0-beta.27",
-    "@angular/forms": "^8.2.5",
+    "@angular/forms": "^9.1.4",
     "@angular/material": "^8.1.4",
-    "@angular/platform-browser": "^8.2.5",
-    "@angular/platform-browser-dynamic": "^8.2.5",
-    "@angular/router": "^8.2.5",
+    "@angular/platform-browser": "^9.1.4",
+    "@angular/platform-browser-dynamic": "^9.1.4",
+    "@angular/router": "^9.1.4",
     "@auth0/angular-jwt": "^2.1.0",
     "@ngxs-labs/immer-adapter": "^2.0.1",
     "@ngxs/logger-plugin": "^3.5.1",
@@ -46,13 +46,13 @@
     "rxjs": "^6.5.3",
     "tslib": "^1.10.0",
     "vis": "^4.21.0",
-    "zone.js": "^0.10.2"
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.803.26",
-    "@angular/cli": "^8.3.26",
-    "@angular/compiler-cli": "^8.2.5",
-    "@angular/language-service": "^8.2.5",
+    "@angular-devkit/build-angular": "~0.901.4",
+    "@angular/cli": "^9.1.4",
+    "@angular/compiler-cli": "^9.1.4",
+    "@angular/language-service": "^9.1.4",
     "@ngxs/devtools-plugin": "^3.5.1",
     "@types/cesium": "^1.47.3",
     "@types/d3": "5.7.2",
@@ -60,7 +60,7 @@
     "@types/jasmine": "~3.4.0",
     "@types/jasminewd2": "~2.0.6",
     "@types/lodash": "^4.14.138",
-    "codelyzer": "^5.1.0",
+    "codelyzer": "^5.1.2",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.3.0",
@@ -74,6 +74,6 @@
     "tslint": "~5.15.0",
     "tslint-angular": "^3.0.2",
     "tslint-sonarts": "^1.9.0",
-    "typescript": "~3.5.3"
+    "typescript": "~3.8.3"
   }
 }

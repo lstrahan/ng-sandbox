@@ -77,10 +77,10 @@ export class CustomSelectComponent implements AfterViewInit, ControlValueAccesso
     return !this._valuePart1;
   }
 
-  @ViewChild('input', { static: false })
+  @ViewChild('input')
   public input: ElementRef;
 
-  @ViewChild(DropdownComponent, { static: false })
+  @ViewChild(DropdownComponent)
   public dropdown: DropdownComponent;
 
   @ContentChildren(CustomSelectOptionComponent)

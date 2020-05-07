@@ -18,6 +18,12 @@ import { PortalModule } from '@angular/cdk/portal';
 import { CustomSelectComponent } from './custom-dropdown/custom-select.component';
 import { CustomSelectOptionComponent } from './custom-dropdown/custom-select-option.component';
 import { DropdownComponent } from './custom-dropdown/dropdown.component';
+import { InputSuffixComponent } from './input-suffix/input-suffix.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCardModule } from '@angular/material/card';
 
 const ROUTES: Routes = [
   { path: '', component: MyFormComponent }
@@ -31,10 +37,11 @@ const ROUTES: Routes = [
     MaterialModule,
     FlexLayoutModule,
     OwlDateTimeModule, OwlNativeDateTimeModule,
-    OverlayModule, PortalModule
+    OverlayModule, PortalModule, MatInputModule, MatButtonModule, MatSelectModule, MatRadioModule, MatCardModule
   ],
   declarations: [MyFormComponent, SimpleCustomFormControlComponent, CustomMatFormControlComponent,
-    DateTimePickerComponent, InlineEditComponent, SelectWithClearComponent, DropdownComponent, CustomSelectComponent, CustomSelectOptionComponent],
+    DateTimePickerComponent, InlineEditComponent, SelectWithClearComponent, DropdownComponent,
+    CustomSelectComponent, CustomSelectOptionComponent, InputSuffixComponent],
   exports: [RouterModule]
 })
 export class CustomFormControlsModule { }

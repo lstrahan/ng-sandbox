@@ -1,0 +1,5 @@
+<mat-icon [matMenuTriggerFor]="componentMenu">{{ iconStr }}</mat-icon>
+<mat-menu #componentMenu="matMenu" xPosition="before" yPosition="below">
+  <button mat-menu-item (click)="iconStr = 'info'">info</button>
+  <button mat-menu-item (click)="iconStr = 'menu'">menu</button>
+</mat-menu>

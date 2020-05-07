@@ -30,6 +30,8 @@ export class ComponentTwoComponent implements OnInit {
   constructor(private store: Store) { }
 
   ngOnInit() {
+    this.customerIndex1$.subscribe(x => console.log('>>>>>>>>>>>>>>>>>>>>>> this.customerIndex1$.subscribe'));
+    
     // method 3 (part 2)
     this.customers3$ = this.store.select(CUSTOMERS_STATE_TOKEN).pipe(map(res => res.customerIndex));
     // method 4 (part 2)

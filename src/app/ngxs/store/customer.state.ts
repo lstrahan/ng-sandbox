@@ -43,7 +43,7 @@ export class CustomerState implements NgxsOnInit  {
 
   ngxsOnInit(ctx?: StateContext<CustomerStateModel>) {
     console.log('>>>>>>>>>>>>>>>>>>>>>> ngxsOnInit');
-    ctx.dispatch(new LoadCustomerIndex());
+    // ctx.dispatch(new LoadCustomerIndex());
   }
 
   @Action(LoadCustomerIndex)

@@ -41,6 +41,13 @@
     </custom-select>
   </mat-form-field>
 
+  <mat-form-field appearance="fill">
+    <input matInput placeholder="Placeholder">
+    <my-input-suffix matSuffix (click)="log('click')"></my-input-suffix>
+  </mat-form-field>
+
+  <my-simple-custom-form-control label="yadd yadda yadda" formControlName="simpleStringCtrl"></my-simple-custom-form-control>
+
   <button mat-raised-button color="primary" (click)="formSubmitClicked()" fxFlexAlign="start">SUBMIT</button>
 
   <br>

@@ -11,6 +11,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/sandbox",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -33,6 +34,12 @@
           },
           "configurations": {
             "dev": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -41,6 +48,12 @@
               ]
             },
             "prod": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "fileReplacements": [],
               "tsConfig": "tsconfig.prod.json",
               "optimization": true,
@@ -89,30 +102,30 @@
   },
   "schematics": {
     "@schematics/angular:class": {
-      "spec": false
+      "skipTests": true
     },
     "@schematics/angular:component": {
-      "spec": false,
+      "skipTests": true,
       "inlineStyle": false,
       "inlineTemplate": false,
       "prefix": "my",
-      "styleext": "scss"
+      "style": "scss"
     },
     "@schematics/angular:directive": {
-      "spec": false,
+      "skipTests": true,
       "prefix": "my"
     },
     "@schematics/angular:guard": {
-      "spec": false
+      "skipTests": true
     },
     "@schematics/angular:module": {
-      "spec": false
+      "skipTests": true
     },
     "@schematics/angular:pipe": {
-      "spec": false
+      "skipTests": true
     },
     "@schematics/angular:service": {
-      "spec": false
+      "skipTests": true
     }
   }
 }

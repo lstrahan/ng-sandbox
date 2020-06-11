@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDrawer } from '@angular/material';
+import { MatDrawer } from '@angular/material/sidenav';
 
 @Component({
   selector: 'my-multi-part',

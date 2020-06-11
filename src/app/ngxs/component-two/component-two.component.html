@@ -1,6 +1,10 @@
 Component Two displays the updated state<br>
 <br>
 <div fxLayout="column">
+    <div>Selected: {{ selectedName }}</div>
+
+    <br><br>
+
     <div *ngFor="let customer of customerIndex1$ | async | keyvalue">
         {{ customer.value }}
     </div>

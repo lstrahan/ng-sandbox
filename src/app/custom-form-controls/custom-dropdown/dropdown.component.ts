@@ -14,7 +14,7 @@ export class DropdownComponent {
   @Input()
   public reference: HTMLElement;
 
-  @ViewChild(TemplatePortalDirective, { static: false })
+  @ViewChild(TemplatePortalDirective)
   public contentTemplate: TemplatePortalDirective;
 
   protected overlayRef: OverlayRef;

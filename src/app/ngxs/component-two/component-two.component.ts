@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Select, Store } from '@ngxs/store';
-import { CustomerState } from '../store/customer.state';
+import { CustomerState, CUSTOMERS_STATE_TOKEN } from '../store/customer.state';
 import { RemoveCustomer } from '../store/customer.actions';
-import { Customer } from 'src/app/library/customer';
+import { map } from 'rxjs/operators';
 
 
 @Component({
@@ -18,19 +18,30 @@ export class ComponentTwoComponent implements OnInit {
   @Select(CustomerState.getCustomerIndex) customerIndex1$: Observable<Map<string, string>>;
   // method 2
   @Select(state => state.customers.customerIndex) customerIndex2$: Observable<Map<string, string>>;
-  // method 3 (part 1)
+  // method 3 using State Token (part 1)
   customers3$: Observable<Map<string, string>>;
   // method 4 (part 1)
   customers4$: Observable<Map<string, string>>;
-  
-  constructor(private store: Store) {
+
+  @Select(state => state.customers.selectedId) selectedId$: Observable<string>;
+
+  selectedName: string = '';
+
+  constructor(private store: Store) { }
+
+  ngOnInit() {
+    this.customerIndex1$.subscribe(x => console.log('>>>>>>>>>>>>>>>>>>>>>> this.customerIndex1$.subscribe'));
+    
     // method 3 (part 2)
-    this.customers3$ = this.store.select(state => state.customers.customerIndex);
+    this.customers3$ = this.store.select(CUSTOMERS_STATE_TOKEN).pipe(map(res => res.customerIndex));
     // method 4 (part 2)
     this.customers4$ = this.store.select(CustomerState.getCustomerIndex);
-  }
 
-  ngOnInit() { }
+    this.selectedId$.subscribe(id => {
+      this.store.select(CustomerState.getCustomerById(id))
+        .subscribe(x => this.selectedName = x);
+    })
+  }
 
   deleteCustomer(id: string) {
     console.log('delete ', id);

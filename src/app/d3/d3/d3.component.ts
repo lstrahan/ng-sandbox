@@ -19,7 +19,7 @@ export class D3Component implements OnInit {
   mydrag = d3.drag();
   msg: string;
 
-  @ViewChild('componentcontainer', { read: ViewContainerRef, static: false }) container: ViewContainerRef;
+  @ViewChild('componentcontainer', { read: ViewContainerRef }) container: ViewContainerRef;
 
   constructor(private resolver: ComponentFactoryResolver) { }
 

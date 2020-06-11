@@ -14,36 +14,40 @@ import { AppComponent } from './app.component';
 
 import { MaterialDemoModule } from './material-demo/material-demo.module';
 import { ClassTransformerComponent } from './class-transformer/class-transformer.component';
+import { NgxsModule } from '@ngxs/store';
+import { CustomerState } from './ngxs/store/customer.state';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 
 const ROUTES: Routes = [
   { path: '', redirectTo: '/material', pathMatch: 'full' },
   {
     path: 'material',
-    loadChildren: './material-demo/material-demo.module#MaterialDemoModule'
+    loadChildren: () => import('./material-demo/material-demo.module').then(m => m.MaterialDemoModule)
   },
   {
     path: 'formcontrols',
-    loadChildren: './custom-form-controls/custom-form-controls.module#CustomFormControlsModule'
+    loadChildren: () => import('./custom-form-controls/custom-form-controls.module').then(m => m.CustomFormControlsModule)
   },
   {
     path: 'flexlayout1',
-    loadChildren: './flex-layout/flex-layout.module#FlexLayoutExampleModule'
+    loadChildren: () => import('./flex-layout/flex-layout.module').then(m => m.FlexLayoutExampleModule)
   },
   {
     path: 'flexlayout2',
-    loadChildren: './flex-layout-2/flex-layout-2.module#FlexLayout2Module'
+    loadChildren: () => import('./flex-layout-2/flex-layout-2.module').then(m => m.FlexLayout2Module)
   },
   {
     path: 'ag-grid',
-    loadChildren: './ag-grid/ag-grid.module#MyAgGridModule'
+    loadChildren: () => import('./ag-grid/ag-grid.module').then(m => m.MyAgGridModule)
   },
   {
     path: 'websockets',
-    loadChildren: './websockets/websockets.module#WebsocketsModule'
+    loadChildren: () => import('./websockets/websockets.module').then(m => m.WebsocketsModule)
   },
   {
     path: 'rxjs',
-    loadChildren: './rxjs/rxjs.module#RxjsModule'
+    loadChildren: () => import('./rxjs/rxjs.module').then(m => m.RxjsModule)
   },
   {
     path: 'class-transformer',
@@ -51,19 +55,19 @@ const ROUTES: Routes = [
   },
   {
     path: 'd3',
-    loadChildren: './d3/d3.module#D3Module'
+    loadChildren: () => import('./d3/d3.module').then(m => m.D3Module)
   },
   {
     path: 'ngxs',
-    loadChildren: './ngxs/ngxs-demo.module#NgxsDemoModule'
+    loadChildren: () => import('./ngxs/ngxs-demo.module').then(m => m.NgxsDemoModule)
   },
   {
     path: 'misc',
-    loadChildren: './misc/misc.module#MiscModule'
+    loadChildren: () => import('./misc/misc.module').then(m => m.MiscModule)
   },
   {
     path: 'sp500',
-    loadChildren: './sp500/sp500.module#SP500Module'
+    loadChildren: () => import('./sp500/sp500.module').then(m => m.SP500Module)
   }
 ];
 @NgModule({
@@ -78,7 +82,10 @@ const ROUTES: Routes = [
     HttpClientModule,
     MaterialModule,
     FlexLayoutModule,
-    MaterialDemoModule
+    MaterialDemoModule,
+    NgxsModule.forRoot(),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
+    NgxsLoggerPluginModule.forRoot()
   ],
   providers: [
     CustomerService,

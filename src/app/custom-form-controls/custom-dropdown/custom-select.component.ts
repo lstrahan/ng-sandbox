@@ -5,7 +5,7 @@ import {
 import { ActiveDescendantKeyManager, FocusMonitor } from '@angular/cdk/a11y';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, NgControl } from '@angular/forms';
-import { MatFormFieldControl } from '@angular/material';
+import { MatFormFieldControl } from '@angular/material/form-field';
 
 import { CustomDropdownService } from './custom-dropdown.service';
 import { CustomSelectOptionComponent } from './custom-select-option.component';
@@ -77,10 +77,10 @@ export class CustomSelectComponent implements AfterViewInit, ControlValueAccesso
     return !this._valuePart1;
   }
 
-  @ViewChild('input', { static: false })
+  @ViewChild('input')
   public input: ElementRef;
 
-  @ViewChild(DropdownComponent, { static: false })
+  @ViewChild(DropdownComponent)
   public dropdown: DropdownComponent;
 
   @ContentChildren(CustomSelectOptionComponent)

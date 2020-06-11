@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WebSocketSubjectService } from '../web-socket-subject.service';
-import { MatRadioChange } from '@angular/material';
+import { MatRadioChange } from '@angular/material/radio';
 
 @Component({
   selector: 'my-container',

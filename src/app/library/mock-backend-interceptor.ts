@@ -41,7 +41,7 @@ export class MockBackendInterceptor implements HttpInterceptor {
       }
 
       // GET customer/$id
-      if (request.url.match(/\/customer\/\d+$/) && request.method === 'GET') {
+      if (request.url.match(/\/customer\/\w+$/) && request.method === 'GET') {
         console.log(`MOCK ${request.url}`);
         let urlParts = request.url.split('/');
         let id = urlParts[urlParts.length - 1];
@@ -67,7 +67,7 @@ export class MockBackendInterceptor implements HttpInterceptor {
       }
 
       // DELETE customer/$id
-      if (request.url.match(/\/customer\/\d+$/) && request.method === 'DELETE') {
+      if (request.url.match(/\/customer\/\w+$/) && request.method === 'DELETE') {
         console.log(`MOCK ${request.url}`);
         let urlParts = request.url.split('/');
         let id = urlParts[urlParts.length - 1];

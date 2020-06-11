@@ -1,7 +1,6 @@
 import { Expose, Exclude, Transform, classToPlain, Type, plainToClass, TypeHelpOptions } from 'class-transformer';
 import moment from 'moment';
 import _ from 'lodash';
-import { basename } from 'path';
 
 export const personJson = {
   id: '1',

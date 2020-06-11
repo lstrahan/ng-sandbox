@@ -8,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   isDarkTheme = false;
 
-  constructor() { }
+  constructor() {
+    console.log('%cAppComponent constructor', 'background: red;');
+  }
 
   ngOnInit() { }
 

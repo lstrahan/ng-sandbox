@@ -34,37 +34,30 @@
           },
           "configurations": {
             "dev": {
-              "budgets": [
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb"
-                }
-              ],
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.dev.ts"
-                }
-              ]
+              "budgets": [{
+                "type": "anyComponentStyle",
+                "maximumWarning": "6kb"
+              }]
             },
-            "prod": {
-              "budgets": [
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb"
-                }
-              ],
-              "fileReplacements": [],
-              "tsConfig": "tsconfig.prod.json",
+            "production": {
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": true,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ]
             }
           }
         },
@@ -77,8 +70,8 @@
             "dev": {
               "browserTarget": "sandbox:build:dev"
             },
-            "prod": {
-              "browserTarget": "sandbox:build:prod"
+            "production": {
+              "browserTarget": "sandbox:build:production"
             }
           }
         },

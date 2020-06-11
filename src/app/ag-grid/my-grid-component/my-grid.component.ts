@@ -6,7 +6,7 @@ import {Component} from '@angular/core';
     templateUrl: './my-grid.component.html'
 })
 export class MyGridComponent {
-    private params: any;
+    params: any;
 
     agInit(params: any): void {
         this.params = params;

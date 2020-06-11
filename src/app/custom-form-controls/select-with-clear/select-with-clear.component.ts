@@ -27,9 +27,9 @@ export class SelectWithClearComponent implements ControlValueAccessor, MatFormFi
   errorState = false;
   controlType = 'custom-mat-form-control';
 
-  private _placeholder: string;
-  private _required = false;
-  private _disabled = false;
+  _placeholder: string;
+  _required = false;
+  _disabled = false;
   _value: string = '';
 
   // Implementation of MatFormFieldControl so that control can be used inside a <mat-form-field> container

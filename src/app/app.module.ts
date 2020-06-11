@@ -15,7 +15,6 @@ import { AppComponent } from './app.component';
 import { MaterialDemoModule } from './material-demo/material-demo.module';
 import { ClassTransformerComponent } from './class-transformer/class-transformer.component';
 import { NgxsModule } from '@ngxs/store';
-import { CustomerState } from './ngxs/store/customer.state';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 

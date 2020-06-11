@@ -11,9 +11,9 @@ import { MatComponent } from '../mat-component/mat.component';
 export class D3Component implements OnInit {
 
   circleInfos = [
-    { x: 10, y: 10, color: 'red' },
-    { x: 40, y: 40, color: 'yellow' },
-    { x: 70, y: 70, color: 'blue' }
+    { x: 30, y: 30, color: 'red' },
+    { x: 60, y: 60, color: 'yellow' },
+    { x: 90, y: 90, color: 'blue' }
   ];
 
   mydrag = d3.drag();
@@ -25,8 +25,15 @@ export class D3Component implements OnInit {
 
   ngOnInit() {
     this.initDragHandlers();
-    this.initForeignObject();
     this.initCircles();
+
+    const svg = d3.select('svg');
+
+    // svg.on('mousedown', () => { console.log('mousedown'); svg.on('mousemove', () => console.log('mousemove')); })
+    //   .on('mouseup', () => { console.log('mouseup'); svg.on('mousemove', null); });
+
+    // svg.on('mousedown', () => { console.log('mousedown.classed'); svg.on('mousemove.classed', () => console.log('mousemove.classed')); })
+    //   .on('mouseup', () => { console.log('mouseup.classed'); svg.on('mousemove.classed', null); });
   }
 
   initDragHandlers() {
@@ -69,47 +76,5 @@ export class D3Component implements OnInit {
       .attr('fill', (d) => d.color)
       .call(<any>this.mydrag); // add drag behavior
   }
-
-  initForeignObject() {
-    let c = d3.select<HTMLCanvasElement, {}>('canvas').node();
-    let ctx = c.getContext('2d');
-    console.log(`length = ${ctx.measureText('sdlkhsdfkjlhsdhj').width}`);
-
-
-    let fo = d3.select('g#chartContents').append<SVGForeignObjectElement>('foreignObject')
-      .attr('x', 150).attr('y', 50).attr('width', 200);
-    // fo.html(`
-    // <h1>xxxxxx xxxxxx xxxx</h1>
-    // <div matTooltip="sdfsfsdfsdfs" style="color: red; background: blue;">thisisred</div>
-    // `);
-
-    // const factory = this.resolver.resolveComponentFactory(MatComponent);
-    // const componentRef = this.container.createComponent(factory);
-    // fo.node().appendChild(componentRef.instance);
-
-    // d3.select('g#chartContents').append('g').attr('app-mat-component', '')
-    //   .attr('transform', 'translate(400,50)');
-
-    // d3.select('g#chartContents').append('text')
-    // .attr('x', 150).attr('y', 50).html('<span>XXXXXXXXXX</span>ZZZZZZZZZZ');
-
-    // let x = d3.select('g#chartContents').append('rect')
-    // .attr('x', 150).attr('y', 50).attr('width', 20).attr('height', 20)
-    // .attr('fill', 'red');
-
-    // let y = x.clone().attr('x', 200).attr('y', 50).attr('width', 20).attr('height', 20)
-    // .attr('fill', 'blue');
-    // let z = x.clone().attr('x', 250).attr('y', 50).attr('width', 20).attr('height', 20)
-    // .attr('fill', 'green');
-    // x.remove();
-    // d3.select('g#chartContents').append(() => y.node());
-    // d3.select('g#chartContents').append(() => z.node());
-
-    // let el = d3.create('rect')
-    //   .attr('x', 200).attr('y', 50).attr('width', 20).attr('height', 20)
-    //   .attr('fill', 'red');
-    //   d3.select('g#chartContents').append(() => el.node());
-  }
-
 
 }
